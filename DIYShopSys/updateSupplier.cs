@@ -26,7 +26,8 @@ namespace DIYShopSys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            addSupplier addSupplier = new addSupplier("test",this);
+            DataSet ds = new DataSet();
+            addSupplier addSupplier = new addSupplier(ds,this);
             addSupplier.Show();
         }
 

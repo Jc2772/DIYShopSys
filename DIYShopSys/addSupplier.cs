@@ -14,7 +14,7 @@ namespace DIYShopSys
     {
         MainMenu main;
         updateSupplier update;
-        String item;
+        DataSet item;
         public addSupplier()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace DIYShopSys
             main.Hide();
             InitializeComponent();
         }
-        public addSupplier(String item,updateSupplier update)
+        public addSupplier(DataSet item,updateSupplier update)
         {
             this.item = item;
             this.update = update;
