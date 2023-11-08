@@ -168,17 +168,17 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private ComboBox comboBox1;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
+        private Button SubmitButton;
+        private Button ReturnButton;
+        private TextBox Input1;
+        private TextBox Input2;
+        private TextBox Input3;
+        private TextBox Input4;
+        private ComboBox ComboBox;
+        private Label LabelForInput1;
+        private Label LabelForInput2;
+        private Label LabelForInput3;
+        private Label LabelForCombo;
+        private Label LabelForInput4;
     }
 }
