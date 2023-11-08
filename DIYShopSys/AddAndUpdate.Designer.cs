@@ -28,140 +28,141 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            comboBox1 = new ComboBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
+            SubmitButton = new Button();
+            ReturnButton = new Button();
+            Input1 = new TextBox();
+            Input2 = new TextBox();
+            Input3 = new TextBox();
+            Input4 = new TextBox();
+            ComboBox = new ComboBox();
+            LabelForInput1 = new Label();
+            LabelForInput2 = new Label();
+            LabelForInput3 = new Label();
+            LabelForCombo = new Label();
+            LabelForInput4 = new Label();
             SuspendLayout();
             // 
-            // button1
+            // SubmitButton
             // 
-            button1.Location = new Point(148, 217);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            SubmitButton.Location = new Point(148, 217);
+            SubmitButton.Name = "SubmitButton";
+            SubmitButton.Size = new Size(75, 23);
+            SubmitButton.TabIndex = 0;
+            SubmitButton.Text = "Submit";
+            SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
             // 
-            // button2
+            // ReturnButton
             // 
-            button2.Location = new Point(271, 12);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            ReturnButton.Location = new Point(271, 12);
+            ReturnButton.Name = "ReturnButton";
+            ReturnButton.Size = new Size(75, 23);
+            ReturnButton.TabIndex = 1;
+            ReturnButton.Text = "Return";
+            ReturnButton.UseVisualStyleBackColor = true;
+            ReturnButton.Click += ReturnButton_Click;
             // 
-            // textBox1
+            // Input1
             // 
-            textBox1.Location = new Point(117, 57);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(169, 23);
-            textBox1.TabIndex = 2;
+            Input1.Location = new Point(117, 57);
+            Input1.Name = "Input1";
+            Input1.Size = new Size(169, 23);
+            Input1.TabIndex = 2;
             // 
-            // textBox2
+            // Input2
             // 
-            textBox2.Location = new Point(117, 86);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(169, 23);
-            textBox2.TabIndex = 3;
+            Input2.Location = new Point(117, 86);
+            Input2.Name = "Input2";
+            Input2.Size = new Size(169, 23);
+            Input2.TabIndex = 3;
             // 
-            // textBox3
+            // Input3
             // 
-            textBox3.Location = new Point(117, 115);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(169, 23);
-            textBox3.TabIndex = 4;
+            Input3.Location = new Point(117, 115);
+            Input3.Name = "Input3";
+            Input3.Size = new Size(169, 23);
+            Input3.TabIndex = 4;
             // 
-            // textBox4
+            // Input4
             // 
-            textBox4.Location = new Point(117, 173);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(169, 23);
-            textBox4.TabIndex = 5;
+            Input4.Location = new Point(117, 173);
+            Input4.Name = "Input4";
+            Input4.Size = new Size(169, 23);
+            Input4.TabIndex = 5;
             // 
-            // comboBox1
+            // ComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(117, 144);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(169, 23);
-            comboBox1.TabIndex = 6;
+            ComboBox.FormattingEnabled = true;
+            ComboBox.Location = new Point(117, 144);
+            ComboBox.Name = "ComboBox";
+            ComboBox.Size = new Size(169, 23);
+            ComboBox.TabIndex = 6;
             // 
-            // label1
+            // LabelForInput1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(73, 60);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 7;
-            label1.Text = "label1";
+            LabelForInput1.AutoSize = true;
+            LabelForInput1.Location = new Point(25, 60);
+            LabelForInput1.Name = "LabelForInput1";
+            LabelForInput1.Size = new Size(86, 15);
+            LabelForInput1.TabIndex = 7;
+            LabelForInput1.Text = "LabelForInput1";
             // 
-            // label2
+            // LabelForInput2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(73, 89);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 8;
-            label2.Text = "label2";
+            LabelForInput2.AutoSize = true;
+            LabelForInput2.Location = new Point(25, 89);
+            LabelForInput2.Name = "LabelForInput2";
+            LabelForInput2.Size = new Size(86, 15);
+            LabelForInput2.TabIndex = 8;
+            LabelForInput2.Text = "LabelForInput2";
             // 
-            // label3
+            // LabelForInput3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(73, 115);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 9;
-            label3.Text = "label3";
+            LabelForInput3.AutoSize = true;
+            LabelForInput3.Location = new Point(25, 118);
+            LabelForInput3.Name = "LabelForInput3";
+            LabelForInput3.Size = new Size(86, 15);
+            LabelForInput3.TabIndex = 9;
+            LabelForInput3.Text = "LabelForInput3";
             // 
-            // label4
+            // LabelForCombo
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(73, 147);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 15);
-            label4.TabIndex = 10;
-            label4.Text = "label4";
+            LabelForCombo.AutoSize = true;
+            LabelForCombo.Location = new Point(19, 147);
+            LabelForCombo.Name = "LabelForCombo";
+            LabelForCombo.Size = new Size(92, 15);
+            LabelForCombo.TabIndex = 10;
+            LabelForCombo.Text = "LabelForCombo";
             // 
-            // label5
+            // LabelForInput4
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(73, 176);
-            label5.Name = "label5";
-            label5.Size = new Size(38, 15);
-            label5.TabIndex = 11;
-            label5.Text = "label5";
+            LabelForInput4.AutoSize = true;
+            LabelForInput4.Location = new Point(25, 176);
+            LabelForInput4.Name = "LabelForInput4";
+            LabelForInput4.Size = new Size(86, 15);
+            LabelForInput4.TabIndex = 11;
+            LabelForInput4.Text = "LabelForInput4";
             // 
             // AddAndUpdate
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(357, 285);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(LabelForInput4);
+            Controls.Add(LabelForCombo);
+            Controls.Add(LabelForInput3);
+            Controls.Add(LabelForInput2);
+            Controls.Add(LabelForInput1);
+            Controls.Add(ComboBox);
+            Controls.Add(Input4);
+            Controls.Add(Input3);
+            Controls.Add(Input2);
+            Controls.Add(Input1);
+            Controls.Add(ReturnButton);
+            Controls.Add(SubmitButton);
             Name = "AddAndUpdate";
             Text = "Form2";
+            FormClosed += AddAndUpdate_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

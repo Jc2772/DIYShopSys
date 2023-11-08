@@ -9,8 +9,8 @@ namespace DIYShopSys
 
         private void AddAndUpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String formname = "add item";
-            AddAndUpdate AddAndUpdate = new AddAndUpdate(this,formname);
+            AddAndUpdate AddAndUpdate = new AddAndUpdate(this);
+            AddAndUpdate.Text = "Add Supplier";
             AddAndUpdate.Show();
         }
         private void updateSupplierToolStripMenuItem_Click(object sender, EventArgs e)

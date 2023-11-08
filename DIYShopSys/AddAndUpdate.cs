@@ -12,54 +12,111 @@ namespace DIYShopSys
 {
     public partial class AddAndUpdate : Form
     {
-        //main menu
+        //used to return to the main menu
         MainMenu main;
-        //update supplier
-        updateSupplier update;
+        //used to return to update supplier
+        updateSupplier updateSupplier;
+        //dataset required for old values
         DataSet item;
-        //update item
 
         public AddAndUpdate()
         {
             InitializeComponent();
         }
-        public AddAndUpdate(MainMenu main, String forname)
+        public AddAndUpdate(MainMenu main)
         {
             this.main = main;
             main.Hide();
             InitializeComponent();
+            LabelForInput1.Text = "Name";
+            LabelForInput2.Text = "Phone number";
+            LabelForInput3.Text = "Email";
+            LabelForCombo.Hide();
+            LabelForInput4.Hide();
+            ComboBox.Hide();
+            Input4.Hide();
         }
-        public AddAndUpdate(DataSet item, updateSupplier update, string forname)
+        public AddAndUpdate(DataSet item, updateSupplier update)
         {
             this.item = item;
-            this.update = update;
+            this.updateSupplier = update;
             update.Hide();
             InitializeComponent();
+            LabelForInput1.Text = "Name";
+            LabelForInput2.Text = "Phone number";
+            LabelForInput3.Text = "Email";
+            LabelForCombo.Hide();
+            LabelForInput4.Hide();
+            ComboBox.Hide();
+            Input4.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SubmitButton_Click(object sender, EventArgs e)
         {
-            if (this.item != null)
+            if (this.Text.Equals("Add Supplier"))
             {
-
+                if (CheckSupplier())
+                {
+                    MessageBox.Show("You have Added a Supplier", "Added Supplier", MessageBoxButtons.OK);
+                }
             }
-            else
+            if (this.Text.Equals(""))
             {
-
+                if (CheckSupplier())
+                {
+                    MessageBox.Show("You have Updated Supplier Details", "Updated Supplier", MessageBoxButtons.OK);
+                }
+            }
+            if (this.Text.Equals(""))
+            {
+                if (CheckNewItem())
+                {
+                    MessageBox.Show("You have Added an Item", "Added Item", MessageBoxButtons.OK);
+                }
+            }
+            if (this.Text.Equals(""))
+            {
+                if (CheckItemUpdate())
+                {
+                    MessageBox.Show("You have Updated Item Details", "Updated Item", MessageBoxButtons.OK);
+                }
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ReturnButton_Click(object sender, EventArgs e)
         {
-            if (this.item != null)
+            if (this.updateSupplier != null)
             {
-                update.Show();
+                updateSupplier.Show();
                 this.Close();
             }
             else
             {
                 main.Show();
                 this.Close();
+            }
+        }
+        private Boolean CheckSupplier()
+        {
+            return false;
+        }
+        private Boolean CheckNewItem()
+        {
+            return false;
+        }
+        private Boolean CheckItemUpdate()
+        {
+            return false;
+        }
+
+        private void AddAndUpdate_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(main != null)
+            {
+                if(main.Visible == false)
+                {
+                    main.Close();
+                }
             }
         }
     }

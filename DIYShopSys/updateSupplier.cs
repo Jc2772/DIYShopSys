@@ -24,18 +24,30 @@ namespace DIYShopSys
             main.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SubmitButton_Click(object sender, EventArgs e)
         {
             DataSet dataSet = new DataSet();
-            string formname = "update item";
-            AddAndUpdate AddAndUpdate = new AddAndUpdate(dataSet,this,formname);
+            AddAndUpdate AddAndUpdate = new AddAndUpdate(dataSet, this);
+            /*used this to learn how to change form name in c#
+             * first answer on page
+             * https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
+             */
+            AddAndUpdate.Text = "Update Supplier Details";
             AddAndUpdate.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ReturnButton_Click(object sender, EventArgs e)
         {
             main.Show();
             this.Close();
+        }
+
+        private void updateSupplier_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(main.Visible == false)
+            {
+                main.Close();
+            }
         }
     }
 }

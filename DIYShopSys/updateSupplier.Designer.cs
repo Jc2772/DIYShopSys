@@ -28,45 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            SubmitButton = new Button();
+            ReturnButton = new Button();
             SuspendLayout();
             // 
-            // button1
+            // SubmitButton
             // 
-            button1.Location = new Point(343, 325);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            SubmitButton.Location = new Point(343, 325);
+            SubmitButton.Name = "SubmitButton";
+            SubmitButton.Size = new Size(75, 23);
+            SubmitButton.TabIndex = 0;
+            SubmitButton.Text = "SubmitButton";
+            SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
             // 
-            // button2
+            // ReturnButton
             // 
-            button2.Location = new Point(682, 12);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            ReturnButton.Location = new Point(682, 12);
+            ReturnButton.Name = "ReturnButton";
+            ReturnButton.Size = new Size(75, 23);
+            ReturnButton.TabIndex = 1;
+            ReturnButton.Text = "ReturnButton";
+            ReturnButton.UseVisualStyleBackColor = true;
+            ReturnButton.Click += ReturnButton_Click;
             // 
             // updateSupplier
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(ReturnButton);
+            Controls.Add(SubmitButton);
             Name = "updateSupplier";
             Text = "Form1";
+            FormClosed += updateSupplier_FormClosed;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button SubmitButton;
+        private Button ReturnButton;
     }
 }
