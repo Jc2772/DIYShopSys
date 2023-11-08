@@ -30,7 +30,7 @@
         {
             menuStrip1 = new MenuStrip();
             suppliersToolStripMenuItem = new ToolStripMenuItem();
-            addSupplierToolStripMenuItem = new ToolStripMenuItem();
+            AddAndUpdateToolStripMenuItem = new ToolStripMenuItem();
             updateSupplierToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -46,17 +46,17 @@
             // 
             // suppliersToolStripMenuItem
             // 
-            suppliersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addSupplierToolStripMenuItem, updateSupplierToolStripMenuItem });
+            suppliersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AddAndUpdateToolStripMenuItem, updateSupplierToolStripMenuItem });
             suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
             suppliersToolStripMenuItem.Size = new Size(66, 20);
             suppliersToolStripMenuItem.Text = "suppliers";
             // 
-            // addSupplierToolStripMenuItem
+            // AddAndUpdateToolStripMenuItem
             // 
-            addSupplierToolStripMenuItem.Name = "addSupplierToolStripMenuItem";
-            addSupplierToolStripMenuItem.Size = new Size(180, 22);
-            addSupplierToolStripMenuItem.Text = "add supplier";
-            addSupplierToolStripMenuItem.Click += addSupplierToolStripMenuItem_Click;
+            AddAndUpdateToolStripMenuItem.Name = "AddAndUpdateToolStripMenuItem";
+            AddAndUpdateToolStripMenuItem.Size = new Size(180, 22);
+            AddAndUpdateToolStripMenuItem.Text = "add supplier";
+            AddAndUpdateToolStripMenuItem.Click += AddAndUpdateToolStripMenuItem_Click;
             // 
             // updateSupplierToolStripMenuItem
             // 
@@ -84,7 +84,7 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem suppliersToolStripMenuItem;
-        private ToolStripMenuItem addSupplierToolStripMenuItem;
+        private ToolStripMenuItem AddAndUpdateToolStripMenuItem;
         private ToolStripMenuItem updateSupplierToolStripMenuItem;
     }
 }

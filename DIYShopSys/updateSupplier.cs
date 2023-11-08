@@ -26,10 +26,10 @@ namespace DIYShopSys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-
-            addSupplier addSupplier = new addSupplier(,this);
-            addSupplier.Show();
+            DataSet dataSet = new DataSet();
+            string formname = "update item";
+            AddAndUpdate AddAndUpdate = new AddAndUpdate(dataSet,this,formname);
+            AddAndUpdate.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

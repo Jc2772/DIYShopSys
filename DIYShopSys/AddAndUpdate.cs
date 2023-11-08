@@ -10,22 +10,26 @@ using System.Windows.Forms;
 
 namespace DIYShopSys
 {
-    public partial class addSupplier : Form
+    public partial class AddAndUpdate : Form
     {
+        //main menu
         MainMenu main;
+        //update supplier
         updateSupplier update;
         DataSet item;
-        public addSupplier()
+        //update item
+
+        public AddAndUpdate()
         {
             InitializeComponent();
         }
-        public addSupplier(MainMenu main)
+        public AddAndUpdate(MainMenu main, String forname)
         {
             this.main = main;
             main.Hide();
             InitializeComponent();
         }
-        public addSupplier(DataSet item,updateSupplier update)
+        public AddAndUpdate(DataSet item, updateSupplier update, string forname)
         {
             this.item = item;
             this.update = update;
@@ -47,7 +51,8 @@ namespace DIYShopSys
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(this.item != null) {
+            if (this.item != null)
+            {
                 update.Show();
                 this.Close();
             }
