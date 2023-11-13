@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DIYShopSys
+// https://www.aspsnippets.com/Articles/Get-Cell-Value-of-Selected-DataGridView-Row-in-Windows-Application-using-C-and-VBNet.aspx
 {
     public partial class updateSupplier : Form
     {
@@ -44,7 +45,7 @@ namespace DIYShopSys
 
         private void updateSupplier_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(main.Visible == false)
+            if (main.Visible == false)
             {
                 main.Close();
             }

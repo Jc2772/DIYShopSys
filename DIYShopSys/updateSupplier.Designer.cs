@@ -30,11 +30,13 @@
         {
             SubmitButton = new Button();
             ReturnButton = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(343, 325);
+            SubmitButton.Location = new Point(347, 399);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(75, 23);
             SubmitButton.TabIndex = 0;
@@ -52,16 +54,27 @@
             ReturnButton.UseVisualStyleBackColor = true;
             ReturnButton.Click += ReturnButton_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 72);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(776, 321);
+            dataGridView1.TabIndex = 2;
+            // 
             // updateSupplier
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dataGridView1);
             Controls.Add(ReturnButton);
             Controls.Add(SubmitButton);
             Name = "updateSupplier";
             Text = "Form1";
             FormClosed += updateSupplier_FormClosed;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -69,5 +82,6 @@
 
         private Button SubmitButton;
         private Button ReturnButton;
+        private DataGridView dataGridView1;
     }
 }
