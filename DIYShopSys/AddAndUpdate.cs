@@ -111,9 +111,9 @@ namespace DIYShopSys
 
         private void AddAndUpdate_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(main != null)
+            if (main != null)
             {
-                if(main.Visible == false)
+                if (main.Visible == false)
                 {
                     main.Close();
                 }
