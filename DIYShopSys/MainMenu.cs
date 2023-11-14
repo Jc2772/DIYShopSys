@@ -15,7 +15,7 @@ namespace DIYShopSys
         }
         private void updateSupplierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            updateSupplier updateSupplier = new updateSupplier(this);
+            updateSupplier updateSupplier = new updateSupplier(this, "Update Supplier Details");
             updateSupplier.Show();
         }
     }

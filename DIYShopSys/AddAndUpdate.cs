@@ -18,11 +18,12 @@ namespace DIYShopSys
         updateSupplier updateSupplier;
         //dataset required for old values
         DataSet item;
-
+        //Unused
         public AddAndUpdate()
         {
             InitializeComponent();
         }
+        //Add Supplier
         public AddAndUpdate(MainMenu main)
         {
             this.main = main;
@@ -36,6 +37,7 @@ namespace DIYShopSys
             ComboBox.Hide();
             Input4.Hide();
         }
+        //Update Supplier
         public AddAndUpdate(DataGridViewRow Row, updateSupplier update)
         {
             this.item = item;
@@ -49,10 +51,16 @@ namespace DIYShopSys
             LabelForInput4.Hide();
             ComboBox.Hide();
             Input4.Hide();
+            //input old values
+            //https://stackoverflow.com/questions/6487839/reading-data-from-datagridview-in-c-sharp
+            Input1.Text = Row.Cells[1].Value.ToString();
+            Input2.Text = Row.Cells[2].Value.ToString();
+            Input3.Text = Row.Cells[3].Value.ToString();
         }
-
+        //submit button
         private void SubmitButton_Click(object sender, EventArgs e)
         {
+            //Checks for form text
             if (this.Text.Equals("Add Supplier"))
             {
                 if (CheckSupplier())
@@ -82,7 +90,7 @@ namespace DIYShopSys
                 }
             }
         }
-
+        //returns to main menu
         private void ReturnButton_Click(object sender, EventArgs e)
         {
             if (this.updateSupplier != null)
@@ -96,6 +104,7 @@ namespace DIYShopSys
                 this.Close();
             }
         }
+        // validation
         private Boolean CheckSupplier()
         {
             return false;
@@ -108,7 +117,7 @@ namespace DIYShopSys
         {
             return false;
         }
-
+        // closing form
         private void AddAndUpdate_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (main != null)
@@ -117,6 +126,10 @@ namespace DIYShopSys
                 {
                     main.Close();
                 }
+            }
+            else
+            {
+                updateSupplier.Close();
             }
         }
     }

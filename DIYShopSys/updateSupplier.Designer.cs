@@ -58,13 +58,17 @@
             // 
             // Grid
             // 
+            Grid.AllowUserToAddRows = false;
+            Grid.AllowUserToDeleteRows = false;
+            Grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Grid.BackgroundColor = SystemColors.Control;
             Grid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Grid.Location = new Point(12, 41);
+            Grid.Location = new Point(12, 76);
             Grid.MultiSelect = false;
             Grid.Name = "Grid";
             Grid.RowTemplate.Height = 25;
             Grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            Grid.Size = new Size(776, 321);
+            Grid.Size = new Size(776, 286);
             Grid.TabIndex = 2;
             // 
             // label1
