@@ -207,6 +207,15 @@ namespace DIYShopSys
 
                 Grid.DataSource = dataset.Tables[0];
             }
+            if (this.Text.Equals("Restock Item"))
+            {
+                QuantityBox.Visible = true;
+                QuantityLabel.Visible = true;
+            }
+            else if (this.Text.Equals("Query Items"))
+            {
+                SubmitButton.Visible = false;
+            }
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -231,28 +240,31 @@ namespace DIYShopSys
                 else
                 {
                     // update details
-                    if (this.Text.Equals("Update Supplier Details"))
+                    if (this.Text.Contains("Update"))
                     {
-
-                        String Text = "Update Supplier Details";
-                        AddAndUpdate AddAndUpdate = new AddAndUpdate(row, this,Text);
-                        AddAndUpdate.Show();
-                    }
-                    else if (this.Text.Equals("Update Item Details"))
-                    {
-                        String Text = "Update Item Details";
+                        if (this.Text.Equals("Update Supplier Details"))
+                        {
+                            String Text = "Update Supplier Details";
+                        }
+                        else if (this.Text.Equals("Update Item Details"))
+                        {
+                            String Text = "Update Item Details";
+                        }
                         AddAndUpdate AddAndUpdate = new AddAndUpdate(row, this, Text);
                         AddAndUpdate.Show();
                     }
                     // remove function
-                    else if (this.Text.Equals("Remove Supplier"))
-                    {
-                        
+                    else if (this.Text.Contains("Remove")) {
+                        if (this.Text.Equals("Remove Supplier"))
+                        {
+
+                        }
+                        else if (this.Text.Equals("Remove Item"))
+                        {
+
+                        }
                     }
-                    else if (this.Text.Equals("Remove Item"))
-                    {
-                       
-                    }
+                    //error for devs
                     else
                     {
                         MessageBox.Show("Form Does Not Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

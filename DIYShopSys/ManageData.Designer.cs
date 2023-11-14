@@ -31,8 +31,8 @@
             SubmitButton = new Button();
             ReturnButton = new Button();
             Grid = new DataGridView();
-            label1 = new Label();
-            textBox1 = new TextBox();
+            QuantityLabel = new Label();
+            QuantityBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)Grid).BeginInit();
             SuspendLayout();
             // 
@@ -42,7 +42,7 @@
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(113, 23);
             SubmitButton.TabIndex = 0;
-            SubmitButton.Text = "SubmitButton";
+            SubmitButton.Text = "Submit Button";
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
             // 
@@ -52,7 +52,7 @@
             ReturnButton.Name = "ReturnButton";
             ReturnButton.Size = new Size(106, 23);
             ReturnButton.TabIndex = 1;
-            ReturnButton.Text = "ReturnButton";
+            ReturnButton.Text = "Return Button";
             ReturnButton.UseVisualStyleBackColor = true;
             ReturnButton.Click += ReturnButton_Click;
             // 
@@ -71,29 +71,31 @@
             Grid.Size = new Size(776, 286);
             Grid.TabIndex = 2;
             // 
-            // label1
+            // QuantityLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(298, 377);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 3;
-            label1.Text = "label1";
+            QuantityLabel.AutoSize = true;
+            QuantityLabel.Location = new Point(288, 377);
+            QuantityLabel.Name = "QuantityLabel";
+            QuantityLabel.Size = new Size(53, 15);
+            QuantityLabel.TabIndex = 3;
+            QuantityLabel.Text = "Quantity";
+            QuantityLabel.Visible = false;
             // 
-            // textBox1
+            // QuantityBox
             // 
-            textBox1.Location = new Point(347, 374);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(126, 23);
-            textBox1.TabIndex = 4;
+            QuantityBox.Location = new Point(347, 374);
+            QuantityBox.Name = "QuantityBox";
+            QuantityBox.Size = new Size(126, 23);
+            QuantityBox.TabIndex = 4;
+            QuantityBox.Visible = false;
             // 
             // ManageData
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
+            Controls.Add(QuantityBox);
+            Controls.Add(QuantityLabel);
             Controls.Add(Grid);
             Controls.Add(ReturnButton);
             Controls.Add(SubmitButton);
@@ -110,7 +112,7 @@
         private Button SubmitButton;
         private Button ReturnButton;
         private DataGridView Grid;
-        private Label label1;
-        private TextBox textBox1;
+        private Label QuantityLabel;
+        private TextBox QuantityBox;
     }
 }
