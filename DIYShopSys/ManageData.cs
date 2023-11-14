@@ -113,14 +113,14 @@ namespace DIYShopSys
 
                 column = new DataColumn();
                 column.DataType = typeof(string);
-                column.ColumnName = "Phone Number";
+                column.ColumnName = "Type";
                 column.ReadOnly = true;
                 column.Unique = true;
                 table.Columns.Add(column);
 
                 column = new DataColumn();
-                column.DataType = typeof(string);
-                column.ColumnName = "Email";
+                column.DataType = typeof(double);
+                column.ColumnName = "Price";
                 column.ReadOnly = true;
                 column.Unique = true;
                 table.Columns.Add(column);
@@ -145,6 +145,27 @@ namespace DIYShopSys
 
                 row = table.NewRow();
                 row[0] = 3;
+                row[1] = "ShortGnomes";
+                row[2] = "087 179 4392";
+                row[3] = "ShortGnomes@outlook.com";
+                table.Rows.Add(row);
+
+                row = table.NewRow();
+                row[0] = 4;
+                row[1] = "ShortGnomes";
+                row[2] = "087 179 4392";
+                row[3] = "ShortGnomes@outlook.com";
+                table.Rows.Add(row);
+
+                row = table.NewRow();
+                row[0] = 5;
+                row[1] = "ShortGnomes";
+                row[2] = "087 179 4392";
+                row[3] = "ShortGnomes@outlook.com";
+                table.Rows.Add(row);
+
+                row = table.NewRow();
+                row[0] = 6;
                 row[1] = "ShortGnomes";
                 row[2] = "087 179 4392";
                 row[3] = "ShortGnomes@outlook.com";

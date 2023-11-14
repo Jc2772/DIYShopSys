@@ -32,12 +32,17 @@
             suppliersToolStripMenuItem = new ToolStripMenuItem();
             AddAndUpdateToolStripMenuItem = new ToolStripMenuItem();
             ManageDataToolStripMenuItem = new ToolStripMenuItem();
+            removeSupplierDetailsToolStripMenuItem = new ToolStripMenuItem();
+            itemsToolStripMenuItem = new ToolStripMenuItem();
+            analysisToolStripMenuItem = new ToolStripMenuItem();
+            yearlyRevenueAnalysisToolStripMenuItem = new ToolStripMenuItem();
+            yearlyItemAnalysisToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { suppliersToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { itemsToolStripMenuItem, analysisToolStripMenuItem, suppliersToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -46,33 +51,64 @@
             // 
             // suppliersToolStripMenuItem
             // 
-            suppliersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AddAndUpdateToolStripMenuItem, ManageDataToolStripMenuItem });
+            suppliersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AddAndUpdateToolStripMenuItem, ManageDataToolStripMenuItem, removeSupplierDetailsToolStripMenuItem });
             suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
-            suppliersToolStripMenuItem.Size = new Size(66, 20);
-            suppliersToolStripMenuItem.Text = "suppliers";
+            suppliersToolStripMenuItem.Size = new Size(67, 20);
+            suppliersToolStripMenuItem.Text = "Suppliers";
             // 
             // AddAndUpdateToolStripMenuItem
             // 
             AddAndUpdateToolStripMenuItem.Name = "AddAndUpdateToolStripMenuItem";
-            AddAndUpdateToolStripMenuItem.Size = new Size(180, 22);
+            AddAndUpdateToolStripMenuItem.Size = new Size(201, 22);
             AddAndUpdateToolStripMenuItem.Text = "add supplier";
             AddAndUpdateToolStripMenuItem.Click += AddAndUpdateToolStripMenuItem_Click;
             // 
             // ManageDataToolStripMenuItem
             // 
             ManageDataToolStripMenuItem.Name = "ManageDataToolStripMenuItem";
-            ManageDataToolStripMenuItem.Size = new Size(180, 22);
+            ManageDataToolStripMenuItem.Size = new Size(201, 22);
             ManageDataToolStripMenuItem.Text = "update supplier";
             ManageDataToolStripMenuItem.Click += ManageDataToolStripMenuItem_Click;
             // 
-            // Form1
+            // removeSupplierDetailsToolStripMenuItem
+            // 
+            removeSupplierDetailsToolStripMenuItem.Name = "removeSupplierDetailsToolStripMenuItem";
+            removeSupplierDetailsToolStripMenuItem.Size = new Size(201, 22);
+            removeSupplierDetailsToolStripMenuItem.Text = "Remove Supplier Details";
+            // 
+            // itemsToolStripMenuItem
+            // 
+            itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
+            itemsToolStripMenuItem.Size = new Size(48, 20);
+            itemsToolStripMenuItem.Text = "Items";
+            // 
+            // analysisToolStripMenuItem
+            // 
+            analysisToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { yearlyRevenueAnalysisToolStripMenuItem, yearlyItemAnalysisToolStripMenuItem });
+            analysisToolStripMenuItem.Name = "analysisToolStripMenuItem";
+            analysisToolStripMenuItem.Size = new Size(62, 20);
+            analysisToolStripMenuItem.Text = "Analysis";
+            // 
+            // yearlyRevenueAnalysisToolStripMenuItem
+            // 
+            yearlyRevenueAnalysisToolStripMenuItem.Name = "yearlyRevenueAnalysisToolStripMenuItem";
+            yearlyRevenueAnalysisToolStripMenuItem.Size = new Size(199, 22);
+            yearlyRevenueAnalysisToolStripMenuItem.Text = "Yearly Revenue Analysis";
+            // 
+            // yearlyItemAnalysisToolStripMenuItem
+            // 
+            yearlyItemAnalysisToolStripMenuItem.Name = "yearlyItemAnalysisToolStripMenuItem";
+            yearlyItemAnalysisToolStripMenuItem.Size = new Size(199, 22);
+            yearlyItemAnalysisToolStripMenuItem.Text = "Yearly Item Analysis";
+            // 
+            // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "MainMenu";
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -86,5 +122,10 @@
         private ToolStripMenuItem suppliersToolStripMenuItem;
         private ToolStripMenuItem AddAndUpdateToolStripMenuItem;
         private ToolStripMenuItem ManageDataToolStripMenuItem;
+        private ToolStripMenuItem removeSupplierDetailsToolStripMenuItem;
+        private ToolStripMenuItem itemsToolStripMenuItem;
+        private ToolStripMenuItem analysisToolStripMenuItem;
+        private ToolStripMenuItem yearlyRevenueAnalysisToolStripMenuItem;
+        private ToolStripMenuItem yearlyItemAnalysisToolStripMenuItem;
     }
 }
