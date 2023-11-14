@@ -15,7 +15,7 @@ namespace DIYShopSys
         //used to return to the main menu
         MainMenu main;
         //used to return to update supplier
-        updateSupplier updateSupplier;
+        ManageData ManageData;
         //dataset required for old values
         DataSet item;
         //Unused
@@ -38,10 +38,10 @@ namespace DIYShopSys
             Input4.Hide();
         }
         //Update Supplier
-        public AddAndUpdate(DataGridViewRow Row, updateSupplier update)
+        public AddAndUpdate(DataGridViewRow Row, ManageData update)
         {
             this.item = item;
-            this.updateSupplier = update;
+            this.ManageData = update;
             update.Hide();
             InitializeComponent();
             LabelForInput1.Text = "Name";
@@ -93,9 +93,9 @@ namespace DIYShopSys
         //returns to main menu
         private void ReturnButton_Click(object sender, EventArgs e)
         {
-            if (this.updateSupplier != null)
+            if (this.ManageData != null)
             {
-                updateSupplier.Show();
+                ManageData.Show();
                 this.Close();
             }
             else
@@ -129,7 +129,7 @@ namespace DIYShopSys
             }
             else
             {
-                updateSupplier.Close();
+                ManageData.Close();
             }
         }
     }

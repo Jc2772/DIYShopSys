@@ -1,6 +1,6 @@
 ﻿namespace DIYShopSys
 {
-    partial class updateSupplier
+    partial class ManageData
     {
         /// <summary>
         /// Required designer variable.
@@ -87,7 +87,7 @@
             textBox1.Size = new Size(126, 23);
             textBox1.TabIndex = 4;
             // 
-            // updateSupplier
+            // ManageData
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -97,9 +97,9 @@
             Controls.Add(Grid);
             Controls.Add(ReturnButton);
             Controls.Add(SubmitButton);
-            Name = "updateSupplier";
+            Name = "ManageData";
             Text = "Form1";
-            FormClosed += updateSupplier_FormClosed;
+            FormClosed += ManageData_FormClosed;
             ((System.ComponentModel.ISupportInitialize)Grid).EndInit();
             ResumeLayout(false);
             PerformLayout();

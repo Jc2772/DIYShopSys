@@ -11,14 +11,14 @@ using System.Windows.Forms;
 namespace DIYShopSys
 
 {
-    public partial class updateSupplier : Form
+    public partial class ManageData : Form
     {
         MainMenu main;
-        public updateSupplier()
+        public ManageData()
         {
             InitializeComponent();
         }
-        public updateSupplier(MainMenu main, String Text)
+        public ManageData(MainMenu main, String Text)
         {
             InitializeComponent();
             this.main = main;
@@ -226,7 +226,7 @@ namespace DIYShopSys
             this.Close();
         }
         // stop program
-        private void updateSupplier_FormClosed(object sender, FormClosedEventArgs e)
+        private void ManageData_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (main.Visible == false)
             {
