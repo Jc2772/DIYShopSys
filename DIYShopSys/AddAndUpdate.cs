@@ -36,7 +36,7 @@ namespace DIYShopSys
             ComboBox.Hide();
             Input4.Hide();
         }
-        public AddAndUpdate(DataSet item, updateSupplier update)
+        public AddAndUpdate(DataGridViewRow Row, updateSupplier update)
         {
             this.item = item;
             this.updateSupplier = update;

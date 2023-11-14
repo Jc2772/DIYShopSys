@@ -23,6 +23,10 @@ namespace DIYShopSys
             InitializeComponent();
             this.main = main;
             main.Hide();
+            if (this.Text.Equals("Restock item"))
+            {
+
+            }
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -32,14 +36,26 @@ namespace DIYShopSys
              */
             if (Grid.SelectedRows.Count == 1)
             {
-                DataGridView row = Grid.SelectedRows[0];
-                AddAndUpdate AddAndUpdate = new AddAndUpdate(dataSet, this);
+                DataGridViewRow row = Grid.SelectedRows[0];
+                AddAndUpdate AddAndUpdate = new AddAndUpdate(row, this);
                 /*used this to learn how to change form name in c#
                  * first answer on page
                  * https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
                  */
-                AddAndUpdate.Text = "Update Supplier Details";
-                AddAndUpdate.Show();
+                if (this.Text.Equals("Update Supplier Details"))
+                {
+                    AddAndUpdate.Text = "Update Supplier Details";
+                    AddAndUpdate.Show();
+                }
+
+                else if (this.Text.Equals("Update Item Details"))
+                {
+                    AddAndUpdate.Show();
+                }
+                else if(this.Text.Equals("Restock item"))
+                {
+
+                }
             }
         }
 
