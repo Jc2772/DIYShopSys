@@ -27,14 +27,20 @@ namespace DIYShopSys
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            DataSet dataSet = new DataSet();
-            AddAndUpdate AddAndUpdate = new AddAndUpdate(dataSet, this);
-            /*used this to learn how to change form name in c#
-             * first answer on page
-             * https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
+            /*https://stackoverflow.com/questions/56009158/how-to-check-if-a-cell-in-selected-row-in-datagridview-is-empty-null-using-c
+            came up with grid Selceted rows while looking at site
              */
-            AddAndUpdate.Text = "Update Supplier Details";
-            AddAndUpdate.Show();
+            if (Grid.SelectedRows.Count == 1)
+            {
+                DataGridView row = Grid.SelectedRows[0];
+                AddAndUpdate AddAndUpdate = new AddAndUpdate(dataSet, this);
+                /*used this to learn how to change form name in c#
+                 * first answer on page
+                 * https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
+                 */
+                AddAndUpdate.Text = "Update Supplier Details";
+                AddAndUpdate.Show();
+            }
         }
 
         private void ReturnButton_Click(object sender, EventArgs e)

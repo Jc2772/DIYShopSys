@@ -30,15 +30,17 @@
         {
             SubmitButton = new Button();
             ReturnButton = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            Grid = new DataGridView();
+            label1 = new Label();
+            textBox1 = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)Grid).BeginInit();
             SuspendLayout();
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(347, 399);
+            SubmitButton.Location = new Point(326, 415);
             SubmitButton.Name = "SubmitButton";
-            SubmitButton.Size = new Size(75, 23);
+            SubmitButton.Size = new Size(113, 23);
             SubmitButton.TabIndex = 0;
             SubmitButton.Text = "SubmitButton";
             SubmitButton.UseVisualStyleBackColor = true;
@@ -48,40 +50,63 @@
             // 
             ReturnButton.Location = new Point(682, 12);
             ReturnButton.Name = "ReturnButton";
-            ReturnButton.Size = new Size(75, 23);
+            ReturnButton.Size = new Size(106, 23);
             ReturnButton.TabIndex = 1;
             ReturnButton.Text = "ReturnButton";
             ReturnButton.UseVisualStyleBackColor = true;
             ReturnButton.Click += ReturnButton_Click;
             // 
-            // dataGridView1
+            // Grid
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 72);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(776, 321);
-            dataGridView1.TabIndex = 2;
+            Grid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Grid.Location = new Point(12, 41);
+            Grid.MultiSelect = false;
+            Grid.Name = "Grid";
+            Grid.RowTemplate.Height = 25;
+            Grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            Grid.Size = new Size(776, 321);
+            Grid.TabIndex = 2;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(298, 377);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 3;
+            label1.Text = "label1";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(347, 374);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(126, 23);
+            textBox1.TabIndex = 4;
             // 
             // updateSupplier
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(textBox1);
+            Controls.Add(label1);
+            Controls.Add(Grid);
             Controls.Add(ReturnButton);
             Controls.Add(SubmitButton);
             Name = "updateSupplier";
             Text = "Form1";
             FormClosed += updateSupplier_FormClosed;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Grid).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button SubmitButton;
         private Button ReturnButton;
-        private DataGridView dataGridView1;
+        private DataGridView Grid;
+        private Label label1;
+        private TextBox textBox1;
     }
 }
