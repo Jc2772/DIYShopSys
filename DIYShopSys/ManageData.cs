@@ -36,28 +36,24 @@ namespace DIYShopSys
                 column.DataType = typeof(int);
                 column.ColumnName = "id";
                 column.ReadOnly = true;
-                column.Unique = true;
                 table.Columns.Add(column);
 
                 column = new DataColumn();
                 column.DataType = typeof(string);
                 column.ColumnName = "name";
                 column.ReadOnly = true;
-                column.Unique = true;
                 table.Columns.Add(column);
 
                 column = new DataColumn();
                 column.DataType = typeof(string);
                 column.ColumnName = "Phone Number";
                 column.ReadOnly = true;
-                column.Unique = true;
                 table.Columns.Add(column);
 
                 column = new DataColumn();
                 column.DataType = typeof(string);
                 column.ColumnName = "Email";
                 column.ReadOnly = true;
-                column.Unique = true;
                 table.Columns.Add(column);
 
                 DataColumn[] PrimaryKeyColumns = new DataColumn[1];
@@ -91,8 +87,9 @@ namespace DIYShopSys
 
                 Grid.DataSource = dataset.Tables[0];
             }
-            else if (this.Text.Contains("item"))
+            else if (this.Text.Contains("Item"))
             {
+                //temporary code
                 DataTable table = new DataTable("Supplier");
                 DataColumn column;
                 DataRow row;
@@ -108,21 +105,36 @@ namespace DIYShopSys
                 column.DataType = typeof(string);
                 column.ColumnName = "name";
                 column.ReadOnly = true;
-                column.Unique = true;
                 table.Columns.Add(column);
 
                 column = new DataColumn();
                 column.DataType = typeof(string);
                 column.ColumnName = "Type";
                 column.ReadOnly = true;
-                column.Unique = true;
                 table.Columns.Add(column);
 
                 column = new DataColumn();
                 column.DataType = typeof(double);
                 column.ColumnName = "Price";
                 column.ReadOnly = true;
-                column.Unique = true;
+                table.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = typeof(string);
+                column.ColumnName = "Supplier name";
+                column.ReadOnly = true;
+                table.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = typeof(int);
+                column.ColumnName = "Supplier Id";
+                column.ReadOnly = true;
+                table.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = typeof(int);
+                column.ColumnName = "Quantity";
+                column.ReadOnly = true;
                 table.Columns.Add(column);
 
                 DataColumn[] PrimaryKeyColumns = new DataColumn[1];
@@ -131,44 +143,62 @@ namespace DIYShopSys
 
                 row = table.NewRow();
                 row[0] = 1;
-                row[1] = "Heavenly Plants";
-                row[2] = "087 954 3423";
-                row[3] = "HeavenlyPlantsRep@outlook.com";
+                row[1] = "Daffodil Bulbs";
+                row[2] = "Bulbs";
+                row[3] = 1;
+                row[4] = "Heavenly Plants";
+                row[5] = 1;
+                row[6] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
                 row[0] = 2;
-                row[1] = "Tims Toolset";
-                row[2] = "087 546 3821";
-                row[3] = "TimToolsRep@gmail";
+                row[1] = "Sledge Hammer";
+                row[2] = "Too1";
+                row[3] = 1;
+                row[4] = "Tims Toolset";
+                row[5] = 2;
+                row[6] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
                 row[0] = 3;
-                row[1] = "ShortGnomes";
-                row[2] = "087 179 4392";
-                row[3] = "ShortGnomes@outlook.com";
+                row[1] = "Green Gnome";
+                row[2] = "Outdoor Furniture";
+                row[3] = 1;
+                row[4] = "ShortGnomes";
+                row[5] = 3;
+                row[6] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
                 row[0] = 4;
-                row[1] = "ShortGnomes";
-                row[2] = "087 179 4392";
-                row[3] = "ShortGnomes@outlook.com";
+                row[1] = "Grass Seeds";
+                row[2] = "Seeds";
+                row[3] = 1;
+                row[4] = "Heavenly Plants";
+                row[5] = 1;
+                row[6] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
                 row[0] = 5;
-                row[1] = "ShortGnomes";
-                row[2] = "087 179 4392";
-                row[3] = "ShortGnomes@outlook.com";
+                row[1] = "Wrench Set";
+                row[2] = "Tools";
+                row[3] = 1;
+                row[4] = "Tims Toolset";
+                row[5] = 2;
+                row[6] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
                 row[0] = 6;
-                row[1] = "ShortGnomes";
-                row[2] = "087 179 4392";
-                row[3] = "ShortGnomes@outlook.com";
+                row[1] = "Green Gnome";
+                row[2] = "Outdoor Furniture";
+                row[3] = 1;
+                row[4] = "ShortGnomes";
+                row[5] = 3;
+                row[6] = 5;
                 table.Rows.Add(row);
 
                 DataSet dataset = new DataSet();
@@ -176,15 +206,6 @@ namespace DIYShopSys
 
 
                 Grid.DataSource = dataset.Tables[0];
-                //temporary code
-                /*List<Item> items = new List<Item> {
-                    new Item(1,"daffodil buds","Buds",1,1,5),
-                    new Item(2,"Grass Seeds","Seeds",1,1,5),
-                    new Item(3,"Wrench Set","Tools",1,2,5),
-                    new Item(4,"Screwdriver Set","Tools",1,2,5),
-                    new Item(5,"Red Gnome","Outdoor Furniture",1,3,5),
-                    new Item(6,"Green Gnome","Outdoor Furniture",1,3,5)
-                };*/
             }
         }
 
@@ -209,25 +230,28 @@ namespace DIYShopSys
                 }
                 else
                 {
-                    AddAndUpdate AddAndUpdate = new AddAndUpdate(row, this);
                     // update details
                     if (this.Text.Equals("Update Supplier Details"))
                     {
-                        AddAndUpdate.Text = "Update Supplier Details";
+
+                        String Text = "Update Supplier Details";
+                        AddAndUpdate AddAndUpdate = new AddAndUpdate(row, this,Text);
                         AddAndUpdate.Show();
                     }
                     else if (this.Text.Equals("Update Item Details"))
                     {
+                        String Text = "Update Item Details";
+                        AddAndUpdate AddAndUpdate = new AddAndUpdate(row, this, Text);
                         AddAndUpdate.Show();
                     }
                     // remove function
                     else if (this.Text.Equals("Remove Supplier"))
                     {
-                        AddAndUpdate.Show();
+                        
                     }
                     else if (this.Text.Equals("Remove Item"))
                     {
-                        AddAndUpdate.Show();
+                       
                     }
                     else
                     {

@@ -24,38 +24,68 @@ namespace DIYShopSys
             InitializeComponent();
         }
         //Add Supplier
-        public AddAndUpdate(MainMenu main)
+        public AddAndUpdate(MainMenu main,String text)
         {
             this.main = main;
             main.Hide();
             InitializeComponent();
-            LabelForInput1.Text = "Name";
-            LabelForInput2.Text = "Phone number";
-            LabelForInput3.Text = "Email";
-            LabelForCombo.Hide();
-            LabelForInput4.Hide();
-            ComboBox.Hide();
-            Input4.Hide();
+            this.Text = text;
+            if (this.Text.Equals("Add Supplier")) {
+                LabelForInput1.Text = "Name";
+                LabelForInput2.Text = "Phone number";
+                LabelForInput3.Text = "Email";
+                LabelForCombo.Hide();
+                LabelForInput4.Hide();
+                ComboBox.Hide();
+                Input4.Hide();
+            }
+            if (this.Text.Equals("Add Item"))
+            {
+                LabelForInput1.Text = "Name";
+                LabelForInput2.Text = "Type";
+                LabelForInput3.Text = "Price";
+                LabelForCombo.Text = "Supplier";
+                LabelForInput4.Text = "Quantity";
+            }
         }
         //Update Supplier
-        public AddAndUpdate(DataGridViewRow Row, ManageData update)
+        public AddAndUpdate(DataGridViewRow Row, ManageData update, String text)
         {
+            this.Text = text;
             this.item = item;
             this.ManageData = update;
             update.Hide();
             InitializeComponent();
-            LabelForInput1.Text = "Name";
-            LabelForInput2.Text = "Phone number";
-            LabelForInput3.Text = "Email";
-            LabelForCombo.Hide();
+            this.Text = text;
             LabelForInput4.Hide();
-            ComboBox.Hide();
             Input4.Hide();
+            if(this.Text.Equals("Update Supplier Details"))
+            {
+                LabelForCombo.Hide();
+                ComboBox.Hide();
+                LabelForInput1.Text = "Name";
+                LabelForInput2.Text = "Phone number";
+                LabelForInput3.Text = "Email";
+            }
             //input old values
             //https://stackoverflow.com/questions/6487839/reading-data-from-datagridview-in-c-sharp
             Input1.Text = Row.Cells[1].Value.ToString();
             Input2.Text = Row.Cells[2].Value.ToString();
             Input3.Text = Row.Cells[3].Value.ToString();
+            if(this.Text.Equals("Update Item Details"))
+            {
+                Input4.Text = Row.Cells[4].Value.ToString();
+                for(int i = 0; i < ComboBox.Items.Count; i++)
+                {
+                    if (ComboBox.Items[i].Equals(Row.Cells[5].Value.ToString() + "-" + Row.Cells[4].Value.ToString())){
+                        ComboBox.SelectedIndex = i;
+                    }
+                }
+                LabelForInput1.Text = "Name";
+                LabelForInput2.Text = "Type";
+                LabelForInput3.Text = "Price";
+                LabelForCombo.Text = "Supplier";
+            }
         }
         //submit button
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -68,23 +98,23 @@ namespace DIYShopSys
                     MessageBox.Show("You have Added a Supplier", "Added Supplier", MessageBoxButtons.OK);
                 }
             }
-            if (this.Text.Equals(""))
+            if (this.Text.Equals("Update Supplier Details"))
             {
                 if (CheckSupplier())
                 {
                     MessageBox.Show("You have Updated Supplier Details", "Updated Supplier", MessageBoxButtons.OK);
                 }
             }
-            if (this.Text.Equals(""))
+            if (this.Text.Equals("Add Item"))
             {
-                if (CheckNewItem())
+                if (CheckItem())
                 {
                     MessageBox.Show("You have Added an Item", "Added Item", MessageBoxButtons.OK);
                 }
             }
-            if (this.Text.Equals(""))
+            if (this.Text.Equals("Update Item Details"))
             {
-                if (CheckItemUpdate())
+                if (CheckItem())
                 {
                     MessageBox.Show("You have Updated Item Details", "Updated Item", MessageBoxButtons.OK);
                 }
@@ -109,12 +139,12 @@ namespace DIYShopSys
         {
             return false;
         }
-        private Boolean CheckNewItem()
+        private Boolean CheckItem()
         {
-            return false;
-        }
-        private Boolean CheckItemUpdate()
-        {
+            if (this.Text.Equals("Update Item Details"))
+            {
+                return false;
+            }
             return false;
         }
         // closing form
@@ -129,7 +159,9 @@ namespace DIYShopSys
             }
             else
             {
-                ManageData.Close();
+                if (ManageData.Visible == false) {
+                    ManageData.Close();
+                }
             }
         }
     }
