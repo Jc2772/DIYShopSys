@@ -90,7 +90,7 @@ namespace DIYShopSys
             else if (this.Text.Contains("Item"))
             {
                 //temporary code
-                DataTable table = new DataTable("Supplier");
+                DataTable table = new DataTable("Item");
                 DataColumn column;
                 DataRow row;
 
@@ -206,15 +206,15 @@ namespace DIYShopSys
                 //end of temporary code
 
                 Grid.DataSource = dataset.Tables[0];
-            }
-            if (this.Text.Equals("Restock Item"))
-            {
-                QuantityBox.Visible = true;
-                QuantityLabel.Visible = true;
-            }
-            else if (this.Text.Equals("Query Items"))
-            {
-                SubmitButton.Visible = false;
+                if (this.Text.Equals("Restock Item"))
+                {
+                    QuantityBox.Visible = true;
+                    QuantityLabel.Visible = true;
+                }
+                else if (this.Text.Equals("Query Items"))
+                {
+                    SubmitButton.Visible = false;
+                }
             }
         }
 
@@ -242,16 +242,20 @@ namespace DIYShopSys
                     // update details
                     if (this.Text.Contains("Update"))
                     {
+                        //updates Supplier
                         if (this.Text.Equals("Update Supplier Details"))
                         {
                             String Text = "Update Supplier Details";
+                            AddAndUpdateSuppliers AddAndUpdateSupplier = new AddAndUpdateSuppliers(row, this, Text);
+                            AddAndUpdateSupplier.Show();
                         }
+                        //updates item
                         else if (this.Text.Equals("Update Item Details"))
                         {
                             String Text = "Update Item Details";
+                            AddAndUpdateItems AddAndUpdateItems = new AddAndUpdateItems(row, this, Text);
+                            AddAndUpdateItems.Show();
                         }
-                        AddAndUpdate AddAndUpdate = new AddAndUpdate(row, this, Text);
-                        AddAndUpdate.Show();
                     }
                     // remove function
                     else if (this.Text.Contains("Remove")) {

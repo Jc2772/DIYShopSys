@@ -7,11 +7,11 @@ namespace DIYShopSys
             InitializeComponent();
         }
         //Add Supplier
-        private void AddAndUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AddAndUpdateItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String Text = "Add Supplier";
-            AddAndUpdate AddAndUpdate = new AddAndUpdate(this, Text);
-            AddAndUpdate.Show();
+            AddAndUpdateItems AddAndUpdateItems = new AddAndUpdateItems(this, Text);
+            AddAndUpdateItems.Show();
         }
         //Update Supplier Details
         private void ManageDataToolStripMenuItem_Click(object sender, EventArgs e)
@@ -28,8 +28,8 @@ namespace DIYShopSys
         private void addItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String Text = "Add Item";
-            AddAndUpdate AddAndUpdate = new AddAndUpdate(this, Text);
-            AddAndUpdate.Show();
+            AddAndUpdateItems AddAndUpdateItems = new AddAndUpdateItems(this, Text);
+            AddAndUpdateItems.Show();
         }
         //Update Item Details
         private void updateItemToolStripMenuItem_Click(object sender, EventArgs e)

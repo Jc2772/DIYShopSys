@@ -30,7 +30,7 @@
         {
             menuStrip1 = new MenuStrip();
             suppliersToolStripMenuItem = new ToolStripMenuItem();
-            AddAndUpdateToolStripMenuItem = new ToolStripMenuItem();
+            AddAndUpdateItemsToolStripMenuItem = new ToolStripMenuItem();
             ManageDataToolStripMenuItem = new ToolStripMenuItem();
             removeSupplierDetailsToolStripMenuItem = new ToolStripMenuItem();
             itemsToolStripMenuItem = new ToolStripMenuItem();
@@ -56,17 +56,17 @@
             // 
             // suppliersToolStripMenuItem
             // 
-            suppliersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AddAndUpdateToolStripMenuItem, ManageDataToolStripMenuItem, removeSupplierDetailsToolStripMenuItem });
+            suppliersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AddAndUpdateItemsToolStripMenuItem, ManageDataToolStripMenuItem, removeSupplierDetailsToolStripMenuItem });
             suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
             suppliersToolStripMenuItem.Size = new Size(67, 20);
             suppliersToolStripMenuItem.Text = "Suppliers";
             // 
-            // AddAndUpdateToolStripMenuItem
+            // AddAndUpdateItemsToolStripMenuItem
             // 
-            AddAndUpdateToolStripMenuItem.Name = "AddAndUpdateToolStripMenuItem";
-            AddAndUpdateToolStripMenuItem.Size = new Size(201, 22);
-            AddAndUpdateToolStripMenuItem.Text = "add supplier";
-            AddAndUpdateToolStripMenuItem.Click += AddAndUpdateToolStripMenuItem_Click;
+            AddAndUpdateItemsToolStripMenuItem.Name = "AddAndUpdateItemsToolStripMenuItem";
+            AddAndUpdateItemsToolStripMenuItem.Size = new Size(201, 22);
+            AddAndUpdateItemsToolStripMenuItem.Text = "add supplier";
+            AddAndUpdateItemsToolStripMenuItem.Click += AddAndUpdateItemsToolStripMenuItem_Click;
             // 
             // ManageDataToolStripMenuItem
             // 
@@ -164,7 +164,7 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem suppliersToolStripMenuItem;
-        private ToolStripMenuItem AddAndUpdateToolStripMenuItem;
+        private ToolStripMenuItem AddAndUpdateItemsToolStripMenuItem;
         private ToolStripMenuItem ManageDataToolStripMenuItem;
         private ToolStripMenuItem removeSupplierDetailsToolStripMenuItem;
         private ToolStripMenuItem itemsToolStripMenuItem;
