@@ -83,7 +83,7 @@ namespace DIYShopSys
 
                 DataSet dataset = new DataSet();
                 dataset.Tables.Add(table);
-
+                //end of temporary code
 
                 Grid.DataSource = dataset.Tables[0];
             }
@@ -203,7 +203,7 @@ namespace DIYShopSys
 
                 DataSet dataset = new DataSet();
                 dataset.Tables.Add(table);
-
+                //end of temporary code
 
                 Grid.DataSource = dataset.Tables[0];
             }
