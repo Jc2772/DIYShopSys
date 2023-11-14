@@ -37,12 +37,17 @@
             analysisToolStripMenuItem = new ToolStripMenuItem();
             yearlyRevenueAnalysisToolStripMenuItem = new ToolStripMenuItem();
             yearlyItemAnalysisToolStripMenuItem = new ToolStripMenuItem();
+            addItemToolStripMenuItem = new ToolStripMenuItem();
+            updateItemToolStripMenuItem = new ToolStripMenuItem();
+            removeItemToolStripMenuItem = new ToolStripMenuItem();
+            queryItemsToolStripMenuItem = new ToolStripMenuItem();
+            restockItemToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { itemsToolStripMenuItem, analysisToolStripMenuItem, suppliersToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { suppliersToolStripMenuItem, itemsToolStripMenuItem, analysisToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -78,6 +83,7 @@
             // 
             // itemsToolStripMenuItem
             // 
+            itemsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addItemToolStripMenuItem, updateItemToolStripMenuItem, removeItemToolStripMenuItem, queryItemsToolStripMenuItem, restockItemToolStripMenuItem });
             itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
             itemsToolStripMenuItem.Size = new Size(48, 20);
             itemsToolStripMenuItem.Text = "Items";
@@ -100,6 +106,36 @@
             yearlyItemAnalysisToolStripMenuItem.Name = "yearlyItemAnalysisToolStripMenuItem";
             yearlyItemAnalysisToolStripMenuItem.Size = new Size(199, 22);
             yearlyItemAnalysisToolStripMenuItem.Text = "Yearly Item Analysis";
+            // 
+            // addItemToolStripMenuItem
+            // 
+            addItemToolStripMenuItem.Name = "addItemToolStripMenuItem";
+            addItemToolStripMenuItem.Size = new Size(180, 22);
+            addItemToolStripMenuItem.Text = "Add Item";
+            // 
+            // updateItemToolStripMenuItem
+            // 
+            updateItemToolStripMenuItem.Name = "updateItemToolStripMenuItem";
+            updateItemToolStripMenuItem.Size = new Size(180, 22);
+            updateItemToolStripMenuItem.Text = "Update Item Details";
+            // 
+            // removeItemToolStripMenuItem
+            // 
+            removeItemToolStripMenuItem.Name = "removeItemToolStripMenuItem";
+            removeItemToolStripMenuItem.Size = new Size(180, 22);
+            removeItemToolStripMenuItem.Text = "Remove Item";
+            // 
+            // queryItemsToolStripMenuItem
+            // 
+            queryItemsToolStripMenuItem.Name = "queryItemsToolStripMenuItem";
+            queryItemsToolStripMenuItem.Size = new Size(180, 22);
+            queryItemsToolStripMenuItem.Text = "Query Items";
+            // 
+            // restockItemToolStripMenuItem
+            // 
+            restockItemToolStripMenuItem.Name = "restockItemToolStripMenuItem";
+            restockItemToolStripMenuItem.Size = new Size(180, 22);
+            restockItemToolStripMenuItem.Text = "Restock Item";
             // 
             // MainMenu
             // 
@@ -127,5 +163,10 @@
         private ToolStripMenuItem analysisToolStripMenuItem;
         private ToolStripMenuItem yearlyRevenueAnalysisToolStripMenuItem;
         private ToolStripMenuItem yearlyItemAnalysisToolStripMenuItem;
+        private ToolStripMenuItem addItemToolStripMenuItem;
+        private ToolStripMenuItem updateItemToolStripMenuItem;
+        private ToolStripMenuItem removeItemToolStripMenuItem;
+        private ToolStripMenuItem queryItemsToolStripMenuItem;
+        private ToolStripMenuItem restockItemToolStripMenuItem;
     }
 }
