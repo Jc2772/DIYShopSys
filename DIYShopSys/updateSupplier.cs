@@ -37,25 +37,37 @@ namespace DIYShopSys
             if (Grid.SelectedRows.Count == 1)
             {
                 DataGridViewRow row = Grid.SelectedRows[0];
-                AddAndUpdate AddAndUpdate = new AddAndUpdate(row, this);
                 /*used this to learn how to change form name in c#
                  * first answer on page
                  * https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
                  */
-                if (this.Text.Equals("Update Supplier Details"))
+                
+                if(this.Text.Equals("Restock item"))
                 {
-                    AddAndUpdate.Text = "Update Supplier Details";
-                    AddAndUpdate.Show();
+                    
                 }
+                else
+                {
+                    AddAndUpdate AddAndUpdate = new AddAndUpdate(row, this);
+                    if (this.Text.Equals("Update Supplier Details"))
+                    {
 
-                else if (this.Text.Equals("Update Item Details"))
-                {
-                    AddAndUpdate.Show();
+                        AddAndUpdate.Text = "Update Supplier Details";
+                        AddAndUpdate.Show();
+                    }
+                    else if (this.Text.Equals("Update Item Details"))
+                    {
+                        AddAndUpdate.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Form Does Not Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else if(this.Text.Equals("Restock item"))
-                {
-
-                }
+            }
+            else
+            {
+                MessageBox.Show("Row Not Selected","Error",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
