@@ -43,20 +43,19 @@ namespace DIYShopSys
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            /*https://stackoverflow.com/questions/56009158/how-to-check-if-a-cell-in-selected-row-in-datagridview-is-empty-null-using-c
-            came up with grid Selceted rows while looking at site
-             */
-
             // checks if row is selected
             if (Grid.SelectedRows.Count == 1)
             {
+                /*https://stackoverflow.com/questions/56009158/how-to-check-if-a-cell-in-selected-row-in-datagridview-is-empty-null-using-c
+                    came up with grid Selceted rows while looking at site
+                */
                 DataGridViewRow row = Grid.SelectedRows[0];
                 /*used this to learn how to change form name in c#
                  * first answer on page
                  * https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
                  */
                     // update details
-                else if (this.Text.Contains("Update"))
+                if (this.Text.Contains("Update"))
                 {
                     //updates Supplier
                     if (this.Text.Equals("Update Supplier Details"))
