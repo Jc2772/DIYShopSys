@@ -181,7 +181,7 @@ namespace DIYShopSys
                 table.Rows.Add(row);
                 dataset.Tables.Add(table);
             }
-            else if (text.Equals("Sales"))
+            else if (text.Equals("Restock Items"))
             {
                 DataTable table = new DataTable("Item");
                 DataColumn column;
@@ -211,44 +211,68 @@ namespace DIYShopSys
                 table.Columns.Add(column);
 
                 row = table.NewRow();
+                //name
                 row[0] = "Daffodil Bulbs";
+                //type
                 row[1] = "Bulbs";
+                //price
                 row[2] = 1;
+                //quantity
                 row[3] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
+                //name
                 row[0] = "Sledge Hammer";
+                //type
                 row[1] = "Tools";
+                //price
                 row[2] = 1;
+                //quantity
                 row[3] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
+                //name
                 row[0] = "Green Gnome";
+                //type
                 row[1] = "Outdoor Furniture";
+                //price
                 row[2] = 1;
+                //quantity
                 row[3] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
+                //name
                 row[0] = "Grass Seeds";
+                //type
                 row[1] = "Seeds";
+                //price
                 row[2] = 1;
+                //quantity
                 row[3] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
+                //name
                 row[0] = "Wrench Set";
+                //type
                 row[1] = "Tools";
+                //price
                 row[2] = 1;
+                //quantity
                 row[3] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
+                //name
                 row[0] = "Green Gnome";
+                //price
                 row[1] = "Outdoor Furniture";
+                //type
                 row[2] = 1;
+                //quantity
                 row[3] = 5;
                 table.Rows.Add(row);
                 dataset.Tables.Add(table);

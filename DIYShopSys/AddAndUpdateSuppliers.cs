@@ -33,7 +33,7 @@ namespace DIYShopSys
             InitializeComponent();
             this.Text = text;
             //input old values
-            //https://stackoverflow.com/questions/6487839/reading-data-from-datagridview-in-c-sharp
+            //figured out how to get row values from here https://stackoverflow.com/questions/6487839/reading-data-from-datagridview-in-c-sharp
             SupName.Text = Row.Cells[1].Value.ToString();
             PhoneNumber.Text = Row.Cells[2].Value.ToString();
             Email.Text = Row.Cells[3].Value.ToString();

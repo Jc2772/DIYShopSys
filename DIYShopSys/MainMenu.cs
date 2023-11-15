@@ -53,14 +53,13 @@ namespace DIYShopSys
         //Restock Item
         private void restockItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManageData ManageData = new ManageData(this, "Restock Items");
-            ManageData.Show();
+            RestockItems RestockItems = new RestockItems(this);
+            RestockItems.Show();
         }
         //Yearly Revenue Analysis
         private void yearlyRevenueAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            sales sales = new sales(this);
-            sales.Show();
+            
         }
         //Yearly Item Analysis
         private void yearlyItemAnalysisToolStripMenuItem_Click(object sender, EventArgs e)

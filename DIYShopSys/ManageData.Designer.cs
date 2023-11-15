@@ -31,8 +31,6 @@
             SubmitButton = new Button();
             ReturnButton = new Button();
             Grid = new DataGridView();
-            QuantityLabel = new Label();
-            QuantityBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)Grid).BeginInit();
             SuspendLayout();
             // 
@@ -71,31 +69,11 @@
             Grid.Size = new Size(776, 286);
             Grid.TabIndex = 2;
             // 
-            // QuantityLabel
-            // 
-            QuantityLabel.AutoSize = true;
-            QuantityLabel.Location = new Point(288, 377);
-            QuantityLabel.Name = "QuantityLabel";
-            QuantityLabel.Size = new Size(53, 15);
-            QuantityLabel.TabIndex = 3;
-            QuantityLabel.Text = "Quantity";
-            QuantityLabel.Visible = false;
-            // 
-            // QuantityBox
-            // 
-            QuantityBox.Location = new Point(347, 374);
-            QuantityBox.Name = "QuantityBox";
-            QuantityBox.Size = new Size(126, 23);
-            QuantityBox.TabIndex = 4;
-            QuantityBox.Visible = false;
-            // 
             // ManageData
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(QuantityBox);
-            Controls.Add(QuantityLabel);
             Controls.Add(Grid);
             Controls.Add(ReturnButton);
             Controls.Add(SubmitButton);
@@ -104,7 +82,6 @@
             FormClosed += ManageData_FormClosed;
             ((System.ComponentModel.ISupportInitialize)Grid).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -112,7 +89,5 @@
         private Button SubmitButton;
         private Button ReturnButton;
         private DataGridView Grid;
-        private Label QuantityLabel;
-        private TextBox QuantityBox;
     }
 }

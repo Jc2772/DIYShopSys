@@ -34,12 +34,7 @@ namespace DIYShopSys
             {
                 DataSet dataset = new Sql().PullData(this.Text);
                 Grid.DataSource = dataset.Tables[0];
-                if (this.Text.Equals("Restock Items"))
-                {
-                    QuantityBox.Visible = true;
-                    QuantityLabel.Visible = true;
-                }
-                else if (this.Text.Equals("Query Items"))
+                if (this.Text.Equals("Query Items"))
                 {
                     SubmitButton.Visible = false;
                 }
@@ -60,13 +55,7 @@ namespace DIYShopSys
                  * first answer on page
                  * https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
                  */
-                //restock
-                if (this.Text.Contains("Restock"))
-                {
-                    MessageBox.Show("You have Added Stock", "Added Stock", MessageBoxButtons.OK);
-                }
-
-                // update details
+                    // update details
                 else if (this.Text.Contains("Update"))
                 {
                     //updates Supplier
@@ -78,15 +67,14 @@ namespace DIYShopSys
                     }
                     //updates item
                     else if (this.Text.Equals("Update Item Details"))
-                        {
-                            String Text = "Update Item Details";
-                            AddAndUpdateItems AddAndUpdateItems = new AddAndUpdateItems(row, this, Text);
-                            AddAndUpdateItems.Show();
-                        }
+                    {
+                        String Text = "Update Item Details";
+                        AddAndUpdateItems AddAndUpdateItems = new AddAndUpdateItems(row, this, Text);
+                        AddAndUpdateItems.Show();
+                    }
                 }
-
                 // remove function
-                else if (this.Text.Contains("Remove")) 
+                else if (this.Text.Contains("Remove"))
                 {
                     if (this.Text.Equals("Remove Suppliers"))
                     {
@@ -94,14 +82,14 @@ namespace DIYShopSys
                     }
                     else if (this.Text.Equals("Remove Items"))
                     {
-                        MessageBox.Show("Item Has Been Removed","Item Removed",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show("Item Has Been Removed", "Item Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 //error for devs
                 else
-                    {
-                        MessageBox.Show("Form Does Not Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                {
+                    MessageBox.Show("Form Does Not Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
