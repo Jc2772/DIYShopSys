@@ -28,95 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            dataGridView2 = new DataGridView();
-            button4 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            Items = new DataGridView();
+            ReturnButton = new Button();
+            AddToBasket = new Button();
+            BuyButton = new Button();
+            Basket = new DataGridView();
+            RemoveItemFromBasket = new Button();
+            ((System.ComponentModel.ISupportInitialize)Items).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Basket).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // Items
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 40);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(486, 348);
-            dataGridView1.TabIndex = 0;
+            Items.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Items.Location = new Point(12, 40);
+            Items.Name = "Items";
+            Items.RowTemplate.Height = 25;
+            Items.Size = new Size(486, 348);
+            Items.TabIndex = 0;
             // 
-            // button1
+            // ReturnButton
             // 
-            button1.Location = new Point(713, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            ReturnButton.Location = new Point(713, 12);
+            ReturnButton.Name = "ReturnButton";
+            ReturnButton.Size = new Size(75, 23);
+            ReturnButton.TabIndex = 1;
+            ReturnButton.Text = "button1";
+            ReturnButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // AddToBasket
             // 
-            button2.Location = new Point(135, 415);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            AddToBasket.Location = new Point(135, 415);
+            AddToBasket.Name = "AddToBasket";
+            AddToBasket.Size = new Size(75, 23);
+            AddToBasket.TabIndex = 2;
+            AddToBasket.Text = "button2";
+            AddToBasket.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BuyButton
             // 
-            button3.Location = new Point(692, 415);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 4;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            BuyButton.Location = new Point(692, 415);
+            BuyButton.Name = "BuyButton";
+            BuyButton.Size = new Size(75, 23);
+            BuyButton.TabIndex = 4;
+            BuyButton.Text = "button3";
+            BuyButton.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // Basket
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(504, 40);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(284, 348);
-            dataGridView2.TabIndex = 3;
+            Basket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Basket.Location = new Point(504, 40);
+            Basket.Name = "Basket";
+            Basket.RowTemplate.Height = 25;
+            Basket.Size = new Size(284, 348);
+            Basket.TabIndex = 3;
             // 
-            // button4
+            // RemoveItemFromBasket
             // 
-            button4.Location = new Point(545, 415);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 5;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            RemoveItemFromBasket.Location = new Point(545, 415);
+            RemoveItemFromBasket.Name = "RemoveItemFromBasket";
+            RemoveItemFromBasket.Size = new Size(75, 23);
+            RemoveItemFromBasket.TabIndex = 5;
+            RemoveItemFromBasket.Text = "button4";
+            RemoveItemFromBasket.UseVisualStyleBackColor = true;
             // 
             // sales
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(dataGridView2);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(RemoveItemFromBasket);
+            Controls.Add(BuyButton);
+            Controls.Add(Basket);
+            Controls.Add(AddToBasket);
+            Controls.Add(ReturnButton);
+            Controls.Add(Items);
             Name = "sales";
-            Text = "sales";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            Text = "Sales";
+            ((System.ComponentModel.ISupportInitialize)Items).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Basket).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private DataGridView dataGridView2;
-        private Button button4;
+        private DataGridView Items;
+        private Button ReturnButton;
+        private Button AddToBasket;
+        private Button BuyButton;
+        private DataGridView Basket;
+        private Button RemoveItemFromBasket;
     }
 }

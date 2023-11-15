@@ -60,7 +60,50 @@ namespace DIYShopSys
         // validation
         private Boolean CheckSupplier()
         {
-            return false;
+            Boolean IsItInt;
+            IsItInt = int.TryParse(PhoneNumber.Text, out _);
+            if (SupName.Text.Length > 20)
+            {
+                return false;
+            }
+            else if (SupName.Text.Length < 1)
+            {
+                return false;
+            }
+            else if (PhoneNumber.Text.Length > 10)
+            {
+                return false;
+            }
+            else if (PhoneNumber.Text.Length < 1)
+            {
+                return false;
+            }
+            else if (IsItInt == false)
+            {
+                return false;
+            }
+            else if (Email.Text.Length > 20)
+            {
+                return false;
+            }
+            else if (Email.Text.Length < 1)
+            {
+                return false;
+            }
+            else
+            {
+                //Code snipit From SD_RE_James_Clifford line 114-122
+                String[] emails = new String[] { "@gmail.com", "@outlook.com", "@yahoo.com", "@hotmail.com" };
+                for (int i = 0; i < emails.Length; i++)
+                {
+                    int cut = Email.Text.Length - emails[i].Length;
+                    if (Email.Text.Substring(cut).Contains(emails[i]))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
 
         // closing form

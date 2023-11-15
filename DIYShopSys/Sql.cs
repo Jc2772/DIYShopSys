@@ -54,7 +54,7 @@ namespace DIYShopSys
 
                 row = table.NewRow();
                 row[0] = 2;
-                row[1] = "Tims Toolset";
+                row[1] = "Tims Tools";
                 row[2] = "087 546 3821";
                 row[3] = "TimToolsRep@gmail";
                 table.Rows.Add(row);
@@ -133,9 +133,9 @@ namespace DIYShopSys
                 row = table.NewRow();
                 row[0] = 2;
                 row[1] = "Sledge Hammer";
-                row[2] = "Too1";
+                row[2] = "Tools";
                 row[3] = 1;
-                row[4] = "Tims Toolset";
+                row[4] = "Tims Tools";
                 row[5] = 2;
                 row[6] = 5;
                 table.Rows.Add(row);
@@ -165,7 +165,7 @@ namespace DIYShopSys
                 row[1] = "Wrench Set";
                 row[2] = "Tools";
                 row[3] = 1;
-                row[4] = "Tims Toolset";
+                row[4] = "Tims Tools";
                 row[5] = 2;
                 row[6] = 5;
                 table.Rows.Add(row);
@@ -178,6 +178,78 @@ namespace DIYShopSys
                 row[4] = "ShortGnomes";
                 row[5] = 3;
                 row[6] = 5;
+                table.Rows.Add(row);
+                dataset.Tables.Add(table);
+            }
+            else if (text.Equals("Sales"))
+            {
+                DataTable table = new DataTable("Item");
+                DataColumn column;
+                DataRow row;
+                column = new DataColumn();
+                column.DataType = typeof(string);
+                column.ColumnName = "name";
+                column.ReadOnly = true;
+                table.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = typeof(string);
+                column.ColumnName = "Type";
+                column.ReadOnly = true;
+                table.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = typeof(double);
+                column.ColumnName = "Price";
+                column.ReadOnly = true;
+                table.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = typeof(int);
+                column.ColumnName = "Quantity";
+                column.ReadOnly = true;
+                table.Columns.Add(column);
+
+                row = table.NewRow();
+                row[0] = "Daffodil Bulbs";
+                row[1] = "Bulbs";
+                row[2] = 1;
+                row[3] = 5;
+                table.Rows.Add(row);
+
+                row = table.NewRow();
+                row[0] = "Sledge Hammer";
+                row[1] = "Tools";
+                row[2] = 1;
+                row[3] = 5;
+                table.Rows.Add(row);
+
+                row = table.NewRow();
+                row[0] = "Green Gnome";
+                row[1] = "Outdoor Furniture";
+                row[2] = 1;
+                row[3] = 5;
+                table.Rows.Add(row);
+
+                row = table.NewRow();
+                row[0] = "Grass Seeds";
+                row[1] = "Seeds";
+                row[2] = 1;
+                row[3] = 5;
+                table.Rows.Add(row);
+
+                row = table.NewRow();
+                row[0] = "Wrench Set";
+                row[1] = "Tools";
+                row[2] = 1;
+                row[3] = 5;
+                table.Rows.Add(row);
+
+                row = table.NewRow();
+                row[0] = "Green Gnome";
+                row[1] = "Outdoor Furniture";
+                row[2] = 1;
+                row[3] = 5;
                 table.Rows.Add(row);
                 dataset.Tables.Add(table);
             }

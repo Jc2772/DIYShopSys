@@ -12,9 +12,17 @@ namespace DIYShopSys
 {
     public partial class sales : Form
     {
+        MainMenu mainMenu;
         public sales()
         {
             InitializeComponent();
+        }
+        public sales(MainMenu main)
+        {
+            InitializeComponent();
+            this.mainMenu = main;
+            DataSet dataset = new Sql().PullData(this.Text);
+            Items.DataSource = dataset.Tables[0];
         }
     }
 }

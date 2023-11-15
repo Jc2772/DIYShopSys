@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,7 @@ namespace DIYShopSys
             update.Hide();
             LabelForQuantity.Hide();
             Quantity.Hide();
+            
             //input old values
             //https://stackoverflow.com/questions/6487839/reading-data-from-datagridview-in-c-sharp
             ItemName.Text = Row.Cells[1].Value.ToString();
@@ -51,6 +53,12 @@ namespace DIYShopSys
                     Supplier.SelectedIndex = i;
                 }
             }
+        }
+        public void setup()
+        {
+            Supplier.Items.Add("1 - Heavenly Plants");
+            Supplier.Items.Add("2 - Tims Tools");
+            Supplier.Items.Add("2 - ShortGnomes");
         }
         //submit button
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -73,11 +81,65 @@ namespace DIYShopSys
         }
         private Boolean CheckItem()
         {
-            if (this.Text.Equals("Update Item Details"))
+            Boolean IsItDouble,IsItInt;
+            IsItDouble = double.TryParse(Price.Text, out _);
+            if (ItemName.Text.Length > 20)
             {
                 return false;
             }
-            return false;
+            else if (ItemName.Text.Length < 1)
+            {
+                return false;
+            }
+            else if (Type.Text.Length > 20)
+            {
+                return false;
+            }
+            else if (Type.Text.Length < 1)
+            {
+                return false;
+            }
+            else if (Price.Text.Length > 8)
+            {
+                return false;
+            }
+            else if (Price.Text.Length < 1)
+            {
+                return false;
+            }
+            else if (Price.Text[Price.Text.Length - 3] != '.')
+            {
+                return false;
+            }
+            else if (IsItDouble == false)
+            {
+                return false;
+            }
+            else if (this.Text.Equals("Update Item Details"))
+            {
+                //parse int - https://code-maze.com/csharp-identify-if-a-string-is-a-number/
+                IsItInt = int.TryParse(Quantity.Text, out _);
+                if (IsItInt == false)
+                {
+                    return false;
+                }
+                else if(Quantity.Text.Length > 3)
+                {
+                    return false;
+                }
+                else if(Quantity.Text.Length < 1)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return true;
+            }
         }
         // closing form
         private void AddAndUpdateItems_FormClosed(object sender, FormClosedEventArgs e)

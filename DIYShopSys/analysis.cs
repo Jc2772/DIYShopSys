@@ -12,8 +12,15 @@ namespace DIYShopSys
 {
     public partial class analysis : Form
     {
+        MainMenu mainMenu;
         public analysis()
         {
+            InitializeComponent();
+        }
+        public analysis(MainMenu main,String text)
+        {
+            this.Text = text;
+            this.mainMenu = main;
             InitializeComponent();
         }
     }

@@ -59,7 +59,8 @@ namespace DIYShopSys
         //Yearly Revenue Analysis
         private void yearlyRevenueAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            sales sales = new sales(this);
+            sales.Show();
         }
         //Yearly Item Analysis
         private void yearlyItemAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
