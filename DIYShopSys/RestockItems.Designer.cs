@@ -51,7 +51,7 @@
             Items.Name = "Items";
             Items.RowTemplate.Height = 25;
             Items.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            Items.Size = new Size(486, 314);
+            Items.Size = new Size(458, 314);
             Items.TabIndex = 0;
             // 
             // ReturnButton
@@ -89,11 +89,11 @@
             Basket.AllowUserToAddRows = false;
             Basket.AllowUserToDeleteRows = false;
             Basket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Basket.Location = new Point(504, 74);
+            Basket.Location = new Point(476, 74);
             Basket.Name = "Basket";
             Basket.RowTemplate.Height = 25;
             Basket.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            Basket.Size = new Size(284, 314);
+            Basket.Size = new Size(312, 314);
             Basket.TabIndex = 3;
             // 
             // RemoveItemFromBasket

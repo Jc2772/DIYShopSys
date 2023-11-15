@@ -20,30 +20,22 @@ namespace DIYShopSys
                 column = new DataColumn();
                 column.DataType = typeof(int);
                 column.ColumnName = "id";
-                column.ReadOnly = true;
                 table.Columns.Add(column);
 
                 column = new DataColumn();
                 column.DataType = typeof(string);
                 column.ColumnName = "name";
-                column.ReadOnly = true;
                 table.Columns.Add(column);
 
                 column = new DataColumn();
                 column.DataType = typeof(string);
                 column.ColumnName = "Phone Number";
-                column.ReadOnly = true;
                 table.Columns.Add(column);
 
                 column = new DataColumn();
                 column.DataType = typeof(string);
                 column.ColumnName = "Email";
-                column.ReadOnly = true;
                 table.Columns.Add(column);
-
-                DataColumn[] PrimaryKeyColumns = new DataColumn[1];
-                PrimaryKeyColumns[0] = table.Columns[0];
-                table.PrimaryKey = PrimaryKeyColumns;
 
                 row = table.NewRow();
                 //supplier id
@@ -81,261 +73,265 @@ namespace DIYShopSys
             }
             else if (text.Contains("Item"))
             {
-                DataTable table = new DataTable("Item");
-                DataColumn column;
-                DataRow row;
+                if (text.Equals("Restock Items"))
+                {
+                    DataTable table = new DataTable("Item");
+                    DataColumn column;
+                    DataRow row;
+                    //name column
+                    column = new DataColumn();
+                    column.DataType = typeof(string);
+                    column.ColumnName = "name";
+                    table.Columns.Add(column);
 
-                column = new DataColumn();
-                column.DataType = typeof(int);
-                column.ColumnName = "id";
-                column.ReadOnly = true;
-                column.Unique = true;
-                table.Columns.Add(column);
+                    //type column
+                    column = new DataColumn();
+                    column.DataType = typeof(string);
+                    column.ColumnName = "Type";
+                    table.Columns.Add(column);
 
-                column = new DataColumn();
-                column.DataType = typeof(string);
-                column.ColumnName = "name";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
+                    //Price column
+                    column = new DataColumn();
+                    column.DataType = typeof(double);
+                    column.ColumnName = "Price";
+                    table.Columns.Add(column);
 
-                column = new DataColumn();
-                column.DataType = typeof(string);
-                column.ColumnName = "Type";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
+                    //quantity column
+                    column = new DataColumn();
+                    column.DataType = typeof(int);
+                    column.ColumnName = "Quantity";
+                    table.Columns.Add(column);
+                    //id column
+                    column = new DataColumn();
+                    column.DataType = typeof(int);
+                    column.ColumnName = "Id";
+                    table.Columns.Add(column);
 
-                column = new DataColumn();
-                column.DataType = typeof(double);
-                column.ColumnName = "Price";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
+                    row = table.NewRow();
 
-                column = new DataColumn();
-                column.DataType = typeof(string);
-                column.ColumnName = "Supplier name";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
+                    //name
+                    row[0] = "Daffodil Bulbs";
+                    //type
+                    row[1] = "Bulbs";
+                    //price
+                    row[2] = 1;
+                    //quantity
+                    row[3] = 5;
+                    row[4] = 1;
+                    table.Rows.Add(row);
 
-                column = new DataColumn();
-                column.DataType = typeof(int);
-                column.ColumnName = "Supplier Id";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
+                    row = table.NewRow();
+                    //name
+                    row[0] = "Sledge Hammer";
+                    //type
+                    row[1] = "Tools";
+                    //price
+                    row[2] = 1;
+                    //quantity
+                    row[3] = 5;
+                    row[4] = 2;
+                    table.Rows.Add(row);
 
-                column = new DataColumn();
-                column.DataType = typeof(int);
-                column.ColumnName = "Quantity";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
+                    row = table.NewRow();
+                    //name
+                    row[0] = "Green Gnome";
+                    //type
+                    row[1] = "Outdoor Furniture";
+                    //price
+                    row[2] = 1;
+                    //quantity
+                    row[3] = 5;
+                    //id
+                    row[4] = 3;
+                    table.Rows.Add(row);
 
-                DataColumn[] PrimaryKeyColumns = new DataColumn[1];
-                PrimaryKeyColumns[0] = table.Columns[0];
-                table.PrimaryKey = PrimaryKeyColumns;
+                    row = table.NewRow();
+                    //name
+                    row[0] = "Grass Seeds";
+                    //type
+                    row[1] = "Seeds";
+                    //price
+                    row[2] = 1;
+                    //quantity
+                    row[3] = 5;
+                    //id
+                    row[4] = 4;
+                    table.Rows.Add(row);
 
-                row = table.NewRow();
-                //id
-                row[0] = 1;
-                //name
-                row[1] = "Daffodil Bulbs";
-                //type
-                row[2] = "Bulbs";
-                //price
-                row[3] = 1;
-                //supplier name
-                row[4] = "Heavenly Plants";
-                //supplier id
-                row[5] = 1;
-                //quantity
-                row[6] = 5;
-                table.Rows.Add(row);
+                    row = table.NewRow();
+                    //name
+                    row[0] = "Wrench Set";
+                    //type
+                    row[1] = "Tools";
+                    //price
+                    row[2] = 1;
+                    //quantity
+                    row[3] = 5;
+                    //id
+                    row[4] = 5;
+                    table.Rows.Add(row);
 
-                row = table.NewRow();
-                //id
-                row[0] = 2;
-                //name
-                row[1] = "Sledge Hammer";
-                //type
-                row[2] = "Tools";
-                //price
-                row[3] = 1;
-                //supplier name
-                row[4] = "Tims Tools";
-                //supplier id
-                row[5] = 2;
-                //quantity
-                row[6] = 5;
-                table.Rows.Add(row);
+                    row = table.NewRow();
+                    //name
+                    row[0] = "Green Gnome";
+                    //price
+                    row[1] = "Outdoor Furniture";
+                    //type
+                    row[2] = 1;
+                    //quantity
+                    row[3] = 5;
+                    //id
+                    row[4] = 6;
+                    table.Rows.Add(row);
+                    dataset.Tables.Add(table);
+                }
+                else
+                {
+                    DataTable table = new DataTable("Item");
+                    DataColumn column;
+                    DataRow row;
 
-                row = table.NewRow();
-                //id
-                row[0] = 3;
-                //name
-                row[1] = "Green Gnome";
-                //type
-                row[2] = "Outdoor Furniture";
-                //price
-                row[3] = 1;
-                //supplier name
-                row[4] = "ShortGnomes";
-                //supplier id
-                row[5] = 3;
-                //quantity
-                row[6] = 5;
-                table.Rows.Add(row);
+                    column = new DataColumn();
+                    column.DataType = typeof(int);
+                    column.ColumnName = "id";
+                    table.Columns.Add(column);
 
-                row = table.NewRow();
-                //id
-                row[0] = 4;
-                //name
-                row[1] = "Grass Seeds";
-                //type
-                row[2] = "Seeds";
-                //price
-                row[3] = 1;
-                //supplier name
-                row[4] = "Heavenly Plants";
-                //supplier id
-                row[5] = 1;
-                //quantity
-                row[6] = 5;
-                table.Rows.Add(row);
+                    column = new DataColumn();
+                    column.DataType = typeof(string);
+                    column.ColumnName = "name";
+                    table.Columns.Add(column);
 
-                row = table.NewRow();
-                //id
-                row[0] = 5;
-                //name
-                row[1] = "Wrench Set";
-                //type
-                row[2] = "Tools";
-                //price
-                row[3] = 1;
-                //supplier name
-                row[4] = "Tims Tools";
-                //supplier id
-                row[5] = 2;
-                //quantity
-                row[6] = 5;
-                table.Rows.Add(row);
+                    column = new DataColumn();
+                    column.DataType = typeof(string);
+                    column.ColumnName = "Type";
+                    table.Columns.Add(column);
 
-                row = table.NewRow();
-                //id
-                row[0] = 6;
-                //name
-                row[1] = "Green Gnome";
-                //type
-                row[2] = "Outdoor Furniture";
-                //price
-                row[3] = 1;
-                //supplier
-                row[4] = "ShortGnomes";
-                //supplier id
-                row[5] = 3;
-                //quantity
-                row[6] = 5;
-                table.Rows.Add(row);
-                dataset.Tables.Add(table);
+                    column = new DataColumn();
+                    column.DataType = typeof(double);
+                    column.ColumnName = "Price";
+                    table.Columns.Add(column);
+
+                    column = new DataColumn();
+                    column.DataType = typeof(string);
+                    column.ColumnName = "Supplier name";
+                    table.Columns.Add(column);
+
+                    column = new DataColumn();
+                    column.DataType = typeof(int);
+                    column.ColumnName = "Supplier Id";
+                    table.Columns.Add(column);
+
+                    column = new DataColumn();
+                    column.DataType = typeof(int);
+                    column.ColumnName = "Quantity";
+                    table.Columns.Add(column);
+
+                    row = table.NewRow();
+                    //id
+                    row[0] = 1;
+                    //name
+                    row[1] = "Daffodil Bulbs";
+                    //type
+                    row[2] = "Bulbs";
+                    //price
+                    row[3] = 1;
+                    //supplier name
+                    row[4] = "Heavenly Plants";
+                    //supplier id
+                    row[5] = 1;
+                    //quantity
+                    row[6] = 5;
+                    table.Rows.Add(row);
+
+                    row = table.NewRow();
+                    //id
+                    row[0] = 2;
+                    //name
+                    row[1] = "Sledge Hammer";
+                    //type
+                    row[2] = "Tools";
+                    //price
+                    row[3] = 1;
+                    //supplier name
+                    row[4] = "Tims Tools";
+                    //supplier id
+                    row[5] = 2;
+                    //quantity
+                    row[6] = 5;
+                    table.Rows.Add(row);
+
+                    row = table.NewRow();
+                    //id
+                    row[0] = 3;
+                    //name
+                    row[1] = "Green Gnome";
+                    //type
+                    row[2] = "Outdoor Furniture";
+                    //price
+                    row[3] = 1;
+                    //supplier name
+                    row[4] = "ShortGnomes";
+                    //supplier id
+                    row[5] = 3;
+                    //quantity
+                    row[6] = 5;
+                    table.Rows.Add(row);
+
+                    row = table.NewRow();
+                    //id
+                    row[0] = 4;
+                    //name
+                    row[1] = "Grass Seeds";
+                    //type
+                    row[2] = "Seeds";
+                    //price
+                    row[3] = 1;
+                    //supplier name
+                    row[4] = "Heavenly Plants";
+                    //supplier id
+                    row[5] = 1;
+                    //quantity
+                    row[6] = 5;
+                    table.Rows.Add(row);
+
+                    row = table.NewRow();
+                    //id
+                    row[0] = 5;
+                    //name
+                    row[1] = "Wrench Set";
+                    //type
+                    row[2] = "Tools";
+                    //price
+                    row[3] = 1;
+                    //supplier name
+                    row[4] = "Tims Tools";
+                    //supplier id
+                    row[5] = 2;
+                    //quantity
+                    row[6] = 5;
+                    table.Rows.Add(row);
+
+                    row = table.NewRow();
+                    //id
+                    row[0] = 6;
+                    //name
+                    row[1] = "Green Gnome";
+                    //type
+                    row[2] = "Outdoor Furniture";
+                    //price
+                    row[3] = 1;
+                    //supplier
+                    row[4] = "ShortGnomes";
+                    //supplier id
+                    row[5] = 3;
+                    //quantity
+                    row[6] = 5;
+                    table.Rows.Add(row);
+                    dataset.Tables.Add(table);
+                }
+
             }
-            else if (text.Equals("Restock Items"))
-            {
-                DataTable table = new DataTable("Item");
-                DataColumn column;
-                DataRow row;
-                //name column
-                column = new DataColumn();
-                column.DataType = typeof(string);
-                column.ColumnName = "name";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                //type column
-                column = new DataColumn();
-                column.DataType = typeof(string);
-                column.ColumnName = "Type";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                //Price column
-                column = new DataColumn();
-                column.DataType = typeof(double);
-                column.ColumnName = "Price";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                //quantity column
-                column = new DataColumn();
-                column.DataType = typeof(int);
-                column.ColumnName = "Quantity";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                row = table.NewRow();
-
-                //name
-                row[0] = "Daffodil Bulbs";
-                //type
-                row[1] = "Bulbs";
-                //price
-                row[2] = 1;
-                //quantity
-                row[3] = 5;
-                table.Rows.Add(row);
-
-                row = table.NewRow();
-                //name
-                row[0] = "Sledge Hammer";
-                //type
-                row[1] = "Tools";
-                //price
-                row[2] = 1;
-                //quantity
-                row[3] = 5;
-                table.Rows.Add(row);
-
-                row = table.NewRow();
-                //name
-                row[0] = "Green Gnome";
-                //type
-                row[1] = "Outdoor Furniture";
-                //price
-                row[2] = 1;
-                //quantity
-                row[3] = 5;
-                table.Rows.Add(row);
-
-                row = table.NewRow();
-                //name
-                row[0] = "Grass Seeds";
-                //type
-                row[1] = "Seeds";
-                //price
-                row[2] = 1;
-                //quantity
-                row[3] = 5;
-                table.Rows.Add(row);
-
-                row = table.NewRow();
-                //name
-                row[0] = "Wrench Set";
-                //type
-                row[1] = "Tools";
-                //price
-                row[2] = 1;
-                //quantity
-                row[3] = 5;
-                table.Rows.Add(row);
-
-                row = table.NewRow();
-                //name
-                row[0] = "Green Gnome";
-                //price
-                row[1] = "Outdoor Furniture";
-                //type
-                row[2] = 1;
-                //quantity
-                row[3] = 5;
-                table.Rows.Add(row);
-                dataset.Tables.Add(table);
-            }
+            
             return dataset;
         }
         public void PushData()
