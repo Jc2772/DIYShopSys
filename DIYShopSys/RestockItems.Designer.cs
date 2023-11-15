@@ -46,6 +46,8 @@
             // 
             Items.AllowUserToAddRows = false;
             Items.AllowUserToDeleteRows = false;
+            Items.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Items.BackgroundColor = SystemColors.Control;
             Items.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Items.Location = new Point(12, 74);
             Items.Name = "Items";
@@ -88,6 +90,8 @@
             // 
             Basket.AllowUserToAddRows = false;
             Basket.AllowUserToDeleteRows = false;
+            Basket.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Basket.BackgroundColor = SystemColors.Control;
             Basket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Basket.Location = new Point(476, 74);
             Basket.Name = "Basket";
