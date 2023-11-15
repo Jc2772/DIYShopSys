@@ -50,6 +50,7 @@
             Items.BackgroundColor = SystemColors.Control;
             Items.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Items.Location = new Point(12, 74);
+            Items.MultiSelect = false;
             Items.Name = "Items";
             Items.RowTemplate.Height = 25;
             Items.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -94,6 +95,7 @@
             Basket.BackgroundColor = SystemColors.Control;
             Basket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Basket.Location = new Point(476, 74);
+            Basket.MultiSelect = false;
             Basket.Name = "Basket";
             Basket.RowTemplate.Height = 25;
             Basket.SelectionMode = DataGridViewSelectionMode.FullRowSelect;

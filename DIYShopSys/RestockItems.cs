@@ -107,7 +107,7 @@ namespace DIYShopSys
 
         private void RemoveItemFromBasket_Click(object sender, EventArgs e)
         {
-            if(Basket.SelectedRows.Count == 1)
+            if (Basket.SelectedRows.Count == 1)
             {
                 if (Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][2]) == 1)
                 {
