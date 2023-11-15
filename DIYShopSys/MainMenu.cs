@@ -22,7 +22,8 @@ namespace DIYShopSys
         //Remove Supplier Details
         private void removeSupplierDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ManageData ManageData = new ManageData(this, "Remove Supplier");
+            ManageData.Show();
         }
         //Add Item
         private void addItemToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,17 +41,20 @@ namespace DIYShopSys
         //Remove Item Details
         private void removeItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ManageData ManageData = new ManageData(this, "Remove Items");
+            ManageData.Show();
         }
         //Query Item
         private void queryItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ManageData ManageData = new ManageData(this, "Query Items");
+            ManageData.Show();
         }
         //Restock Item
         private void restockItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ManageData ManageData = new ManageData(this, "Restock Items");
+            ManageData.Show();
         }
         //Yearly Revenue Analysis
         private void yearlyRevenueAnalysisToolStripMenuItem_Click(object sender, EventArgs e)

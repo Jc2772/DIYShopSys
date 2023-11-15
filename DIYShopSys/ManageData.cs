@@ -27,186 +27,14 @@ namespace DIYShopSys
             //populate dataset
             if (this.Text.Contains("Supplier"))
             {
-                //temporary code
-                DataTable table = new DataTable("Supplier");
-                DataColumn column;
-                DataRow row;
-
-                column = new DataColumn();
-                column.DataType = typeof(int);
-                column.ColumnName = "id";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                column = new DataColumn();
-                column.DataType = typeof(string);
-                column.ColumnName = "name";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                column = new DataColumn();
-                column.DataType = typeof(string);
-                column.ColumnName = "Phone Number";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                column = new DataColumn();
-                column.DataType = typeof(string);
-                column.ColumnName = "Email";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                DataColumn[] PrimaryKeyColumns = new DataColumn[1];
-                PrimaryKeyColumns[0] = table.Columns[0];
-                table.PrimaryKey = PrimaryKeyColumns;
-
-                row = table.NewRow();
-                row[0] = 1;
-                row[1] = "Heavenly Plants";
-                row[2] = "087 954 3423";
-                row[3] = "HeavenlyPlantsRep@outlook.com";
-                table.Rows.Add(row);
-
-                row = table.NewRow();
-                row[0] = 2;
-                row[1] = "Tims Toolset";
-                row[2] = "087 546 3821";
-                row[3] = "TimToolsRep@gmail";
-                table.Rows.Add(row);
-
-                row = table.NewRow();
-                row[0] = 3;
-                row[1] = "ShortGnomes";
-                row[2] = "087 179 4392";
-                row[3] = "ShortGnomes@outlook.com";
-                table.Rows.Add(row);
-
-                DataSet dataset = new DataSet();
-                dataset.Tables.Add(table);
-                //end of temporary code
-
+                DataSet dataset = new Sql().PullData(this.Text);
                 Grid.DataSource = dataset.Tables[0];
             }
             else if (this.Text.Contains("Item"))
             {
-                //temporary code
-                DataTable table = new DataTable("Item");
-                DataColumn column;
-                DataRow row;
-
-                column = new DataColumn();
-                column.DataType = typeof(int);
-                column.ColumnName = "id";
-                column.ReadOnly = true;
-                column.Unique = true;
-                table.Columns.Add(column);
-
-                column = new DataColumn();
-                column.DataType = typeof(string);
-                column.ColumnName = "name";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                column = new DataColumn();
-                column.DataType = typeof(string);
-                column.ColumnName = "Type";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                column = new DataColumn();
-                column.DataType = typeof(double);
-                column.ColumnName = "Price";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                column = new DataColumn();
-                column.DataType = typeof(string);
-                column.ColumnName = "Supplier name";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                column = new DataColumn();
-                column.DataType = typeof(int);
-                column.ColumnName = "Supplier Id";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                column = new DataColumn();
-                column.DataType = typeof(int);
-                column.ColumnName = "Quantity";
-                column.ReadOnly = true;
-                table.Columns.Add(column);
-
-                DataColumn[] PrimaryKeyColumns = new DataColumn[1];
-                PrimaryKeyColumns[0] = table.Columns[0];
-                table.PrimaryKey = PrimaryKeyColumns;
-
-                row = table.NewRow();
-                row[0] = 1;
-                row[1] = "Daffodil Bulbs";
-                row[2] = "Bulbs";
-                row[3] = 1;
-                row[4] = "Heavenly Plants";
-                row[5] = 1;
-                row[6] = 5;
-                table.Rows.Add(row);
-
-                row = table.NewRow();
-                row[0] = 2;
-                row[1] = "Sledge Hammer";
-                row[2] = "Too1";
-                row[3] = 1;
-                row[4] = "Tims Toolset";
-                row[5] = 2;
-                row[6] = 5;
-                table.Rows.Add(row);
-
-                row = table.NewRow();
-                row[0] = 3;
-                row[1] = "Green Gnome";
-                row[2] = "Outdoor Furniture";
-                row[3] = 1;
-                row[4] = "ShortGnomes";
-                row[5] = 3;
-                row[6] = 5;
-                table.Rows.Add(row);
-
-                row = table.NewRow();
-                row[0] = 4;
-                row[1] = "Grass Seeds";
-                row[2] = "Seeds";
-                row[3] = 1;
-                row[4] = "Heavenly Plants";
-                row[5] = 1;
-                row[6] = 5;
-                table.Rows.Add(row);
-
-                row = table.NewRow();
-                row[0] = 5;
-                row[1] = "Wrench Set";
-                row[2] = "Tools";
-                row[3] = 1;
-                row[4] = "Tims Toolset";
-                row[5] = 2;
-                row[6] = 5;
-                table.Rows.Add(row);
-
-                row = table.NewRow();
-                row[0] = 6;
-                row[1] = "Green Gnome";
-                row[2] = "Outdoor Furniture";
-                row[3] = 1;
-                row[4] = "ShortGnomes";
-                row[5] = 3;
-                row[6] = 5;
-                table.Rows.Add(row);
-
-                DataSet dataset = new DataSet();
-                dataset.Tables.Add(table);
-                //end of temporary code
-
+                DataSet dataset = new Sql().PullData(this.Text);
                 Grid.DataSource = dataset.Tables[0];
-                if (this.Text.Equals("Restock Item"))
+                if (this.Text.Equals("Restock Items"))
                 {
                     QuantityBox.Visible = true;
                     QuantityLabel.Visible = true;
@@ -232,48 +60,48 @@ namespace DIYShopSys
                  * first answer on page
                  * https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
                  */
-
-                if (this.Text.Equals("Restock item"))
+                //restock
+                if (this.Text.Contains("Restock"))
                 {
                     MessageBox.Show("You have Added Stock", "Added Stock", MessageBoxButtons.OK);
                 }
-                else
+
+                // update details
+                else if (this.Text.Contains("Update"))
                 {
-                    // update details
-                    if (this.Text.Contains("Update"))
+                    //updates Supplier
+                    if (this.Text.Equals("Update Supplier Details"))
                     {
-                        //updates Supplier
-                        if (this.Text.Equals("Update Supplier Details"))
-                        {
-                            String Text = "Update Supplier Details";
-                            AddAndUpdateSuppliers AddAndUpdateSupplier = new AddAndUpdateSuppliers(row, this, Text);
-                            AddAndUpdateSupplier.Show();
-                        }
-                        //updates item
-                        else if (this.Text.Equals("Update Item Details"))
+                        String Text = "Update Supplier Details";
+                        AddAndUpdateSuppliers AddAndUpdateSupplier = new AddAndUpdateSuppliers(row, this, Text);
+                        AddAndUpdateSupplier.Show();
+                    }
+                    //updates item
+                    else if (this.Text.Equals("Update Item Details"))
                         {
                             String Text = "Update Item Details";
                             AddAndUpdateItems AddAndUpdateItems = new AddAndUpdateItems(row, this, Text);
                             AddAndUpdateItems.Show();
                         }
-                    }
-                    // remove function
-                    else if (this.Text.Contains("Remove")) {
-                        if (this.Text.Equals("Remove Supplier"))
-                        {
+                }
 
-                        }
-                        else if (this.Text.Equals("Remove Item"))
-                        {
-
-                        }
+                // remove function
+                else if (this.Text.Contains("Remove")) 
+                {
+                    if (this.Text.Equals("Remove Suppliers"))
+                    {
+                        MessageBox.Show("Supplier Still Supplies Item", "Can't Remove Supplier", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    //error for devs
-                    else
+                    else if (this.Text.Equals("Remove Items"))
+                    {
+                        MessageBox.Show("Item Has Been Removed","Item Removed",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                }
+                //error for devs
+                else
                     {
                         MessageBox.Show("Form Does Not Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
             }
             else
             {
