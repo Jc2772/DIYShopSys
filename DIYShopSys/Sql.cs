@@ -46,23 +46,35 @@ namespace DIYShopSys
                 table.PrimaryKey = PrimaryKeyColumns;
 
                 row = table.NewRow();
+                //supplier id
                 row[0] = 1;
+                //Supplier name
                 row[1] = "Heavenly Plants";
+                //phone number
                 row[2] = "087 954 3423";
+                //email
                 row[3] = "HeavenlyPlantsRep@outlook.com";
                 table.Rows.Add(row);
 
                 row = table.NewRow();
+                //supplier id
                 row[0] = 2;
+                //Supplier name
                 row[1] = "Tims Tools";
+                //phone number
                 row[2] = "087 546 3821";
+                //email
                 row[3] = "TimToolsRep@gmail";
                 table.Rows.Add(row);
 
                 row = table.NewRow();
+                //supplier id
                 row[0] = 3;
+                //Supplier name
                 row[1] = "ShortGnomes";
+                //phone number
                 row[2] = "087 179 4392";
+                //email
                 row[3] = "ShortGnomes@outlook.com";
                 table.Rows.Add(row);
                 dataset.Tables.Add(table);
@@ -121,62 +133,104 @@ namespace DIYShopSys
                 table.PrimaryKey = PrimaryKeyColumns;
 
                 row = table.NewRow();
+                //id
                 row[0] = 1;
+                //name
                 row[1] = "Daffodil Bulbs";
+                //type
                 row[2] = "Bulbs";
+                //price
                 row[3] = 1;
+                //supplier name
                 row[4] = "Heavenly Plants";
+                //supplier id
                 row[5] = 1;
+                //quantity
                 row[6] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
+                //id
                 row[0] = 2;
+                //name
                 row[1] = "Sledge Hammer";
+                //type
                 row[2] = "Tools";
+                //price
                 row[3] = 1;
+                //supplier name
                 row[4] = "Tims Tools";
+                //supplier id
                 row[5] = 2;
+                //quantity
                 row[6] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
+                //id
                 row[0] = 3;
+                //name
                 row[1] = "Green Gnome";
+                //type
                 row[2] = "Outdoor Furniture";
+                //price
                 row[3] = 1;
+                //supplier name
                 row[4] = "ShortGnomes";
+                //supplier id
                 row[5] = 3;
+                //quantity
                 row[6] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
+                //id
                 row[0] = 4;
+                //name
                 row[1] = "Grass Seeds";
+                //type
                 row[2] = "Seeds";
+                //price
                 row[3] = 1;
+                //supplier name
                 row[4] = "Heavenly Plants";
+                //supplier id
                 row[5] = 1;
+                //quantity
                 row[6] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
+                //id
                 row[0] = 5;
+                //name
                 row[1] = "Wrench Set";
+                //type
                 row[2] = "Tools";
+                //price
                 row[3] = 1;
+                //supplier name
                 row[4] = "Tims Tools";
+                //supplier id
                 row[5] = 2;
+                //quantity
                 row[6] = 5;
                 table.Rows.Add(row);
 
                 row = table.NewRow();
+                //id
                 row[0] = 6;
+                //name
                 row[1] = "Green Gnome";
+                //type
                 row[2] = "Outdoor Furniture";
+                //price
                 row[3] = 1;
+                //supplier
                 row[4] = "ShortGnomes";
+                //supplier id
                 row[5] = 3;
+                //quantity
                 row[6] = 5;
                 table.Rows.Add(row);
                 dataset.Tables.Add(table);
