@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,6 +30,7 @@ namespace DIYShopSys
             this.Text = text;
             this.main = main;
             main.Hide();
+            setup();
         }
         //Update Supplier
         public AddAndUpdateItems(DataGridViewRow Row, ManageData update, String text)
@@ -53,7 +55,9 @@ namespace DIYShopSys
                     Supplier.SelectedIndex = i;
                 }
             }
+            setup();
         }
+        //setup
         public void setup()
         {
             Supplier.Items.Add("1 - Heavenly Plants");
@@ -83,6 +87,7 @@ namespace DIYShopSys
         {
             Boolean IsItDouble,IsItInt;
             IsItDouble = double.TryParse(Price.Text, out _);
+            //validate name
             if (ItemName.Text.Length > 20)
             {
                 return false;
@@ -91,6 +96,7 @@ namespace DIYShopSys
             {
                 return false;
             }
+            //validate type
             else if (Type.Text.Length > 20)
             {
                 return false;
@@ -99,6 +105,7 @@ namespace DIYShopSys
             {
                 return false;
             }
+            //validate price
             else if (Price.Text.Length > 8)
             {
                 return false;
@@ -115,7 +122,8 @@ namespace DIYShopSys
             {
                 return false;
             }
-            else if (this.Text.Equals("Update Item Details"))
+            //
+            else if (this.Text.Equals("Add Item"))
             {
                 //parse int - https://code-maze.com/csharp-identify-if-a-string-is-a-number/
                 IsItInt = int.TryParse(Quantity.Text, out _);

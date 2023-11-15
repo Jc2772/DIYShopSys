@@ -240,24 +240,28 @@ namespace DIYShopSys
                 DataTable table = new DataTable("Item");
                 DataColumn column;
                 DataRow row;
+                //name column
                 column = new DataColumn();
                 column.DataType = typeof(string);
                 column.ColumnName = "name";
                 column.ReadOnly = true;
                 table.Columns.Add(column);
 
+                //type column
                 column = new DataColumn();
                 column.DataType = typeof(string);
                 column.ColumnName = "Type";
                 column.ReadOnly = true;
                 table.Columns.Add(column);
 
+                //Price column
                 column = new DataColumn();
                 column.DataType = typeof(double);
                 column.ColumnName = "Price";
                 column.ReadOnly = true;
                 table.Columns.Add(column);
 
+                //quantity column
                 column = new DataColumn();
                 column.DataType = typeof(int);
                 column.ColumnName = "Quantity";
@@ -265,6 +269,7 @@ namespace DIYShopSys
                 table.Columns.Add(column);
 
                 row = table.NewRow();
+
                 //name
                 row[0] = "Daffodil Bulbs";
                 //type

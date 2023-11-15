@@ -39,21 +39,39 @@ namespace DIYShopSys
             column = new DataColumn();
             column.DataType = typeof(double);
             column.ColumnName = "Price";
-            column.ReadOnly = true;
             table.Columns.Add(column);
             //Quantity
             column = new DataColumn();
             column.DataType = typeof(int);
             column.ColumnName = "Quantity";
-            column.ReadOnly = true;
             table.Columns.Add(column);
             dataset.Tables.Add(table);
+            Items.DataSource = dataset.Tables[0];
         }
 
         private void AddToBasket_Click(object sender, EventArgs e)
         {
-            DataRow row;
-
+            if (Items.SelectedRows.Count == 1)
+            {
+            if(Basket.Rows.Count > 0)
+                {
+                    if (Basket.Rows[0].Cells[0].Value.ToString().Equals("Daffodil Bulbs"))
+                    {
+                        dataset.Tables[1].Rows[0][2] = Convert.ToInt32(dataset.Tables[1].Rows[0][2]) + 1;
+                    }
+                }
+            else {
+                    DataRow row = dataset.Tables[1].NewRow();
+                    //name
+                    row[0] = "Daffodil Bulbs";
+                    //price
+                    row[1] = 1;
+                    //quantity
+                    row[2] = 5;
+                    dataset.Tables[1].Rows.Add(row);
+                    Basket.DataSource = dataset.Tables[1];
+                }
+            }
         }
 
         private void RemoveItemFromBasket_Click(object sender, EventArgs e)
