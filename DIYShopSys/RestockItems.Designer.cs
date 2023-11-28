@@ -37,9 +37,11 @@
             Total = new Label();
             ItemLabel = new Label();
             Basketlabel = new Label();
-            comboBox1 = new ComboBox();
+            Supplier = new ComboBox();
+            GroupBox = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)Items).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Basket).BeginInit();
+            GroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // Items
@@ -49,12 +51,12 @@
             Items.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Items.BackgroundColor = SystemColors.Control;
             Items.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Items.Location = new Point(12, 74);
+            Items.Location = new Point(6, 66);
             Items.MultiSelect = false;
             Items.Name = "Items";
             Items.RowTemplate.Height = 25;
             Items.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            Items.Size = new Size(458, 314);
+            Items.Size = new Size(432, 290);
             Items.TabIndex = 0;
             // 
             // ReturnButton
@@ -69,9 +71,9 @@
             // 
             // AddToBasket
             // 
-            AddToBasket.Location = new Point(135, 415);
+            AddToBasket.Location = new Point(6, 362);
             AddToBasket.Name = "AddToBasket";
-            AddToBasket.Size = new Size(109, 23);
+            AddToBasket.Size = new Size(133, 23);
             AddToBasket.TabIndex = 2;
             AddToBasket.Text = "Add Item to basket";
             AddToBasket.UseVisualStyleBackColor = true;
@@ -79,7 +81,7 @@
             // 
             // BuyButton
             // 
-            BuyButton.Location = new Point(734, 415);
+            BuyButton.Location = new Point(701, 362);
             BuyButton.Name = "BuyButton";
             BuyButton.Size = new Size(54, 23);
             BuyButton.TabIndex = 4;
@@ -94,28 +96,28 @@
             Basket.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Basket.BackgroundColor = SystemColors.Control;
             Basket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Basket.Location = new Point(476, 74);
+            Basket.Location = new Point(458, 66);
             Basket.MultiSelect = false;
             Basket.Name = "Basket";
             Basket.RowTemplate.Height = 25;
             Basket.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            Basket.Size = new Size(312, 314);
+            Basket.Size = new Size(312, 290);
             Basket.TabIndex = 3;
             // 
             // RemoveItemFromBasket
             // 
-            RemoveItemFromBasket.Location = new Point(504, 415);
+            RemoveItemFromBasket.Location = new Point(278, 362);
             RemoveItemFromBasket.Name = "RemoveItemFromBasket";
-            RemoveItemFromBasket.Size = new Size(103, 23);
+            RemoveItemFromBasket.Size = new Size(160, 23);
             RemoveItemFromBasket.TabIndex = 5;
-            RemoveItemFromBasket.Text = "Remove Item";
+            RemoveItemFromBasket.Text = "Remove Item from basket";
             RemoveItemFromBasket.UseVisualStyleBackColor = true;
             RemoveItemFromBasket.Click += RemoveItemFromBasket_Click;
             // 
             // Total
             // 
             Total.AutoSize = true;
-            Total.Location = new Point(689, 391);
+            Total.Location = new Point(458, 362);
             Total.Name = "Total";
             Total.Size = new Size(43, 15);
             Total.TabIndex = 6;
@@ -133,39 +135,52 @@
             // Basketlabel
             // 
             Basketlabel.AutoSize = true;
-            Basketlabel.Location = new Point(504, 22);
+            Basketlabel.Location = new Point(575, 37);
             Basketlabel.Name = "Basketlabel";
             Basketlabel.Size = new Size(82, 15);
             Basketlabel.TabIndex = 8;
             Basketlabel.Text = "Ordered Items";
             // 
-            // comboBox1
+            // Supplier
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 45);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 9;
+            Supplier.FormattingEnabled = true;
+            Supplier.Location = new Point(12, 45);
+            Supplier.Name = "Supplier";
+            Supplier.Size = new Size(121, 23);
+            Supplier.TabIndex = 9;
+            Supplier.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // GroupBox
+            // 
+            GroupBox.Controls.Add(Items);
+            GroupBox.Controls.Add(AddToBasket);
+            GroupBox.Controls.Add(Basketlabel);
+            GroupBox.Controls.Add(RemoveItemFromBasket);
+            GroupBox.Controls.Add(Total);
+            GroupBox.Controls.Add(Basket);
+            GroupBox.Controls.Add(BuyButton);
+            GroupBox.Location = new Point(12, 74);
+            GroupBox.Name = "GroupBox";
+            GroupBox.Size = new Size(776, 393);
+            GroupBox.TabIndex = 10;
+            GroupBox.TabStop = false;
+            GroupBox.Visible = false;
             // 
             // RestockItems
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(comboBox1);
-            Controls.Add(Basketlabel);
+            ClientSize = new Size(800, 474);
+            Controls.Add(GroupBox);
+            Controls.Add(Supplier);
             Controls.Add(ItemLabel);
-            Controls.Add(Total);
-            Controls.Add(RemoveItemFromBasket);
-            Controls.Add(BuyButton);
-            Controls.Add(Basket);
-            Controls.Add(AddToBasket);
             Controls.Add(ReturnButton);
-            Controls.Add(Items);
             Name = "RestockItems";
             Text = "Restock Items";
             ((System.ComponentModel.ISupportInitialize)Items).EndInit();
             ((System.ComponentModel.ISupportInitialize)Basket).EndInit();
+            GroupBox.ResumeLayout(false);
+            GroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -181,6 +196,7 @@
         private Label Total;
         private Label ItemLabel;
         private Label Basketlabel;
-        private ComboBox comboBox1;
+        private ComboBox Supplier;
+        private GroupBox GroupBox;
     }
 }

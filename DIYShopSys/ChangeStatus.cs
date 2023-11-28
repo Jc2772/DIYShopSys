@@ -21,6 +21,16 @@ namespace DIYShopSys
         {
             InitializeComponent();
             this.main = main;
+            if (this.Text.Contains("Supplier"))
+            {
+                DataSet dataset = new Sql().PullData(this.Text);
+                Grid.DataSource = dataset.Tables[0];
+            }
+            else if (this.Text.Contains("Item"))
+            {
+                DataSet dataset = new Sql().PullData(this.Text);
+                Grid.DataSource = dataset.Tables[0];
+            }
         }
         // return
         private void ReturnButton_Click(object sender, EventArgs e)

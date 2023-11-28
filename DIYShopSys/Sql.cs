@@ -29,7 +29,7 @@ namespace DIYShopSys
 
                 column = new DataColumn();
                 column.DataType = typeof(string);
-                column.ColumnName = "Phone Number";
+                column.ColumnName = "PhoneNumber";
                 table.Columns.Add(column);
 
                 column = new DataColumn();
@@ -81,43 +81,49 @@ namespace DIYShopSys
                     //name column
                     column = new DataColumn();
                     column.DataType = typeof(string);
-                    column.ColumnName = "name";
+                    column.ColumnName = "itemName";
                     table.Columns.Add(column);
 
                     //type column
                     column = new DataColumn();
                     column.DataType = typeof(string);
-                    column.ColumnName = "Type";
+                    column.ColumnName = "TypeName";
                     table.Columns.Add(column);
 
-                    //Price column
+                    //type column
+                    column = new DataColumn();
+                    column.DataType = typeof(string);
+                    column.ColumnName = "Location";
+                    table.Columns.Add(column);
+
+                    //Cost column
                     column = new DataColumn();
                     column.DataType = typeof(double);
-                    column.ColumnName = "Price";
+                    column.ColumnName = "Cost";
                     table.Columns.Add(column);
 
-                    //quantity column
-                    column = new DataColumn();
-                    column.DataType = typeof(int);
-                    column.ColumnName = "Quantity";
-                    table.Columns.Add(column);
                     //id column
                     column = new DataColumn();
                     column.DataType = typeof(int);
-                    column.ColumnName = "Id";
+                    column.ColumnName = "SupplierId";
                     table.Columns.Add(column);
 
+                    //type column
+                    column = new DataColumn();
+                    column.DataType = typeof(string);
+                    column.ColumnName = "SupplierName";
+                    table.Columns.Add(column);
                     row = table.NewRow();
 
                     //name
                     row[0] = "Daffodil Bulbs";
                     //type
                     row[1] = "Bulbs";
-                    //price
+                    //cost
                     row[2] = 1;
-                    //quantity
-                    row[3] = 5;
+                    row[3] = 1;
                     row[4] = 1;
+                    row[5] = "Heavenly Plants";
                     table.Rows.Add(row);
 
                     row = table.NewRow();
@@ -125,24 +131,24 @@ namespace DIYShopSys
                     row[0] = "Sledge Hammer";
                     //type
                     row[1] = "Tools";
-                    //price
+                    //cost
                     row[2] = 1;
-                    //quantity
-                    row[3] = 5;
+                    row[3] = 2;
                     row[4] = 2;
+                    row[5] = "Tims Tools";
                     table.Rows.Add(row);
 
                     row = table.NewRow();
                     //name
-                    row[0] = "Green Gnome";
+                    row[0] = "Red Gnome";
                     //type
                     row[1] = "Outdoor Furniture";
-                    //price
+                    //cost
                     row[2] = 1;
-                    //quantity
-                    row[3] = 5;
                     //id
+                    row[3] = 3;
                     row[4] = 3;
+                    row[5] = "ShortGnomes";
                     table.Rows.Add(row);
 
                     row = table.NewRow();
@@ -150,12 +156,12 @@ namespace DIYShopSys
                     row[0] = "Grass Seeds";
                     //type
                     row[1] = "Seeds";
-                    //price
+                    //cost
                     row[2] = 1;
-                    //quantity
-                    row[3] = 5;
                     //id
-                    row[4] = 4;
+                    row[3] = 4;
+                    row[4] = 1;
+                    row[5] = "Heavenly Plants";
                     table.Rows.Add(row);
 
                     row = table.NewRow();
@@ -163,25 +169,25 @@ namespace DIYShopSys
                     row[0] = "Wrench Set";
                     //type
                     row[1] = "Tools";
-                    //price
+                    //cost
                     row[2] = 1;
-                    //quantity
-                    row[3] = 5;
                     //id
-                    row[4] = 5;
+                    row[3] = 5;
+                    row[4] = 2;
+                    row[5] = "Tims Tools";
                     table.Rows.Add(row);
 
                     row = table.NewRow();
                     //name
                     row[0] = "Green Gnome";
-                    //price
-                    row[1] = "Outdoor Furniture";
                     //type
+                    row[1] = "Outdoor Furniture";
+                    //cost
                     row[2] = 1;
-                    //quantity
-                    row[3] = 5;
                     //id
-                    row[4] = 6;
+                    row[3] = 6;
+                    row[4] = 3;
+                    row[5] = "ShortGnomes";
                     table.Rows.Add(row);
                     dataset.Tables.Add(table);
                 }
@@ -213,12 +219,12 @@ namespace DIYShopSys
 
                     column = new DataColumn();
                     column.DataType = typeof(string);
-                    column.ColumnName = "Supplier name";
+                    column.ColumnName = "SupplierName";
                     table.Columns.Add(column);
 
                     column = new DataColumn();
                     column.DataType = typeof(int);
-                    column.ColumnName = "Supplier Id";
+                    column.ColumnName = "SupplierId";
                     table.Columns.Add(column);
 
                     column = new DataColumn();
@@ -238,9 +244,9 @@ namespace DIYShopSys
                     //supplier name
                     row[4] = "Heavenly Plants";
                     //supplier id
-                    row[5] = 1;
+                    row[6] = 1;
                     //quantity
-                    row[6] = 5;
+                    row[7] = 5;
                     table.Rows.Add(row);
 
                     row = table.NewRow();
