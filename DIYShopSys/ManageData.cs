@@ -54,41 +54,21 @@ namespace DIYShopSys
                  * first answer on page
                  * https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
                  */
-                    // update details
-                if (this.Text.Contains("Update"))
+
+                //updates Supplier
+                if (this.Text.Equals("Update Supplier Details"))
                 {
-                    //updates Supplier
-                    if (this.Text.Equals("Update Supplier Details"))
-                    {
-                        String Text = "Update Supplier Details";
-                        AddAndUpdateSuppliers AddAndUpdateSupplier = new AddAndUpdateSuppliers(row, this, Text);
-                        AddAndUpdateSupplier.Show();
-                    }
-                    //updates item
-                    else if (this.Text.Equals("Update Item Details"))
-                    {
-                        String Text = "Update Item Details";
-                        AddAndUpdateItems AddAndUpdateItems = new AddAndUpdateItems(row, this, Text);
-                        AddAndUpdateItems.Show();
-                    }
+                    String Text = "Update Supplier Details";
+                    AddAndUpdateSuppliers AddAndUpdateSupplier = new AddAndUpdateSuppliers(row, this, Text);
+                    AddAndUpdateSupplier.Show();
                 }
-                // remove function
-                else if (this.Text.Contains("Remove"))
+                //updates item
+                else if (this.Text.Equals("Update Item Details"))
                 {
-                    if (this.Text.Equals("Remove Suppliers"))
-                    {
-                        MessageBox.Show("Supplier Still Supplies Item", "Can't Remove Supplier", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                    else if (this.Text.Equals("Remove Items"))
-                    {
-                        MessageBox.Show("Item Has Been Removed", "Item Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                //error for devs
-                else
-                {
-                    MessageBox.Show("Form Does Not Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    String Text = "Update Item Details";
+                    AddAndUpdateItems AddAndUpdateItems = new AddAndUpdateItems(row, this, Text);
+                    AddAndUpdateItems.Show();
+                } 
             }
             else
             {

@@ -31,20 +31,22 @@
             SubmitButton = new Button();
             ReturnButton = new Button();
             ItemName = new TextBox();
-            Type = new TextBox();
             Price = new TextBox();
             Quantity = new TextBox();
             Supplier = new ComboBox();
             LabelForName = new Label();
-            LabelForType = new Label();
             LabelForPrice = new Label();
             LabelForSupplier = new Label();
             LabelForQuantity = new Label();
+            LabelForCost = new Label();
+            Cost = new TextBox();
+            LabelForType = new Label();
+            Type = new ComboBox();
             SuspendLayout();
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(148, 217);
+            SubmitButton.Location = new Point(135, 250);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(75, 23);
             SubmitButton.TabIndex = 0;
@@ -62,30 +64,23 @@
             ReturnButton.UseVisualStyleBackColor = true;
             ReturnButton.Click += ReturnButton_Click;
             // 
-            // Name
+            // ItemName
             // 
             ItemName.Location = new Point(117, 57);
-            ItemName.Name = "Name";
+            ItemName.Name = "ItemName";
             ItemName.Size = new Size(169, 23);
             ItemName.TabIndex = 2;
             // 
-            // Type
-            // 
-            Type.Location = new Point(117, 86);
-            Type.Name = "Type";
-            Type.Size = new Size(169, 23);
-            Type.TabIndex = 3;
-            // 
             // Price
             // 
-            Price.Location = new Point(117, 115);
+            Price.Location = new Point(117, 88);
             Price.Name = "Price";
             Price.Size = new Size(169, 23);
             Price.TabIndex = 4;
             // 
             // Quantity
             // 
-            Quantity.Location = new Point(117, 173);
+            Quantity.Location = new Point(117, 207);
             Quantity.Name = "Quantity";
             Quantity.Size = new Size(169, 23);
             Quantity.TabIndex = 5;
@@ -93,7 +88,7 @@
             // Supplier
             // 
             Supplier.FormattingEnabled = true;
-            Supplier.Location = new Point(117, 144);
+            Supplier.Location = new Point(117, 178);
             Supplier.Name = "Supplier";
             Supplier.Size = new Size(169, 23);
             Supplier.TabIndex = 6;
@@ -107,19 +102,10 @@
             LabelForName.TabIndex = 7;
             LabelForName.Text = "Name";
             // 
-            // LabelForType
-            // 
-            LabelForType.AutoSize = true;
-            LabelForType.Location = new Point(25, 89);
-            LabelForType.Name = "LabelForType";
-            LabelForType.Size = new Size(31, 15);
-            LabelForType.TabIndex = 8;
-            LabelForType.Text = "Type";
-            // 
             // LabelForPrice
             // 
             LabelForPrice.AutoSize = true;
-            LabelForPrice.Location = new Point(25, 118);
+            LabelForPrice.Location = new Point(25, 91);
             LabelForPrice.Name = "LabelForPrice";
             LabelForPrice.Size = new Size(33, 15);
             LabelForPrice.TabIndex = 9;
@@ -128,7 +114,7 @@
             // LabelForSupplier
             // 
             LabelForSupplier.AutoSize = true;
-            LabelForSupplier.Location = new Point(19, 147);
+            LabelForSupplier.Location = new Point(25, 178);
             LabelForSupplier.Name = "LabelForSupplier";
             LabelForSupplier.Size = new Size(50, 15);
             LabelForSupplier.TabIndex = 10;
@@ -137,31 +123,66 @@
             // LabelForQuantity
             // 
             LabelForQuantity.AutoSize = true;
-            LabelForQuantity.Location = new Point(25, 176);
+            LabelForQuantity.Location = new Point(25, 210);
             LabelForQuantity.Name = "LabelForQuantity";
             LabelForQuantity.Size = new Size(53, 15);
             LabelForQuantity.TabIndex = 11;
             LabelForQuantity.Text = "Quantity";
+            // 
+            // LabelForCost
+            // 
+            LabelForCost.AutoSize = true;
+            LabelForCost.Location = new Point(25, 122);
+            LabelForCost.Name = "LabelForCost";
+            LabelForCost.Size = new Size(33, 15);
+            LabelForCost.TabIndex = 13;
+            LabelForCost.Text = "Price";
+            // 
+            // Cost
+            // 
+            Cost.Location = new Point(117, 122);
+            Cost.Name = "Cost";
+            Cost.Size = new Size(169, 23);
+            Cost.TabIndex = 12;
+            // 
+            // LabelForType
+            // 
+            LabelForType.AutoSize = true;
+            LabelForType.Location = new Point(25, 151);
+            LabelForType.Name = "LabelForType";
+            LabelForType.Size = new Size(50, 15);
+            LabelForType.TabIndex = 15;
+            LabelForType.Text = "Supplier";
+            // 
+            // Type
+            // 
+            Type.FormattingEnabled = true;
+            Type.Location = new Point(117, 151);
+            Type.Name = "Type";
+            Type.Size = new Size(169, 23);
+            Type.TabIndex = 14;
             // 
             // AddAndUpdateItems
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(357, 285);
+            Controls.Add(LabelForType);
+            Controls.Add(Type);
+            Controls.Add(LabelForCost);
+            Controls.Add(Cost);
             Controls.Add(LabelForQuantity);
             Controls.Add(LabelForSupplier);
             Controls.Add(LabelForPrice);
-            Controls.Add(LabelForType);
             Controls.Add(LabelForName);
             Controls.Add(Supplier);
             Controls.Add(Quantity);
             Controls.Add(Price);
-            Controls.Add(Type);
             Controls.Add(ItemName);
             Controls.Add(ReturnButton);
             Controls.Add(SubmitButton);
+            Name = "AddAndUpdateItems";
             Text = "Form2";
-            Name = "AddAndUpdateItemsItem";
             FormClosed += AddAndUpdateItems_FormClosed;
             ResumeLayout(false);
             PerformLayout();
@@ -172,14 +193,16 @@
         private Button SubmitButton;
         private Button ReturnButton;
         private TextBox ItemName;
-        private TextBox Type;
         private TextBox Price;
         private TextBox Quantity;
         private ComboBox Supplier;
         private Label LabelForName;
-        private Label LabelForType;
         private Label LabelForPrice;
         private Label LabelForSupplier;
         private Label LabelForQuantity;
+        private Label LabelForCost;
+        private TextBox Cost;
+        private Label LabelForType;
+        private ComboBox Type;
     }
 }
