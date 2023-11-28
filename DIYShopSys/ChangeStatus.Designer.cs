@@ -30,6 +30,8 @@
         {
             Grid = new DataGridView();
             ReturnButton = new Button();
+            Activate = new Button();
+            Deativate = new Button();
             ((System.ComponentModel.ISupportInitialize)Grid).BeginInit();
             SuspendLayout();
             // 
@@ -58,11 +60,33 @@
             ReturnButton.UseVisualStyleBackColor = true;
             ReturnButton.Click += ReturnButton_Click;
             // 
+            // Activate
+            // 
+            Activate.Location = new Point(263, 385);
+            Activate.Name = "Activate";
+            Activate.Size = new Size(83, 23);
+            Activate.TabIndex = 5;
+            Activate.Text = "button1";
+            Activate.UseVisualStyleBackColor = true;
+            Activate.Click += Activate_Click;
+            // 
+            // Deativate
+            // 
+            Deativate.Location = new Point(430, 385);
+            Deativate.Name = "Deativate";
+            Deativate.Size = new Size(83, 23);
+            Deativate.TabIndex = 6;
+            Deativate.Text = "button2";
+            Deativate.UseVisualStyleBackColor = true;
+            Deativate.Click += Deativate_Click;
+            // 
             // ChangeStatus
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(Deativate);
+            Controls.Add(Activate);
             Controls.Add(Grid);
             Controls.Add(ReturnButton);
             Name = "ChangeStatus";
@@ -76,5 +100,7 @@
 
         private DataGridView Grid;
         private Button ReturnButton;
+        private Button Activate;
+        private Button Deativate;
     }
 }

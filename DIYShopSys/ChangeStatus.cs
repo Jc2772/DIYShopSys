@@ -36,5 +36,15 @@ namespace DIYShopSys
                 main.Close();
             }
         }
+
+        private void Activate_Click(object sender, EventArgs e)
+        {
+            //add check for form.text when using sql
+        }
+
+        private void Deativate_Click(object sender, EventArgs e)
+        {
+            //add check for form.text when using sql
+        }
     }
 }
