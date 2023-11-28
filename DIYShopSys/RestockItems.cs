@@ -31,9 +31,9 @@ namespace DIYShopSys
             Basket.Columns[3].Visible = false;
             for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
             {
-                if (!Supplier.Items.Contains(dataset.Tables[0].Rows[i][4].ToString() + "-" + dataset.Tables[0].Rows[i][5].ToString()))
+                if (!Supplier.Items.Contains(dataset.Tables[0].Rows[i][2].ToString() + "-" + dataset.Tables[0].Rows[i][3].ToString()))
                 {
-                    Supplier.Items.Add(dataset.Tables[0].Rows[i][4].ToString() + "-" + dataset.Tables[0].Rows[i][5].ToString());
+                    Supplier.Items.Add(dataset.Tables[0].Rows[i][2].ToString() + "-" + dataset.Tables[0].Rows[i][3].ToString());
                 }
             }
         }
@@ -116,7 +116,7 @@ namespace DIYShopSys
         {
             resetDataset();
             for(int i = 0; i < dataset.Tables[0].Rows.Count; i++) {
-                if(!Supplier.SelectedItem.Equals(dataset.Tables[0].Rows[i][3] + "-" + dataset.Tables[0].Rows[i][4]))
+                if(!Supplier.SelectedItem.Equals(dataset.Tables[0].Rows[i][2] + "-" + dataset.Tables[0].Rows[i][3]))
                 {
                     dataset.Tables[0].Rows.RemoveAt(i--);
                 }

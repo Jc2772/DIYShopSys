@@ -90,12 +90,6 @@ namespace DIYShopSys
                     column.ColumnName = "TypeName";
                     table.Columns.Add(column);
 
-                    //type column
-                    column = new DataColumn();
-                    column.DataType = typeof(string);
-                    column.ColumnName = "Location";
-                    table.Columns.Add(column);
-
                     //Cost column
                     column = new DataColumn();
                     column.DataType = typeof(double);
@@ -122,8 +116,7 @@ namespace DIYShopSys
                     //cost
                     row[2] = 1;
                     row[3] = 1;
-                    row[4] = 1;
-                    row[5] = "Heavenly Plants";
+                    row[4] = "Heavenly Plants";
                     table.Rows.Add(row);
 
                     row = table.NewRow();
@@ -134,8 +127,7 @@ namespace DIYShopSys
                     //cost
                     row[2] = 1;
                     row[3] = 2;
-                    row[4] = 2;
-                    row[5] = "Tims Tools";
+                    row[4] = "Tims Tools";
                     table.Rows.Add(row);
 
                     row = table.NewRow();
@@ -147,8 +139,7 @@ namespace DIYShopSys
                     row[2] = 1;
                     //id
                     row[3] = 3;
-                    row[4] = 3;
-                    row[5] = "ShortGnomes";
+                    row[4] = "ShortGnomes";
                     table.Rows.Add(row);
 
                     row = table.NewRow();
@@ -159,9 +150,8 @@ namespace DIYShopSys
                     //cost
                     row[2] = 1;
                     //id
-                    row[3] = 4;
-                    row[4] = 1;
-                    row[5] = "Heavenly Plants";
+                    row[3] = 1;
+                    row[4] = "Heavenly Plants";
                     table.Rows.Add(row);
 
                     row = table.NewRow();
@@ -172,9 +162,8 @@ namespace DIYShopSys
                     //cost
                     row[2] = 1;
                     //id
-                    row[3] = 5;
-                    row[4] = 2;
-                    row[5] = "Tims Tools";
+                    row[3] = 2;
+                    row[4] = "Tims Tools";
                     table.Rows.Add(row);
 
                     row = table.NewRow();
@@ -185,9 +174,8 @@ namespace DIYShopSys
                     //cost
                     row[2] = 1;
                     //id
-                    row[3] = 6;
-                    row[4] = 3;
-                    row[5] = "ShortGnomes";
+                    row[3] = 3;
+                    row[4] = "ShortGnomes";
                     table.Rows.Add(row);
                     dataset.Tables.Add(table);
                 }

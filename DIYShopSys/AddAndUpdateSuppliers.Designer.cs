@@ -36,6 +36,8 @@
             SupName = new TextBox();
             ReturnButton = new Button();
             SubmitButton = new Button();
+            labelForDeliveryFee = new Label();
+            DeliveryFee = new TextBox();
             SuspendLayout();
             // 
             // LabelForEmail
@@ -79,10 +81,10 @@
             PhoneNumber.Size = new Size(169, 23);
             PhoneNumber.TabIndex = 12;
             // 
-            // Name
+            // SupName
             // 
             SupName.Location = new Point(125, 60);
-            SupName.Name = "Name";
+            SupName.Name = "SupName";
             SupName.Size = new Size(169, 23);
             SupName.TabIndex = 11;
             // 
@@ -97,7 +99,7 @@
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(158, 147);
+            SubmitButton.Location = new Point(158, 193);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(75, 23);
             SubmitButton.TabIndex = 17;
@@ -105,11 +107,29 @@
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
             // 
-            // Form1
+            // labelForDeliveryFee
+            // 
+            labelForDeliveryFee.AutoSize = true;
+            labelForDeliveryFee.Location = new Point(33, 150);
+            labelForDeliveryFee.Name = "labelForDeliveryFee";
+            labelForDeliveryFee.Size = new Size(70, 15);
+            labelForDeliveryFee.TabIndex = 19;
+            labelForDeliveryFee.Text = "Delivery Fee";
+            // 
+            // DeliveryFee
+            // 
+            DeliveryFee.Location = new Point(125, 147);
+            DeliveryFee.Name = "DeliveryFee";
+            DeliveryFee.Size = new Size(169, 23);
+            DeliveryFee.TabIndex = 18;
+            // 
+            // AddAndUpdateSuppliers
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(367, 204);
+            ClientSize = new Size(367, 280);
+            Controls.Add(labelForDeliveryFee);
+            Controls.Add(DeliveryFee);
             Controls.Add(SubmitButton);
             Controls.Add(LabelForEmail);
             Controls.Add(LabelForPhoneNumber);
@@ -134,5 +154,7 @@
         private TextBox SupName;
         private Button ReturnButton;
         private Button SubmitButton;
+        private Label labelForDeliveryFee;
+        private TextBox DeliveryFee;
     }
 }
