@@ -28,75 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            label2 = new Label();
-            textBox2 = new TextBox();
+            TypeName = new TextBox();
+            LabelForTypeName = new Label();
+            ReturnButton = new Button();
+            SubmitButton = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // TypeName
             // 
-            textBox1.Location = new Point(158, 51);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 0;
+            TypeName.Location = new Point(87, 52);
+            TypeName.Name = "TypeName";
+            TypeName.Size = new Size(100, 23);
+            TypeName.TabIndex = 0;
             // 
-            // label1
+            // LabelForTypeName
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(83, 59);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
+            LabelForTypeName.AutoSize = true;
+            LabelForTypeName.Location = new Point(30, 52);
+            LabelForTypeName.Name = "LabelForTypeName";
+            LabelForTypeName.Size = new Size(39, 15);
+            LabelForTypeName.TabIndex = 1;
+            LabelForTypeName.Text = "Name";
             // 
-            // button1
+            // ReturnButton
             // 
-            button1.Location = new Point(337, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            ReturnButton.Location = new Point(186, 13);
+            ReturnButton.Name = "ReturnButton";
+            ReturnButton.Size = new Size(53, 23);
+            ReturnButton.TabIndex = 2;
+            ReturnButton.Text = "Return";
+            ReturnButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // SubmitButton
             // 
-            button2.Location = new Point(129, 257);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(83, 99);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 5;
-            label2.Text = "label2";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(158, 91);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 4;
+            SubmitButton.Location = new Point(87, 81);
+            SubmitButton.Name = "SubmitButton";
+            SubmitButton.Size = new Size(75, 23);
+            SubmitButton.TabIndex = 3;
+            SubmitButton.Text = "Submit";
+            SubmitButton.UseVisualStyleBackColor = true;
             // 
             // AddAndUpdateTypes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(429, 321);
-            Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label1);
-            Controls.Add(textBox1);
+            ClientSize = new Size(259, 144);
+            Controls.Add(SubmitButton);
+            Controls.Add(ReturnButton);
+            Controls.Add(LabelForTypeName);
+            Controls.Add(TypeName);
             Name = "AddAndUpdateTypes";
             Text = "Form1";
             ResumeLayout(false);
@@ -105,11 +85,9 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private Label label1;
-        private Button button1;
-        private Button button2;
-        private Label label2;
-        private TextBox textBox2;
+        private TextBox TypeName;
+        private Label LabelForTypeName;
+        private Button ReturnButton;
+        private Button SubmitButton;
     }
 }
