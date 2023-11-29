@@ -56,37 +56,36 @@ namespace DIYShopSys
 
         private void Activate_Click(object sender, EventArgs e)
         {
-            if (this.Text.Equals("Manage Supplier Status"))
-            {
-                this.dataset = new Sql().SupplierData();
-                Grid.DataSource = dataset.Tables[0];
-            }
-            else if (this.Text.Equals("Manage Types Status"))
-            {
-                this.dataset = new Sql().typesData();
-                Grid.DataSource = dataset.Tables[0];
-            }
-            else if (this.Text.Equals("Manage Item Status"))
-            {
-                this.dataset = new Sql().itemsData();
-                Grid.DataSource = dataset.Tables[0];
+            if (Grid.SelectedRows.Count == 1) {
+                if (this.Text.Equals("Manage Supplier Status"))
+                {
+                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][3] = "a";
+                }
+                else if (this.Text.Equals("Manage Types Status"))
+                {
+                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][3] = "a";
+                }
+                else if (this.Text.Equals("Manage Item Status"))
+                {
+                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][3] = "a";
+                }
             }
         }
 
         private void Deativate_Click(object sender, EventArgs e)
         {
-            if () {
+            if (Grid.SelectedRows.Count == 1) {
                 if (this.Text.Equals("Manage Supplier Status"))
                 {
-                    dataset.Tables[].Rows[][3].Va
+                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][3] = "d";
                 }
                 else if (this.Text.Equals("Manage Types Status"))
                 {
-
+                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][3] = "d";
                 }
                 else if (this.Text.Equals("Manage Item Status"))
                 {
-
+                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][3] = "d";
                 }
             }
         }
