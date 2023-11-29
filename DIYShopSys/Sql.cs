@@ -40,6 +40,11 @@ namespace DIYShopSys
             column = new DataColumn();
             column.DataType = typeof(double);
             column.ColumnName = "DeliveryFee";
+            table.Columns.Add(column); ;
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Status";
             table.Columns.Add(column);
 
             row = table.NewRow();
@@ -52,6 +57,7 @@ namespace DIYShopSys
             //email
             row[3] = "HeavenlyPlantsRep@outlook.com";
             row[4] = 5;
+
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -95,6 +101,11 @@ namespace DIYShopSys
             column = new DataColumn();
             column.DataType = typeof(int);
             column.ColumnName = "TypeId";
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Status";
             table.Columns.Add(column);
 
             row = table.NewRow();
@@ -162,6 +173,12 @@ namespace DIYShopSys
             column.DataType = typeof(int);
             column.ColumnName = "Quantity";
             table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Status";
+            table.Columns.Add(column);
+
 
             row = table.NewRow();
             //id
