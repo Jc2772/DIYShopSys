@@ -358,6 +358,7 @@ namespace DIYShopSys
             row[3] = 1;
             row[4] = "Heavenly Plants";
             row[5] = 5;
+            row[6] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -371,6 +372,7 @@ namespace DIYShopSys
             row[3] = 2;
             row[4] = "Tims Tools";
             row[5] = 7;
+            row[6] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -384,6 +386,7 @@ namespace DIYShopSys
             row[3] = 3;
             row[4] = "ShortGnomes";
             row[5] = 3;
+            row[6] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -397,6 +400,7 @@ namespace DIYShopSys
             row[3] = 1;
             row[4] = "Heavenly Plants";
             row[5] = 5;
+            row[6] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -410,6 +414,7 @@ namespace DIYShopSys
             row[3] = 2;
             row[4] = "Tims Tools";
             row[5] = 7;
+            row[6] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -423,6 +428,7 @@ namespace DIYShopSys
             row[3] = 3;
             row[4] = "ShortGnomes";
             row[5] = 3;
+            row[6] = "a";
             table.Rows.Add(row);
             dataset.Tables.Add(table);
             return dataset;
