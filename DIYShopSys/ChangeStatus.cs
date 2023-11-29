@@ -22,12 +22,17 @@ namespace DIYShopSys
             InitializeComponent();
             this.main = main;
             main.Hide();
-            if (this.Text.Contains("Supplier"))
+            if (this.Text.Equals("Manage Supplier Status"))
             {
                 DataSet dataset = new Sql().SupplierData();
                 Grid.DataSource = dataset.Tables[0];
             }
-            else if (this.Text.Contains("Item"))
+            else if (this.Text.Equals("Manage Types Status"))
+            {
+                DataSet dataset = new Sql().typesData();
+                Grid.DataSource = dataset.Tables[0];
+            }
+            else if (this.Text.Equals("Manage Item Status"))
             {
                 DataSet dataset = new Sql().itemsData();
                 Grid.DataSource = dataset.Tables[0];
