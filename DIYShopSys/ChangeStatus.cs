@@ -75,20 +75,19 @@ namespace DIYShopSys
 
         private void Deativate_Click(object sender, EventArgs e)
         {
-            if (this.Text.Equals("Manage Supplier Status"))
-            {
-                this.dataset = new Sql().SupplierData();
-                Grid.DataSource = dataset.Tables[0];
-            }
-            else if (this.Text.Equals("Manage Types Status"))
-            {
-                this.dataset = new Sql().typesData();
-                Grid.DataSource = dataset.Tables[0];
-            }
-            else if (this.Text.Equals("Manage Item Status"))
-            {
-                this.dataset = new Sql().itemsData();
-                Grid.DataSource = dataset.Tables[0];
+            if () {
+                if (this.Text.Equals("Manage Supplier Status"))
+                {
+                    dataset.Tables[].Rows[][3].Va
+                }
+                else if (this.Text.Equals("Manage Types Status"))
+                {
+
+                }
+                else if (this.Text.Equals("Manage Item Status"))
+                {
+
+                }
             }
         }
     }
