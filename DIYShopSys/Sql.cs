@@ -109,20 +109,24 @@ namespace DIYShopSys
             table.Columns.Add(column);
 
             row = table.NewRow();
-            row[2] = "Bulbs";
-            row[3] = 1;
+            row[0] = "Bulbs";
+            row[1] = 1;
+            row[2] = "a";
 
             row = table.NewRow();
             row[0] = "Tools";
             row[1] = 2;
+            row[2] = "a";
 
             row = table.NewRow();
-            row[2] = "Outdoor Furniture";
-            row[3] = 3;
+            row[0] = "Outdoor Furniture";
+            row[1] = 3;
+            row[2] = "a";
 
             row = table.NewRow();
-            row[2] = "Seeds";
-            row[3] = 4;
+            row[0] = "Seeds";
+            row[1] = 4;
+            row[2] = "a";
             table.Rows.Add(row);
             dataset.Tables.Add(table);
             return dataset;
@@ -196,6 +200,7 @@ namespace DIYShopSys
             row[6] = 1;
             //quantity
             row[7] = 5;
+            row[8] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -214,6 +219,7 @@ namespace DIYShopSys
             row[6] = 2;
             //quantity
             row[7] = 5;
+            row[8] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -232,6 +238,7 @@ namespace DIYShopSys
             row[6] = 3;
             //quantity
             row[7] = 5;
+            row[8] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -250,6 +257,7 @@ namespace DIYShopSys
             row[6] = 1;
             //quantity
             row[7] = 5;
+            row[8] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -268,6 +276,7 @@ namespace DIYShopSys
             row[6] = 2;
             //quantity
             row[7] = 5;
+            row[8] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -286,6 +295,7 @@ namespace DIYShopSys
             row[6] = 3;
             //quantity
             row[7] = 5;
+            row[8] = "a";
             table.Rows.Add(row);
             dataset.Tables.Add(table);
             return dataset;
@@ -331,6 +341,11 @@ namespace DIYShopSys
             column = new DataColumn();
             column.DataType = typeof(double);
             column.ColumnName = "DeliveryFee";
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Status";
             table.Columns.Add(column);
 
             //name
