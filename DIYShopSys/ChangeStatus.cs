@@ -13,6 +13,7 @@ namespace DIYShopSys
     public partial class ChangeStatus : Form
     {
         MainMenu main;
+        DataSet dataset;
         public ChangeStatus()
         {
             InitializeComponent();
@@ -24,17 +25,17 @@ namespace DIYShopSys
             main.Hide();
             if (this.Text.Equals("Manage Supplier Status"))
             {
-                DataSet dataset = new Sql().SupplierData();
+                this.dataset = new Sql().SupplierData();
                 Grid.DataSource = dataset.Tables[0];
             }
             else if (this.Text.Equals("Manage Types Status"))
             {
-                DataSet dataset = new Sql().typesData();
+                this.dataset = new Sql().typesData();
                 Grid.DataSource = dataset.Tables[0];
             }
             else if (this.Text.Equals("Manage Item Status"))
             {
-                DataSet dataset = new Sql().itemsData();
+                this.dataset = new Sql().itemsData();
                 Grid.DataSource = dataset.Tables[0];
             }
         }
@@ -55,13 +56,40 @@ namespace DIYShopSys
 
         private void Activate_Click(object sender, EventArgs e)
         {
-            //add check for form.text when using sql
-
+            if (this.Text.Equals("Manage Supplier Status"))
+            {
+                this.dataset = new Sql().SupplierData();
+                Grid.DataSource = dataset.Tables[0];
+            }
+            else if (this.Text.Equals("Manage Types Status"))
+            {
+                this.dataset = new Sql().typesData();
+                Grid.DataSource = dataset.Tables[0];
+            }
+            else if (this.Text.Equals("Manage Item Status"))
+            {
+                this.dataset = new Sql().itemsData();
+                Grid.DataSource = dataset.Tables[0];
+            }
         }
 
         private void Deativate_Click(object sender, EventArgs e)
         {
-            //add check for form.text when using sql
+            if (this.Text.Equals("Manage Supplier Status"))
+            {
+                this.dataset = new Sql().SupplierData();
+                Grid.DataSource = dataset.Tables[0];
+            }
+            else if (this.Text.Equals("Manage Types Status"))
+            {
+                this.dataset = new Sql().typesData();
+                Grid.DataSource = dataset.Tables[0];
+            }
+            else if (this.Text.Equals("Manage Item Status"))
+            {
+                this.dataset = new Sql().itemsData();
+                Grid.DataSource = dataset.Tables[0];
+            }
         }
     }
 }
