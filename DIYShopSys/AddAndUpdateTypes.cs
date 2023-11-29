@@ -12,8 +12,8 @@ namespace DIYShopSys
 {
     public partial class AddAndUpdateTypes : Form
     {
-        MainMenu menu;
-        ManageData update;
+        MainMenu main;
+        ManageData ManageData;
         DataGridViewRow Row;
         public AddAndUpdateTypes()
         {
@@ -23,14 +23,46 @@ namespace DIYShopSys
         {
             InitializeComponent();
             this.Text = Text;
-            this.menu = main;
+            this.main = main;
         }
         public AddAndUpdateTypes(DataGridViewRow Row, ManageData update, String text)
         {
             InitializeComponent();
             this.Text = text;
-            this.update = update;
+            this.ManageData = update;
             this.Row = Row;
+        }
+        // closing form
+        private void AddAndUpdateItems_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (main != null)
+            {
+                if (main.Visible == false)
+                {
+                    main.Close();
+                }
+            }
+            else
+            {
+                if (ManageData.Visible == false)
+                {
+                    ManageData.Close();
+                }
+            }
+        }
+        //returns to main menu
+        private void ReturnButton_Click(object sender, EventArgs e)
+        {
+            if (this.ManageData != null)
+            {
+                ManageData.Show();
+                this.Close();
+            }
+            else
+            {
+                main.Show();
+                this.Close();
+            }
         }
     }
 }
