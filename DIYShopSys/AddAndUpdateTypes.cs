@@ -14,7 +14,7 @@ namespace DIYShopSys
     {
         MainMenu menu;
         ManageData update;
-        DataGridView Row;
+        DataGridViewRow Row;
         public AddAndUpdateTypes()
         {
             InitializeComponent();
