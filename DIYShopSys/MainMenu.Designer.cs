@@ -42,12 +42,16 @@
             analysisToolStripMenuItem = new ToolStripMenuItem();
             yearlyRevenueAnalysisToolStripMenuItem = new ToolStripMenuItem();
             yearlyItemAnalysisToolStripMenuItem = new ToolStripMenuItem();
+            typesToolStripMenuItem = new ToolStripMenuItem();
+            addTypeToolStripMenuItem = new ToolStripMenuItem();
+            updateTypesToolStripMenuItem = new ToolStripMenuItem();
+            manageTypeStatusToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { suppliersToolStripMenuItem, itemsToolStripMenuItem, analysisToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { suppliersToolStripMenuItem, typesToolStripMenuItem, itemsToolStripMenuItem, analysisToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -64,22 +68,22 @@
             // AddAndUpdateItemsToolStripMenuItem
             // 
             AddAndUpdateItemsToolStripMenuItem.Name = "AddAndUpdateItemsToolStripMenuItem";
-            AddAndUpdateItemsToolStripMenuItem.Size = new Size(201, 22);
-            AddAndUpdateItemsToolStripMenuItem.Text = "add supplier";
+            AddAndUpdateItemsToolStripMenuItem.Size = new Size(198, 22);
+            AddAndUpdateItemsToolStripMenuItem.Text = "Add Supplier";
             AddAndUpdateItemsToolStripMenuItem.Click += AddAndUpdateItemsToolStripMenuItem_Click;
             // 
             // ManageDataToolStripMenuItem
             // 
             ManageDataToolStripMenuItem.Name = "ManageDataToolStripMenuItem";
-            ManageDataToolStripMenuItem.Size = new Size(201, 22);
-            ManageDataToolStripMenuItem.Text = "update supplier";
+            ManageDataToolStripMenuItem.Size = new Size(198, 22);
+            ManageDataToolStripMenuItem.Text = "Update Supplier";
             ManageDataToolStripMenuItem.Click += ManageDataToolStripMenuItem_Click;
             // 
             // removeSupplierDetailsToolStripMenuItem
             // 
             removeSupplierDetailsToolStripMenuItem.Name = "removeSupplierDetailsToolStripMenuItem";
-            removeSupplierDetailsToolStripMenuItem.Size = new Size(201, 22);
-            removeSupplierDetailsToolStripMenuItem.Text = "Remove Supplier Details";
+            removeSupplierDetailsToolStripMenuItem.Size = new Size(198, 22);
+            removeSupplierDetailsToolStripMenuItem.Text = "Manage Supplier Status";
             removeSupplierDetailsToolStripMenuItem.Click += removeSupplierDetailsToolStripMenuItem_Click;
             // 
             // itemsToolStripMenuItem
@@ -106,8 +110,8 @@
             // removeItemToolStripMenuItem
             // 
             removeItemToolStripMenuItem.Name = "removeItemToolStripMenuItem";
-            removeItemToolStripMenuItem.Size = new Size(180, 22);
-            removeItemToolStripMenuItem.Text = "Remove Item";
+            removeItemToolStripMenuItem.Size = new Size(179, 22);
+            removeItemToolStripMenuItem.Text = "Manage Item Status";
             removeItemToolStripMenuItem.Click += removeItemToolStripMenuItem_Click;
             // 
             // queryItemsToolStripMenuItem
@@ -145,6 +149,34 @@
             yearlyItemAnalysisToolStripMenuItem.Text = "Yearly Item Analysis";
             yearlyItemAnalysisToolStripMenuItem.Click += yearlyItemAnalysisToolStripMenuItem_Click;
             // 
+            // typesToolStripMenuItem
+            // 
+            typesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addTypeToolStripMenuItem, updateTypesToolStripMenuItem, manageTypeStatusToolStripMenuItem });
+            typesToolStripMenuItem.Name = "typesToolStripMenuItem";
+            typesToolStripMenuItem.Size = new Size(48, 20);
+            typesToolStripMenuItem.Text = "Types";
+            // 
+            // addTypeToolStripMenuItem
+            // 
+            addTypeToolStripMenuItem.Name = "addTypeToolStripMenuItem";
+            addTypeToolStripMenuItem.Size = new Size(180, 22);
+            addTypeToolStripMenuItem.Text = "Add Type";
+            addTypeToolStripMenuItem.Click += addTypeToolStripMenuItem_Click;
+            // 
+            // updateTypesToolStripMenuItem
+            // 
+            updateTypesToolStripMenuItem.Name = "updateTypesToolStripMenuItem";
+            updateTypesToolStripMenuItem.Size = new Size(180, 22);
+            updateTypesToolStripMenuItem.Text = "Update Types";
+            updateTypesToolStripMenuItem.Click += updateTypesToolStripMenuItem_Click;
+            // 
+            // manageTypeStatusToolStripMenuItem
+            // 
+            manageTypeStatusToolStripMenuItem.Name = "manageTypeStatusToolStripMenuItem";
+            manageTypeStatusToolStripMenuItem.Size = new Size(180, 22);
+            manageTypeStatusToolStripMenuItem.Text = "Manage Type Status";
+            manageTypeStatusToolStripMenuItem.Click += manageTypeStatusToolStripMenuItem_Click;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -176,5 +208,9 @@
         private ToolStripMenuItem removeItemToolStripMenuItem;
         private ToolStripMenuItem queryItemsToolStripMenuItem;
         private ToolStripMenuItem restockItemToolStripMenuItem;
+        private ToolStripMenuItem typesToolStripMenuItem;
+        private ToolStripMenuItem addTypeToolStripMenuItem;
+        private ToolStripMenuItem updateTypesToolStripMenuItem;
+        private ToolStripMenuItem manageTypeStatusToolStripMenuItem;
     }
 }

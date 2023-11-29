@@ -25,6 +25,25 @@ namespace DIYShopSys
             ManageData ManageData = new ManageData(this, "Remove Supplier");
             ManageData.Show();
         }
+        private void yearlyItemAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updateTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manageTypeStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
         //Add Item
         private void addItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -58,11 +77,6 @@ namespace DIYShopSys
         }
         //Yearly Revenue Analysis
         private void yearlyRevenueAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-        //Yearly Item Analysis
-        private void yearlyItemAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

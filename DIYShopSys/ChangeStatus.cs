@@ -23,12 +23,12 @@ namespace DIYShopSys
             this.main = main;
             if (this.Text.Contains("Supplier"))
             {
-                DataSet dataset = new Sql().PullData(this.Text);
+                DataSet dataset = new Sql().SupplierData();
                 Grid.DataSource = dataset.Tables[0];
             }
             else if (this.Text.Contains("Item"))
             {
-                DataSet dataset = new Sql().PullData(this.Text);
+                DataSet dataset = new Sql().itemsData();
                 Grid.DataSource = dataset.Tables[0];
             }
         }

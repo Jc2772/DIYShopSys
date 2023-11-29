@@ -34,7 +34,7 @@
             BuyButton = new Button();
             Basket = new DataGridView();
             RemoveItemFromBasket = new Button();
-            Total = new Label();
+            TotalLabel = new Label();
             ItemLabel = new Label();
             Basketlabel = new Label();
             Supplier = new ComboBox();
@@ -81,7 +81,7 @@
             // 
             // BuyButton
             // 
-            BuyButton.Location = new Point(701, 362);
+            BuyButton.Location = new Point(550, 362);
             BuyButton.Name = "BuyButton";
             BuyButton.Size = new Size(54, 23);
             BuyButton.TabIndex = 4;
@@ -106,7 +106,7 @@
             // 
             // RemoveItemFromBasket
             // 
-            RemoveItemFromBasket.Location = new Point(278, 362);
+            RemoveItemFromBasket.Location = new Point(610, 362);
             RemoveItemFromBasket.Name = "RemoveItemFromBasket";
             RemoveItemFromBasket.Size = new Size(160, 23);
             RemoveItemFromBasket.TabIndex = 5;
@@ -114,14 +114,14 @@
             RemoveItemFromBasket.UseVisualStyleBackColor = true;
             RemoveItemFromBasket.Click += RemoveItemFromBasket_Click;
             // 
-            // Total
+            // TotalLabel
             // 
-            Total.AutoSize = true;
-            Total.Location = new Point(458, 362);
-            Total.Name = "Total";
-            Total.Size = new Size(43, 15);
-            Total.TabIndex = 6;
-            Total.Text = "Total =";
+            TotalLabel.AutoSize = true;
+            TotalLabel.Location = new Point(437, 366);
+            TotalLabel.Name = "TotalLabel";
+            TotalLabel.Size = new Size(43, 15);
+            TotalLabel.TabIndex = 6;
+            TotalLabel.Text = "Total =";
             // 
             // ItemLabel
             // 
@@ -156,7 +156,7 @@
             GroupBox.Controls.Add(AddToBasket);
             GroupBox.Controls.Add(Basketlabel);
             GroupBox.Controls.Add(RemoveItemFromBasket);
-            GroupBox.Controls.Add(Total);
+            GroupBox.Controls.Add(TotalLabel);
             GroupBox.Controls.Add(Basket);
             GroupBox.Controls.Add(BuyButton);
             GroupBox.Location = new Point(12, 74);
@@ -193,7 +193,7 @@
         private Button BuyButton;
         private DataGridView Basket;
         private Button RemoveItemFromBasket;
-        private Label Total;
+        private Label TotalLabel;
         private Label ItemLabel;
         private Label Basketlabel;
         private ComboBox Supplier;

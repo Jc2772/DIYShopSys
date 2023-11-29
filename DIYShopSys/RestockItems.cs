@@ -15,6 +15,7 @@ namespace DIYShopSys
     {
         MainMenu mainMenu;
         DataSet dataset;
+        Double total;
         public RestockItems()
         {
             InitializeComponent();
@@ -44,20 +45,25 @@ namespace DIYShopSys
             {
                 if (Basket.Rows.Count > 0)
                 {
-                    if (Basket.Rows[0].Cells[0].Value.ToString().Equals(Items.SelectedRows[0].Cells[0].Value.ToString()))
+                    for (int i = 0; i < Basket.Rows.Count; i++)
                     {
-                        dataset.Tables[1].Rows[0][2] = Convert.ToInt32(dataset.Tables[1].Rows[Items.SelectedRows[0].Index][2]) + 1;
-                        //dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][4]) - 1;
+                        if (Basket.Rows[i].Cells[0].Value.ToString().Equals(Items.SelectedRows[0].Cells[0].Value.ToString()))
+                        {
+                            dataset.Tables[1].Rows[0][2] = Convert.ToInt32(dataset.Tables[1].Rows[Items.SelectedRows[0].Index][2]) + 1;
+                            //dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][4]) - 1;
+                            total += Convert.ToDouble(Items.SelectedRows[0].Cells[2].Value.ToString());
+                            TotalLabel.Text = "total = " + total;
+                            return;
+                        }
                     }
-                    else
-                    {
-                        addToBasket();
-                    }
+                    addToBasket();
                 }
                 else
                 {
                     addToBasket();
                 }
+                total += Convert.ToDouble(Items.SelectedRows[0].Cells[2].Value.ToString());
+                TotalLabel.Text = "total = " + total;
             }
         }
 
@@ -65,13 +71,14 @@ namespace DIYShopSys
         {
             if (Basket.SelectedRows.Count == 1)
             {
+                total -= Convert.ToDouble(Basket.SelectedRows[0].Cells[1].Value.ToString());
+                TotalLabel.Text = "total = " + total;
                 if (Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][2]) == 1)
                 {
                     dataset.Tables[1].Rows.RemoveAt(Basket.SelectedRows[0].Index);
                 }
                 else
                 {
-
                     dataset.Tables[1].Rows[0][2] = Convert.ToInt32(dataset.Tables[1].Rows[Items.SelectedRows[0].Index][2]) - 1;
                     //dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) + 1;
                 }
@@ -80,7 +87,12 @@ namespace DIYShopSys
 
         private void BuyButton_Click(object sender, EventArgs e)
         {
-
+            //messagebox yes no from https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
+            MessageBox.Show("", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("", "", MessageBoxButtons.OK);
+            }
         }
 
         // closing form
@@ -113,17 +125,20 @@ namespace DIYShopSys
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             resetDataset();
-            for(int i = 0; i < dataset.Tables[0].Rows.Count; i++) {
-                if(!Supplier.SelectedItem.Equals(dataset.Tables[0].Rows[i][3] + "-" + dataset.Tables[0].Rows[i][4]))
+            for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
+            {
+                if (!Supplier.SelectedItem.Equals(dataset.Tables[0].Rows[i][3] + "-" + dataset.Tables[0].Rows[i][4]))
                 {
                     dataset.Tables[0].Rows.RemoveAt(i--);
                 }
             }
+            total = Convert.ToDouble(dataset.Tables[0].Rows[0][5]);
+            TotalLabel.Text = "total = " + total;
             GroupBox.Visible = true;
         }
         private void resetDataset()
         {
-            this.dataset = new Sql().PullData(this.Text);
+            this.dataset = new Sql().restockData();
             //creating basket table
             DataTable table = new DataTable("Basket");
             DataColumn column;
