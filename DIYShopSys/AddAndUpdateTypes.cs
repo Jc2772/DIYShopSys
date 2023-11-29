@@ -12,17 +12,25 @@ namespace DIYShopSys
 {
     public partial class AddAndUpdateTypes : Form
     {
+        MainMenu menu;
+        ManageData update;
+        DataGridView Row;
         public AddAndUpdateTypes()
         {
             InitializeComponent();
         }
-        public AddAndUpdateTypes()
+        public AddAndUpdateTypes(MainMenu main, String text)
         {
             InitializeComponent();
+            this.Text = Text;
+            this.menu = main;
         }
-        public AddAndUpdateTypes()
+        public AddAndUpdateTypes(DataGridViewRow Row, ManageData update, String text)
         {
             InitializeComponent();
+            this.Text = text;
+            this.update = update;
+            this.Row = Row;
         }
     }
 }
