@@ -21,6 +21,7 @@ namespace DIYShopSys
         {
             InitializeComponent();
             this.main = main;
+            main.Hide();
             if (this.Text.Contains("Supplier"))
             {
                 DataSet dataset = new Sql().SupplierData();

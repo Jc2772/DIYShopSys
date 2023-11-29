@@ -16,5 +16,13 @@ namespace DIYShopSys
         {
             InitializeComponent();
         }
+        public AddAndUpdateTypes()
+        {
+            InitializeComponent();
+        }
+        public AddAndUpdateTypes()
+        {
+            InitializeComponent();
+        }
     }
 }

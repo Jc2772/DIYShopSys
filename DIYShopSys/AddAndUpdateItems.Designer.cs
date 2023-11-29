@@ -150,9 +150,9 @@
             LabelForType.AutoSize = true;
             LabelForType.Location = new Point(25, 151);
             LabelForType.Name = "LabelForType";
-            LabelForType.Size = new Size(50, 15);
+            LabelForType.Size = new Size(36, 15);
             LabelForType.TabIndex = 15;
-            LabelForType.Text = "Supplier";
+            LabelForType.Text = "Types";
             // 
             // Type
             // 

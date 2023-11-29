@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,6 +76,42 @@ namespace DIYShopSys
             //email
             row[3] = "ShortGnomes@outlook.com";
             row[4] = 3;
+            table.Rows.Add(row);
+            dataset.Tables.Add(table);
+            return dataset;
+        }
+        public DataSet typesData()
+        {
+            DataSet dataset = new DataSet();
+            DataTable table = new DataTable("Item");
+            DataColumn column;
+            DataRow row;
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "TypeName";
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(int);
+            column.ColumnName = "TypeId";
+            table.Columns.Add(column);
+
+            row = table.NewRow();
+            row[2] = "Bulbs";
+            row[3] = 1;
+
+            row = table.NewRow();
+            row[0] = "Tools";
+            row[1] = 2;
+
+            row = table.NewRow();
+            row[2] = "Outdoor Furniture";
+            row[3] = 3;
+
+            row = table.NewRow();
+            row[2] = "Seeds";
+            row[3] = 4;
             table.Rows.Add(row);
             dataset.Tables.Add(table);
             return dataset;

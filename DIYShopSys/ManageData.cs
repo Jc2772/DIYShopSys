@@ -25,9 +25,14 @@ namespace DIYShopSys
             main.Hide();
             this.Text = Text;
             //populate dataset
-            if (this.Text.Contains("Supplier"))
+            if (this.Text.Equals("Update Supplier Details"))
             {
                 DataSet dataset = new Sql().SupplierData();
+                Grid.DataSource = dataset.Tables[0];
+            }
+            else if (this.Text.Equals("Update Types Details"))
+            {
+                DataSet dataset = new Sql().typesData();
                 Grid.DataSource = dataset.Tables[0];
             }
             else if (this.Text.Contains("Item"))
@@ -61,6 +66,10 @@ namespace DIYShopSys
                     String Text = "Update Supplier Details";
                     AddAndUpdateSuppliers AddAndUpdateSupplier = new AddAndUpdateSuppliers(row, this, Text);
                     AddAndUpdateSupplier.Show();
+                }
+                else if(this.Text.Equals("Update Types Details"))
+                {
+
                 }
                 //updates item
                 else if (this.Text.Equals("Update Item Details"))
