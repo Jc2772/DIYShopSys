@@ -59,15 +59,15 @@ namespace DIYShopSys
             if (Grid.SelectedRows.Count == 1) {
                 if (this.Text.Equals("Manage Supplier Status"))
                 {
-                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][3] = "a";
+                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][5] = "a";
                 }
                 else if (this.Text.Equals("Manage Types Status"))
                 {
-                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][3] = "a";
+                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][2] = "a";
                 }
                 else if (this.Text.Equals("Manage Item Status"))
                 {
-                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][3] = "a";
+                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][8] = "a";
                 }
             }
         }
@@ -77,15 +77,15 @@ namespace DIYShopSys
             if (Grid.SelectedRows.Count == 1) {
                 if (this.Text.Equals("Manage Supplier Status"))
                 {
-                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][3] = "d";
+                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][5] = "d";
                 }
                 else if (this.Text.Equals("Manage Types Status"))
                 {
-                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][3] = "d";
+                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][2] = "d";
                 }
                 else if (this.Text.Equals("Manage Item Status"))
                 {
-                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][3] = "d";
+                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][8] = "d";
                 }
             }
         }
