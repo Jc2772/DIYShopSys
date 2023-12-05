@@ -54,6 +54,7 @@
             Items.Location = new Point(6, 66);
             Items.MultiSelect = false;
             Items.Name = "Items";
+            Items.ReadOnly = true;
             Items.RowTemplate.Height = 25;
             Items.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Items.Size = new Size(432, 290);
@@ -75,13 +76,13 @@
             AddToBasket.Name = "AddToBasket";
             AddToBasket.Size = new Size(133, 23);
             AddToBasket.TabIndex = 2;
-            AddToBasket.Text = "Add Item to basket";
+            AddToBasket.Text = "Add Item to Order List";
             AddToBasket.UseVisualStyleBackColor = true;
             AddToBasket.Click += AddToBasket_Click;
             // 
             // BuyButton
             // 
-            BuyButton.Location = new Point(550, 362);
+            BuyButton.Location = new Point(530, 362);
             BuyButton.Name = "BuyButton";
             BuyButton.Size = new Size(54, 23);
             BuyButton.TabIndex = 4;
@@ -99,6 +100,7 @@
             Basket.Location = new Point(458, 66);
             Basket.MultiSelect = false;
             Basket.Name = "Basket";
+            Basket.ReadOnly = true;
             Basket.RowTemplate.Height = 25;
             Basket.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Basket.Size = new Size(312, 290);
@@ -106,18 +108,18 @@
             // 
             // RemoveItemFromBasket
             // 
-            RemoveItemFromBasket.Location = new Point(610, 362);
+            RemoveItemFromBasket.Location = new Point(590, 362);
             RemoveItemFromBasket.Name = "RemoveItemFromBasket";
-            RemoveItemFromBasket.Size = new Size(160, 23);
+            RemoveItemFromBasket.Size = new Size(180, 23);
             RemoveItemFromBasket.TabIndex = 5;
-            RemoveItemFromBasket.Text = "Remove Item from basket";
+            RemoveItemFromBasket.Text = "Remove Item from Order List";
             RemoveItemFromBasket.UseVisualStyleBackColor = true;
             RemoveItemFromBasket.Click += RemoveItemFromBasket_Click;
             // 
             // TotalLabel
             // 
             TotalLabel.AutoSize = true;
-            TotalLabel.Location = new Point(437, 366);
+            TotalLabel.Location = new Point(428, 366);
             TotalLabel.Name = "TotalLabel";
             TotalLabel.Size = new Size(43, 15);
             TotalLabel.TabIndex = 6;

@@ -41,7 +41,7 @@ namespace DIYShopSys
             update.Hide();
             LabelForQuantity.Hide();
             Quantity.Hide();
-
+            setup();
             //input old values
             //https://stackoverflow.com/questions/6487839/reading-data-from-datagridview-in-c-sharp
             ItemName.Text = Row.Cells[1].Value.ToString();
@@ -55,7 +55,13 @@ namespace DIYShopSys
                     Supplier.SelectedIndex = i;
                 }
             }
-            setup();
+            for (int i = 0;i < Type.Items.Count; i++)
+            {
+                if (Type.Items[i].Equals(Row.Cells[6].Value.ToString() + "-" + Row.Cells[5].Value.ToString()))
+                {
+                    Type.SelectedIndex = i;
+                }
+            }
         }
         //setup
         public void setup()
@@ -63,6 +69,10 @@ namespace DIYShopSys
             Supplier.Items.Add("1 - Heavenly Plants");
             Supplier.Items.Add("2 - Tims Tools");
             Supplier.Items.Add("2 - ShortGnomes");
+            Type.Items.Add("1 - Bulbs");
+            Type.Items.Add("2 - Tools");
+            Type.Items.Add("3 - Outdoor Furniture");
+            Type.Items.Add("4 - Seeds");
         }
         //submit button
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -179,7 +189,7 @@ namespace DIYShopSys
         //returns to main menu
         private void ReturnButton_Click(object sender, EventArgs e)
         {
-            if (this.ManageData != null)
+            if (this.Text.Equals("Update Item Details"))
             {
                 ManageData.Show();
                 this.Close();

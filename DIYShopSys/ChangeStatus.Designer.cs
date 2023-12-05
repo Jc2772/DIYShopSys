@@ -45,6 +45,7 @@
             Grid.Location = new Point(12, 75);
             Grid.MultiSelect = false;
             Grid.Name = "Grid";
+            Grid.ReadOnly = true;
             Grid.RowTemplate.Height = 25;
             Grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Grid.Size = new Size(776, 286);
@@ -66,7 +67,7 @@
             Activate.Name = "Activate";
             Activate.Size = new Size(83, 23);
             Activate.TabIndex = 5;
-            Activate.Text = "button1";
+            Activate.Text = "Activate";
             Activate.UseVisualStyleBackColor = true;
             Activate.Click += Activate_Click;
             // 
@@ -76,7 +77,7 @@
             Deativate.Name = "Deativate";
             Deativate.Size = new Size(83, 23);
             Deativate.TabIndex = 6;
-            Deativate.Text = "button2";
+            Deativate.Text = "Deactivate";
             Deativate.UseVisualStyleBackColor = true;
             Deativate.Click += Deativate_Click;
             // 

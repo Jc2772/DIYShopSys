@@ -31,6 +31,7 @@ namespace DIYShopSys
             this.Text = text;
             this.ManageData = update;
             this.Row = Row;
+            this.ManageData.Hide();
             TypeName.Text = Row.Cells[1].Value.ToString();
         }
         // closing form

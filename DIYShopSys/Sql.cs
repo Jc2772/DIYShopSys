@@ -53,7 +53,7 @@ namespace DIYShopSys
             //Supplier name
             row[1] = "Heavenly Plants";
             //phone number
-            row[2] = "087 954 3423";
+            row[2] = "0879543423";
             //email
             row[3] = "HeavenlyPlantsRep@outlook.com";
             row[4] = 5;
@@ -66,7 +66,7 @@ namespace DIYShopSys
             //Supplier name
             row[1] = "Tims Tools";
             //phone number
-            row[2] = "087 546 3821";
+            row[2] = "0875463821";
             //email
             row[3] = "TimToolsRep@gmail";
             row[4] = 7;
@@ -78,7 +78,7 @@ namespace DIYShopSys
             //Supplier name
             row[1] = "ShortGnomes";
             //phone number
-            row[2] = "087 179 4392";
+            row[2] = "0871794392";
             //email
             row[3] = "ShortGnomes@outlook.com";
             row[4] = 3;

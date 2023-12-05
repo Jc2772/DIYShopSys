@@ -64,6 +64,7 @@
             Grid.Location = new Point(12, 76);
             Grid.MultiSelect = false;
             Grid.Name = "Grid";
+            Grid.ReadOnly = true;
             Grid.RowTemplate.Height = 25;
             Grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Grid.Size = new Size(776, 286);
