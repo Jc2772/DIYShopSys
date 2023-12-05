@@ -22,11 +22,9 @@ namespace DIYShopSys
         //Remove Supplier Details
         private void removeSupplierDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-        private void yearlyItemAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            String Text = "Manage Supplier Status";
+            ChangeStatus manage = new ChangeStatus(this, Text);
+            manage.Show();
         }
 
         private void addTypeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,7 +43,9 @@ namespace DIYShopSys
 
         private void manageTypeStatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            String Text = "Manage Type Status";
+            ChangeStatus manage = new ChangeStatus(this, Text);
+            manage.Show();
         }
         //Add Item
         private void addItemToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,6 +63,9 @@ namespace DIYShopSys
         //Remove Item Details
         private void removeItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            String Text = "Manage Item Status";
+            ChangeStatus manage = new ChangeStatus(this, Text);
+            manage.Show();
         }
         //Query Item
         private void queryItemsToolStripMenuItem_Click(object sender, EventArgs e)

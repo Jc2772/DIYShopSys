@@ -24,6 +24,7 @@ namespace DIYShopSys
             InitializeComponent();
             this.Text = Text;
             this.main = main;
+            main.Hide();
         }
         public AddAndUpdateTypes(DataGridViewRow Row, ManageData update, String text)
         {
@@ -32,7 +33,7 @@ namespace DIYShopSys
             this.ManageData = update;
             this.Row = Row;
             this.ManageData.Hide();
-            TypeName.Text = Row.Cells[1].Value.ToString();
+            TypeName.Text = Row.Cells[0].Value.ToString();
         }
         // closing form
         private void AddAndUpdateItems_FormClosed(object sender, FormClosedEventArgs e)

@@ -18,17 +18,18 @@ namespace DIYShopSys
         {
             InitializeComponent();
         }
-        public ChangeStatus(MainMenu main)
+        public ChangeStatus(MainMenu main,String text)
         {
             InitializeComponent();
             this.main = main;
             main.Hide();
+            this.Text = text;
             if (this.Text.Equals("Manage Supplier Status"))
             {
                 this.dataset = new Sql().SupplierData();
                 Grid.DataSource = dataset.Tables[0];
             }
-            else if (this.Text.Equals("Manage Types Status"))
+            else if (this.Text.Equals("Manage Type Status"))
             {
                 this.dataset = new Sql().typesData();
                 Grid.DataSource = dataset.Tables[0];
@@ -61,7 +62,7 @@ namespace DIYShopSys
                 {
                     dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][5] = "a";
                 }
-                else if (this.Text.Equals("Manage Types Status"))
+                else if (this.Text.Equals("Manage Type Status"))
                 {
                     dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][2] = "a";
                 }
@@ -79,7 +80,7 @@ namespace DIYShopSys
                 {
                     dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][5] = "d";
                 }
-                else if (this.Text.Equals("Manage Types Status"))
+                else if (this.Text.Equals("Manage Type Status"))
                 {
                     dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][2] = "d";
                 }

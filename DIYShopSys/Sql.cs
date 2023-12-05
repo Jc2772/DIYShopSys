@@ -97,13 +97,13 @@ namespace DIYShopSys
             DataRow row;
 
             column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "TypeName";
+            column.DataType = typeof(int);
+            column.ColumnName = "TypeId";
             table.Columns.Add(column);
 
             column = new DataColumn();
-            column.DataType = typeof(int);
-            column.ColumnName = "TypeId";
+            column.DataType = typeof(string);
+            column.ColumnName = "TypeName";
             table.Columns.Add(column);
 
             column = new DataColumn();
@@ -112,23 +112,26 @@ namespace DIYShopSys
             table.Columns.Add(column);
 
             row = table.NewRow();
-            row[0] = "Bulbs";
-            row[1] = 1;
+            row[1] = "Bulbs";
+            row[0] = 1;
             row[2] = "a";
+            table.Rows.Add(row);
 
             row = table.NewRow();
-            row[0] = "Tools";
-            row[1] = 2;
+            row[1] = "Tools";
+            row[0] = 2;
             row[2] = "a";
+            table.Rows.Add(row);
 
             row = table.NewRow();
-            row[0] = "Outdoor Furniture";
-            row[1] = 3;
+            row[1] = "Outdoor Furniture";
+            row[0] = 3;
             row[2] = "a";
+            table.Rows.Add(row);
 
             row = table.NewRow();
-            row[0] = "Seeds";
-            row[1] = 4;
+            row[1] = "Seeds";
+            row[0] = 4;
             row[2] = "a";
             table.Rows.Add(row);
             dataset.Tables.Add(table);

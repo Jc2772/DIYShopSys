@@ -147,7 +147,6 @@
             yearlyItemAnalysisToolStripMenuItem.Name = "yearlyItemAnalysisToolStripMenuItem";
             yearlyItemAnalysisToolStripMenuItem.Size = new Size(199, 22);
             yearlyItemAnalysisToolStripMenuItem.Text = "Yearly Item Analysis";
-            yearlyItemAnalysisToolStripMenuItem.Click += yearlyItemAnalysisToolStripMenuItem_Click;
             // 
             // typesToolStripMenuItem
             // 

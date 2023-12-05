@@ -27,6 +27,7 @@ namespace DIYShopSys
         {
             InitializeComponent();
             this.main = main;
+            main.Hide();
             this.Text = text;
         }
         public AddAndUpdateSuppliers(DataGridViewRow Row, ManageData update, String text)
