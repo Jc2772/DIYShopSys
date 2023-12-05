@@ -25,13 +25,13 @@ namespace DIYShopSys
             main.Hide();
             this.Text = Text;
             //populate dataset
-            //got grid.datasource code from https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.datagridview.datasource?view=windowsdesktop-8.0
+            //got grid.datasource code from 
             if (this.Text.Equals("Update Supplier Details"))
             {
                 DataSet dataset = new Sql().SupplierData();
                 Grid.DataSource = dataset.Tables[0];
             }
-            else if (this.Text.Equals("Update Type Details"))
+            else if (this.Text.Equals("Update Type Detail"))
             {
                 DataSet dataset = new Sql().typesData();
                 Grid.DataSource = dataset.Tables[0];

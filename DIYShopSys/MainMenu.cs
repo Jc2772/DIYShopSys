@@ -38,13 +38,14 @@ namespace DIYShopSys
 
         private void updateTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String Text = "Update Types Detail";
+            String Text = "Update Type Detail";
             ManageData manage = new ManageData(this,Text);
+            manage.Show();
         }
 
         private void manageTypeStatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
         //Add Item
         private void addItemToolStripMenuItem_Click(object sender, EventArgs e)
