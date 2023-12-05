@@ -46,7 +46,6 @@ namespace DIYShopSys
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             if (CheckSupplier()) {
-                MessageBox.Show(this.Text);
                 if (this.Text.Equals("Add Supplier"))
                 {
                     MessageBox.Show("You have Added a Supplier", "Added Supplier", MessageBoxButtons.OK);
@@ -54,6 +53,8 @@ namespace DIYShopSys
                 else if (this.Text.Equals("Update Supplier Details"))
                 {
                     MessageBox.Show("You have Updated Supplier Details", "Updated Supplier", MessageBoxButtons.OK);
+                    ManageData.Show();
+                    this.Close();
                 }
             }
         }
@@ -64,44 +65,40 @@ namespace DIYShopSys
             Boolean IsItInt,IsItDouble;
             IsItInt = int.TryParse(PhoneNumber.Text, out _);
             IsItDouble = int.TryParse(DeliveryFee.Text, out _);
-            if (SupName.Text.Length > 20)
+            if (SupName.Text.Length > 20 && SupName.Text.Length < 1)
             {
-                MessageBox.Show("Error1");
+                MessageBox.Show("Invalid Name, Name Must Be 1-8 Characters long", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            else if (SupName.Text.Length < 1)
+            else if (PhoneNumber.Text.Length != 10)
             {
-                MessageBox.Show("Error2");
-                return false;
-            }
-            else if (PhoneNumber.Text.Length > 10)
-            {
-                MessageBox.Show("Error3");
-                return false;
-            }
-            else if (PhoneNumber.Text.Length < 1)
-            {
-                MessageBox.Show("Error4");
+                MessageBox.Show(PhoneNumber.Text.Length.ToString());
+                MessageBox.Show("Invalid Phone Number, Phone Number Must be 10 Characters Long", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else if (IsItInt == false)
             {
-                MessageBox.Show("Error5");
+                MessageBox.Show("Invalid Phone Number, Phone Number Must Convert To Int", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            else if (IsItDouble == false)
+            else if (DeliveryFee.Text.Length > 7 || DeliveryFee.Text.Length < 4)
             {
-                MessageBox.Show("Error6");
+                MessageBox.Show("Invalid Delivery Fee, Delivery Fee must be 4-7 characters long", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            else if (Email.Text.Length > 30)
+            else if (DeliveryFee.Text[DeliveryFee.Text.Length - 3] != '.')
             {
-                MessageBox.Show("Error7");
+                MessageBox.Show("Invalid Delivery Fee, Delivery Fee Does not have A decimal", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            else if (Email.Text.Length < 1)
+            else if (IsItDouble)
             {
-                MessageBox.Show("Error8");
+                MessageBox.Show("Invalid Delivery Fee, Delivery Fee is not Double", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (Email.Text.Length > 30 || Email.Text.Length < 1)
+            {
+                MessageBox.Show("Invalid Email, Email Must be 1-30 characters long", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else
@@ -116,7 +113,6 @@ namespace DIYShopSys
                         return true;
                     }
                 }
-                MessageBox.Show("Error9");
                 return false;
             }
         }

@@ -71,11 +71,19 @@ namespace DIYShopSys
         {
             if(TypeName.Text.Length >= 1 && TypeName.Text.Length <= 20)
             {
-                MessageBox.Show("");
+                MessageBox.Show("Name Is Not Valid","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("");
+                if (this.Text.Equals("Update Type")) {
+
+                    MessageBox.Show("Updating Type");
+                    ManageData.Show();
+                    this.Close();
+                }
+                else{
+                    MessageBox.Show("Adding Type");
+                }
             }
         }
     }

@@ -30,7 +30,7 @@ namespace DIYShopSys
                 DataSet dataset = new Sql().SupplierData();
                 Grid.DataSource = dataset.Tables[0];
             }
-            else if (this.Text.Equals("Update Types Details"))
+            else if (this.Text.Equals("Update Type Details"))
             {
                 DataSet dataset = new Sql().typesData();
                 Grid.DataSource = dataset.Tables[0];
@@ -67,9 +67,11 @@ namespace DIYShopSys
                     AddAndUpdateSuppliers AddAndUpdateSupplier = new AddAndUpdateSuppliers(row, this, Text);
                     AddAndUpdateSupplier.Show();
                 }
-                else if(this.Text.Equals("Update Types Details"))
+                else if(this.Text.Equals("Update Type Detail"))
                 {
-
+                    String Text = "Update Type Detail";
+                    AddAndUpdateTypes AddAndUpdateTypes = new AddAndUpdateTypes(row, this, Text);
+                    AddAndUpdateTypes.Show();
                 }
                 //updates item
                 else if (this.Text.Equals("Update Item Details"))

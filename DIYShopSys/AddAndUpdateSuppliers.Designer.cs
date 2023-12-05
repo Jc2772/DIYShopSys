@@ -141,6 +141,7 @@
             Controls.Add(ReturnButton);
             Name = "AddAndUpdateSuppliers";
             Text = "Form1";
+            FormClosed += AddAndUpdateItems_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

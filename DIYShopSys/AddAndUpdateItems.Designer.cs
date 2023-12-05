@@ -134,9 +134,9 @@
             LabelForCost.AutoSize = true;
             LabelForCost.Location = new Point(25, 122);
             LabelForCost.Name = "LabelForCost";
-            LabelForCost.Size = new Size(33, 15);
+            LabelForCost.Size = new Size(31, 15);
             LabelForCost.TabIndex = 13;
-            LabelForCost.Text = "Price";
+            LabelForCost.Text = "Cost";
             // 
             // Cost
             // 

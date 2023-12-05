@@ -57,6 +57,7 @@ namespace DIYShopSys
             //email
             row[3] = "HeavenlyPlantsRep@outlook.com";
             row[4] = 5;
+            row[5] = "a";
 
             table.Rows.Add(row);
 
@@ -70,6 +71,7 @@ namespace DIYShopSys
             //email
             row[3] = "TimToolsRep@gmail";
             row[4] = 7;
+            row[5] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -82,6 +84,7 @@ namespace DIYShopSys
             //email
             row[3] = "ShortGnomes@outlook.com";
             row[4] = 3;
+            row[5] = "a";
             table.Rows.Add(row);
             dataset.Tables.Add(table);
             return dataset;
@@ -164,6 +167,11 @@ namespace DIYShopSys
             table.Columns.Add(column);
 
             column = new DataColumn();
+            column.DataType = typeof(double);
+            column.ColumnName = "Cost";
+            table.Columns.Add(column);
+
+            column = new DataColumn();
             column.DataType = typeof(string);
             column.ColumnName = "SupplierName";
             table.Columns.Add(column);
@@ -194,13 +202,14 @@ namespace DIYShopSys
             row[3] = 1;
             //price
             row[4] = 1;
+            row[5] = 1;
             //supplier name
-            row[5] = "Heavenly Plants";
+            row[6] = "Heavenly Plants";
             //supplier id
-            row[6] = 1;
+            row[7] = 1;
             //quantity
-            row[7] = 5;
-            row[8] = "a";
+            row[8] = 5;
+            row[9] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -213,13 +222,14 @@ namespace DIYShopSys
             row[3] = 2;
             //price
             row[4] = 1;
+            row[5] = 1;
             //supplier name
-            row[5] = "Tims Tools";
+            row[6] = "Tims Tools";
             //supplier id
-            row[6] = 2;
+            row[7] = 2;
             //quantity
-            row[7] = 5;
-            row[8] = "a";
+            row[8] = 5;
+            row[9] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -232,13 +242,14 @@ namespace DIYShopSys
             row[3] = 3;
             //price
             row[4] = 1;
+            row[5] = 1;
             //supplier name
-            row[5] = "ShortGnomes";
+            row[6] = "ShortGnomes";
             //supplier id
-            row[6] = 3;
+            row[7] = 3;
             //quantity
-            row[7] = 5;
-            row[8] = "a";
+            row[8] = 5;
+            row[9] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -251,13 +262,14 @@ namespace DIYShopSys
             row[3] = 4;
             //price
             row[4] = 1;
+            row[5] = 1;
             //supplier name
-            row[5] = "Heavenly Plants";
+            row[6] = "Heavenly Plants";
             //supplier id
-            row[6] = 1;
+            row[7] = 1;
             //quantity
-            row[7] = 5;
-            row[8] = "a";
+            row[8] = 5;
+            row[9] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -270,13 +282,14 @@ namespace DIYShopSys
             row[3] = 2;
             //price
             row[4] = 1;
+            row[5] = 1;
             //supplier name
-            row[5] = "Tims Tools";
+            row[6] = "Tims Tools";
             //supplier id
-            row[6] = 2;
+            row[7] = 2;
             //quantity
-            row[7] = 5;
-            row[8] = "a";
+            row[8] = 5;
+            row[9] = "a";
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -289,13 +302,14 @@ namespace DIYShopSys
             row[3] = 3;
             //price
             row[4] = 1;
+            row[5] = 1;
             //supplier
-            row[5] = "ShortGnomes";
+            row[6] = "ShortGnomes";
             //supplier id
-            row[6] = 3;
+            row[7] = 3;
             //quantity
-            row[7] = 5;
-            row[8] = "a";
+            row[8] = 5;
+            row[9] = "a";
             table.Rows.Add(row);
             dataset.Tables.Add(table);
             return dataset;

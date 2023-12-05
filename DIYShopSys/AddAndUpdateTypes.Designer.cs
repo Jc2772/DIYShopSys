@@ -81,6 +81,7 @@
             Controls.Add(TypeName);
             Name = "AddAndUpdateTypes";
             Text = "Form1";
+            FormClosed += AddAndUpdateItems_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

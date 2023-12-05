@@ -31,12 +31,15 @@ namespace DIYShopSys
 
         private void addTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            String Text = "Add Type";
+            AddAndUpdateTypes AddAndUpdateTypes = new AddAndUpdateTypes(this, Text);
+            AddAndUpdateTypes.Show();
         }
 
         private void updateTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            String Text = "Update Types Detail";
+            ManageData manage = new ManageData(this,Text);
         }
 
         private void manageTypeStatusToolStripMenuItem_Click(object sender, EventArgs e)
