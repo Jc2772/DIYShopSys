@@ -36,7 +36,7 @@
             // 
             // ReturnButton
             // 
-            ReturnButton.Location = new Point(341, 12);
+            ReturnButton.Location = new Point(413, 12);
             ReturnButton.Name = "ReturnButton";
             ReturnButton.Size = new Size(75, 23);
             ReturnButton.TabIndex = 3;
