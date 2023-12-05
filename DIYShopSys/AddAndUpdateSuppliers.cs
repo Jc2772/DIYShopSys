@@ -144,13 +144,11 @@ namespace DIYShopSys
         {
             if (this.Text.Equals("Update Supplier Details"))
             {
-                MessageBox.Show("test1");
                 this.ManageData.Show();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("test2");
                 main.Show();
                 this.Close();
             }

@@ -58,6 +58,7 @@
             ReturnButton.TabIndex = 2;
             ReturnButton.Text = "Return";
             ReturnButton.UseVisualStyleBackColor = true;
+            ReturnButton.Click += ReturnButton_Click;
             // 
             // SubmitButton
             // 
@@ -67,6 +68,7 @@
             SubmitButton.TabIndex = 3;
             SubmitButton.Text = "Submit";
             SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
             // 
             // AddAndUpdateTypes
             // 

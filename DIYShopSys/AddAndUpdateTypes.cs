@@ -66,5 +66,17 @@ namespace DIYShopSys
                 this.Close();
             }
         }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            if(TypeName.Text.Length >= 1 && TypeName.Text.Length <= 20)
+            {
+                MessageBox.Show("");
+            }
+            else
+            {
+                MessageBox.Show("");
+            }
+        }
     }
 }

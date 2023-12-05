@@ -96,6 +96,7 @@
             ReturnButton.TabIndex = 10;
             ReturnButton.Text = "Return";
             ReturnButton.UseVisualStyleBackColor = true;
+            ReturnButton.Click += ReturnButton_Click;
             // 
             // SubmitButton
             // 
