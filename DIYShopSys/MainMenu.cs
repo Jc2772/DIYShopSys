@@ -37,7 +37,7 @@ namespace DIYShopSys
         private void updateTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String Text = "Update Type Detail";
-            ManageData manage = new ManageData(this,Text);
+            ManageData manage = new ManageData(this, Text);
             manage.Show();
         }
 
@@ -81,6 +81,12 @@ namespace DIYShopSys
         }
         //Yearly Revenue Analysis
         private void yearlyRevenueAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            YearlyRevenueAnalysis analysis = new YearlyRevenueAnalysis(this);
+            analysis.Show();
+        }
+
+        private void yearlyItemAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
