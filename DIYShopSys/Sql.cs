@@ -10,7 +10,6 @@ namespace DIYShopSys
 {
     internal class Sql
     {
-        //how to create a datatable https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable?view=net-7.0
         public DataSet SupplierData(){ 
             DataSet dataset = new DataSet();
             DataTable table = new DataTable("Supplier");

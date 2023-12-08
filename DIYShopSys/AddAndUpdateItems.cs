@@ -95,6 +95,7 @@ namespace DIYShopSys
         }
         private Boolean CheckItem()
         {
+            // tryparse = https://stackoverflow.com/questions/1019793/how-can-i-convert-string-to-int
             Boolean IsPriceDouble,IsCostDouble ,IsQuantityInt;
             IsPriceDouble = double.TryParse(Price.Text, out _);
             IsCostDouble = double.TryParse(Price.Text, out _);

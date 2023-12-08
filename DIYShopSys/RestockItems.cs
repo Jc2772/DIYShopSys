@@ -139,6 +139,7 @@ namespace DIYShopSys
         }
         private void resetDataset()
         {
+            //how to create a datatable https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable?view=net-7.0
             this.dataset = new Sql().restockData();
             //creating basket table
             DataTable table = new DataTable("Basket");
