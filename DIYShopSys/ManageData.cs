@@ -25,7 +25,6 @@ namespace DIYShopSys
             main.Hide();
             this.Text = Text;
             //populate dataset
-            //got grid.datasource code from 
             if (this.Text.Equals("Update Supplier Details"))
             {
                 DataSet dataset = new Sql().SupplierData();
