@@ -6,6 +6,7 @@ namespace DIYShopSys
         {
             InitializeComponent();
         }
+        //this.title comes from https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
         //Add Supplier
         private void AddAndUpdateItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
