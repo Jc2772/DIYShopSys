@@ -46,7 +46,8 @@ namespace DIYShopSys
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            if (CheckSupplier()) {
+            if (CheckSupplier())
+            {
                 if (this.Text.Equals("Add Supplier"))
                 {
                     MessageBox.Show("You have Added a Supplier", "Added Supplier", MessageBoxButtons.OK);
@@ -63,7 +64,7 @@ namespace DIYShopSys
         // validation
         private Boolean CheckSupplier()
         {
-            Boolean IsItInt,IsItDouble;
+            Boolean IsItInt, IsItDouble;
             IsItInt = int.TryParse(PhoneNumber.Text, out _);
             IsItDouble = int.TryParse(DeliveryFee.Text, out _);
             if (SupName.Text.Length > 20 && SupName.Text.Length < 1)

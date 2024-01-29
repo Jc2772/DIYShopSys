@@ -38,6 +38,8 @@
             SubmitButton = new Button();
             labelForDeliveryFee = new Label();
             DeliveryFee = new TextBox();
+            LabelForRepName = new Label();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // LabelForEmail
@@ -100,7 +102,7 @@
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(158, 193);
+            SubmitButton.Location = new Point(160, 216);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(75, 23);
             SubmitButton.TabIndex = 17;
@@ -124,11 +126,29 @@
             DeliveryFee.Size = new Size(169, 23);
             DeliveryFee.TabIndex = 18;
             // 
+            // LabelForRepName
+            // 
+            LabelForRepName.AutoSize = true;
+            LabelForRepName.Location = new Point(33, 181);
+            LabelForRepName.Name = "LabelForRepName";
+            LabelForRepName.Size = new Size(62, 15);
+            LabelForRepName.TabIndex = 20;
+            LabelForRepName.Text = "Rep Name";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(125, 178);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(169, 23);
+            textBox1.TabIndex = 21;
+            // 
             // AddAndUpdateSuppliers
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(367, 280);
+            Controls.Add(textBox1);
+            Controls.Add(LabelForRepName);
             Controls.Add(labelForDeliveryFee);
             Controls.Add(DeliveryFee);
             Controls.Add(SubmitButton);
@@ -140,7 +160,7 @@
             Controls.Add(SupName);
             Controls.Add(ReturnButton);
             Name = "AddAndUpdateSuppliers";
-            Text = "Form1";
+            Text = "add Suplier";
             FormClosed += AddAndUpdateItems_FormClosed;
             ResumeLayout(false);
             PerformLayout();
@@ -158,5 +178,7 @@
         private Button SubmitButton;
         private Label labelForDeliveryFee;
         private TextBox DeliveryFee;
+        private Label LabelForRepName;
+        private TextBox textBox1;
     }
 }

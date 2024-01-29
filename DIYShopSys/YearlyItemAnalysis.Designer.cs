@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YearlyItemAnalysis));
             ReturnButton = new Button();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // ReturnButton
@@ -44,31 +41,19 @@
             ReturnButton.UseVisualStyleBackColor = true;
             ReturnButton.Click += ReturnButton_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 60);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(481, 275);
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            // 
             // YearlyItemAnalysis
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(500, 344);
-            Controls.Add(pictureBox1);
             Controls.Add(ReturnButton);
             Name = "YearlyItemAnalysis";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button ReturnButton;
-        private PictureBox pictureBox1;
     }
 }
