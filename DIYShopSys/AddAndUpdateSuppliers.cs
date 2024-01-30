@@ -85,12 +85,12 @@ namespace DIYShopSys
             }
             else if (DeliveryFee.Text.Length > 7 || DeliveryFee.Text.Length < 4)
             {
-                MessageBox.Show("Invalid Delivery Fee, Delivery Fee must be 4-7 characters long", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid Delivery Fee, Delivery Fee must be 4-7 characters long and must have 2 fractional digits", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else if (DeliveryFee.Text[DeliveryFee.Text.Length - 3] != '.')
             {
-                MessageBox.Show("Invalid Delivery Fee, Delivery Fee Does not have A decimal", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid Delivery Fee, Delivery must have 2 fractional digits", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else if (IsItDouble)
