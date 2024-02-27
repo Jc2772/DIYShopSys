@@ -66,7 +66,7 @@ namespace DIYShopSys
         public int GetNextStockId()
         {
             connection.Open();
-            string query = "Select MAX(BookingId) from Bookings";
+            string query = "Select MAX(StockId) from Stock";
             OracleCommand cmd = new OracleCommand(query, connection);
             OracleDataReader data = cmd.ExecuteReader();
             connection.Close();
@@ -83,7 +83,7 @@ namespace DIYShopSys
         public int GetNextOrderId()
         {
             connection.Open();
-            string query = "Select MAX(BookingId) from Bookings";
+            string query = "Select MAX(OrderId) from Orders";
             OracleCommand cmd = new OracleCommand(query, connection);
             OracleDataReader data = cmd.ExecuteReader();
             connection.Close();
