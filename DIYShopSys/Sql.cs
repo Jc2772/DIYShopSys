@@ -29,5 +29,90 @@ namespace DIYShopSys
             connection.Close();
             return ds;
         }
+        public int GetNextSupplierId()
+        {
+            connection.Open();
+            string query = "Select MAX(SupplierId) from Suppliers";
+            OracleCommand cmd = new OracleCommand(query, connection);
+            OracleDataReader data = cmd.ExecuteReader();
+            connection.Close();
+            data.Read();
+            if (data.IsDBNull(0))
+            {
+                return 1;
+            }
+            else
+            {
+                return data.GetInt32(0) + 1;
+            }
+        }
+        public int GetNextTypeId()
+        {
+            connection.Open();
+            string query = "Select MAX(TypeId) from ItemTypes";
+            OracleCommand cmd = new OracleCommand(query, connection);
+            OracleDataReader data = cmd.ExecuteReader();
+            connection.Close();
+            data.Read();
+            if (data.IsDBNull(0))
+            {
+                return 1;
+            }
+            else
+            {
+                return data.GetInt32(0) + 1;
+            }
+        }
+        public int GetNextStockId()
+        {
+            connection.Open();
+            string query = "Select MAX(BookingId) from Bookings";
+            OracleCommand cmd = new OracleCommand(query, connection);
+            OracleDataReader data = cmd.ExecuteReader();
+            connection.Close();
+            data.Read();
+            if (data.IsDBNull(0))
+            {
+                return 1;
+            }
+            else
+            {
+                return data.GetInt32(0) + 1;
+            }
+        }
+        public int GetNextOrderId()
+        {
+            connection.Open();
+            string query = "Select MAX(BookingId) from Bookings";
+            OracleCommand cmd = new OracleCommand(query, connection);
+            OracleDataReader data = cmd.ExecuteReader();
+            connection.Close();
+            data.Read();
+            if (data.IsDBNull(0))
+            {
+                return 1;
+            }
+            else
+            {
+                return data.GetInt32(0) + 1;
+            }
+        }
+        public int GetNextSaleId()
+        {
+            connection.Open();
+            string query = "Select MAX(BookingId) from Bookings";
+            OracleCommand cmd = new OracleCommand(query, connection);
+            OracleDataReader data = cmd.ExecuteReader();
+            connection.Close();
+            data.Read();
+            if (data.IsDBNull(0))
+            {
+                return 1;
+            }
+            else
+            {
+                return data.GetInt32(0) + 1;
+            }
+        }
     }
 }
