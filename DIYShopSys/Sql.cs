@@ -100,7 +100,7 @@ namespace DIYShopSys
         public int GetNextSaleId()
         {
             connection.Open();
-            string query = "Select MAX(BookingId) from Bookings";
+            string query = "Select MAX(SaleId) from Sales";
             OracleCommand cmd = new OracleCommand(query, connection);
             OracleDataReader data = cmd.ExecuteReader();
             connection.Close();
