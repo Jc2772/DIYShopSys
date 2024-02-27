@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,16 +10,16 @@ using System.Windows.Forms;
 
 namespace DIYShopSys
 {
-    public partial class RestockItems : Form
+    public partial class Sales : Form
     {
         MainMenu mainMenu;
         DataSet dataset;
         Double total;
-        public RestockItems()
+        public Sales()
         {
             InitializeComponent();
         }
-        public RestockItems(MainMenu main)
+        public Sales(MainMenu main)
         {
             InitializeComponent();
             this.mainMenu = main;
@@ -31,13 +30,6 @@ namespace DIYShopSys
                 */
             Items.Columns[3].Visible = false;
             Items.Columns[4].Visible = false;
-            for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
-            {
-                if (!Supplier.Items.Contains(dataset.Tables[0].Rows[i][3].ToString() + "-" + dataset.Tables[0].Rows[i][4].ToString()))
-                {
-                    Supplier.Items.Add(dataset.Tables[0].Rows[i][3].ToString() + "-" + dataset.Tables[0].Rows[i][4].ToString());
-                }
-            }
         }
 
         private void AddToBasket_Click(object sender, EventArgs e)
@@ -51,7 +43,7 @@ namespace DIYShopSys
                         if (Basket.Rows[i].Cells[0].Value.ToString().Equals(Items.SelectedRows[0].Cells[0].Value.ToString()))
                         {
                             dataset.Tables[1].Rows[0][2] = Convert.ToInt32(dataset.Tables[1].Rows[Items.SelectedRows[0].Index][2]) + 1;
-                            //dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][4]) - 1;
+                            dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][4]) - 1;
                             total += Convert.ToDouble(Items.SelectedRows[0].Cells[2].Value.ToString());
                             TotalLabel.Text = "total = " + total;
                             return;
@@ -68,7 +60,7 @@ namespace DIYShopSys
             }
         }
 
-        private void RemoveItemFromBasket_Click(object sender, EventArgs e)
+        private void RemoveFromBasket_Click(object sender, EventArgs e)
         {
             if (Basket.SelectedRows.Count == 1)
             {
@@ -81,7 +73,7 @@ namespace DIYShopSys
                 else
                 {
                     dataset.Tables[1].Rows[0][2] = Convert.ToInt32(dataset.Tables[1].Rows[Items.SelectedRows[0].Index][2]) - 1;
-                    //dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) + 1;
+                    dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) + 1;
                 }
             }
         }
@@ -105,23 +97,7 @@ namespace DIYShopSys
             //quantity
             row[2] = 1;
             dataset.Tables[1].Rows.Add(row);
-            //dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][4]) - 1;
-        }
-        
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            resetDataset();
-            for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
-            {
-                if (!Supplier.SelectedItem.Equals(dataset.Tables[0].Rows[i][3] + "-" + dataset.Tables[0].Rows[i][4]))
-                {
-                    dataset.Tables[0].Rows.RemoveAt(i--);
-                }
-            }
-            total = Convert.ToDouble(dataset.Tables[0].Rows[0][5]);
-            TotalLabel.Text = "total = " + total;
-            GroupBox.Visible = true;
+            dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][4]) - 1;
         }
         private void resetDataset()
         {
@@ -155,7 +131,7 @@ namespace DIYShopSys
             total = 0;
         }
         // closing form
-        private void RestockItems_FormClosed(object sender, FormClosedEventArgs e)
+        private void Sales_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (mainMenu.Visible == false)
             {

@@ -30,10 +30,10 @@
         {
             Items = new DataGridView();
             ReturnButton = new Button();
-            AddToBasket = new Button();
+            AddToOrder = new Button();
             BuyButton = new Button();
             Basket = new DataGridView();
-            RemoveItemFromBasket = new Button();
+            RemoveFromOrder = new Button();
             TotalLabel = new Label();
             ItemLabel = new Label();
             Basketlabel = new Label();
@@ -70,15 +70,15 @@
             ReturnButton.UseVisualStyleBackColor = true;
             ReturnButton.Click += ReturnButton_Click;
             // 
-            // AddToBasket
+            // AddToOrder
             // 
-            AddToBasket.Location = new Point(6, 362);
-            AddToBasket.Name = "AddToBasket";
-            AddToBasket.Size = new Size(133, 23);
-            AddToBasket.TabIndex = 2;
-            AddToBasket.Text = "Add Item to Order List";
-            AddToBasket.UseVisualStyleBackColor = true;
-            AddToBasket.Click += AddToBasket_Click;
+            AddToOrder.Location = new Point(6, 362);
+            AddToOrder.Name = "AddToOrder";
+            AddToOrder.Size = new Size(133, 23);
+            AddToOrder.TabIndex = 2;
+            AddToOrder.Text = "Add Item to Order List";
+            AddToOrder.UseVisualStyleBackColor = true;
+            AddToOrder.Click += AddToBasket_Click;
             // 
             // BuyButton
             // 
@@ -106,15 +106,15 @@
             Basket.Size = new Size(312, 290);
             Basket.TabIndex = 3;
             // 
-            // RemoveItemFromBasket
+            // RemoveFromOrder
             // 
-            RemoveItemFromBasket.Location = new Point(590, 362);
-            RemoveItemFromBasket.Name = "RemoveItemFromBasket";
-            RemoveItemFromBasket.Size = new Size(180, 23);
-            RemoveItemFromBasket.TabIndex = 5;
-            RemoveItemFromBasket.Text = "Remove Item from Order List";
-            RemoveItemFromBasket.UseVisualStyleBackColor = true;
-            RemoveItemFromBasket.Click += RemoveItemFromBasket_Click;
+            RemoveFromOrder.Location = new Point(590, 362);
+            RemoveFromOrder.Name = "RemoveFromOrder";
+            RemoveFromOrder.Size = new Size(180, 23);
+            RemoveFromOrder.TabIndex = 5;
+            RemoveFromOrder.Text = "Remove Item from Order List";
+            RemoveFromOrder.UseVisualStyleBackColor = true;
+            RemoveFromOrder.Click += RemoveItemFromBasket_Click;
             // 
             // TotalLabel
             // 
@@ -155,9 +155,9 @@
             // GroupBox
             // 
             GroupBox.Controls.Add(Items);
-            GroupBox.Controls.Add(AddToBasket);
+            GroupBox.Controls.Add(AddToOrder);
             GroupBox.Controls.Add(Basketlabel);
-            GroupBox.Controls.Add(RemoveItemFromBasket);
+            GroupBox.Controls.Add(RemoveFromOrder);
             GroupBox.Controls.Add(TotalLabel);
             GroupBox.Controls.Add(Basket);
             GroupBox.Controls.Add(BuyButton);
@@ -179,6 +179,7 @@
             Controls.Add(ReturnButton);
             Name = "RestockItems";
             Text = "Restock Items";
+            FormClosed += RestockItems_FormClosed;
             ((System.ComponentModel.ISupportInitialize)Items).EndInit();
             ((System.ComponentModel.ISupportInitialize)Basket).EndInit();
             GroupBox.ResumeLayout(false);
@@ -191,10 +192,10 @@
 
         private DataGridView Items;
         private Button ReturnButton;
-        private Button AddToBasket;
+        private Button AddToOrder;
         private Button BuyButton;
         private DataGridView Basket;
-        private Button RemoveItemFromBasket;
+        private Button RemoveFromOrder;
         private Label TotalLabel;
         private Label ItemLabel;
         private Label Basketlabel;
