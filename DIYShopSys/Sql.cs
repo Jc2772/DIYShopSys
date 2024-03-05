@@ -32,7 +32,7 @@ namespace DIYShopSys
         public int GetNextSupplierId()
         {
             connection.Open();
-            string query = "Select MAX(SupplierId) from Suppliers";
+            string query = "Select MAX(supplier_id) from suppliers";
             OracleCommand cmd = new OracleCommand(query, connection);
             OracleDataReader data = cmd.ExecuteReader();
             connection.Close();
@@ -49,7 +49,7 @@ namespace DIYShopSys
         public int GetNextTypeId()
         {
             connection.Open();
-            string query = "Select MAX(TypeId) from ItemTypes";
+            string query = "Select MAX(type_id) from item_types";
             OracleCommand cmd = new OracleCommand(query, connection);
             OracleDataReader data = cmd.ExecuteReader();
             connection.Close();
@@ -66,7 +66,7 @@ namespace DIYShopSys
         public int GetNextStockId()
         {
             connection.Open();
-            string query = "Select MAX(StockId) from Stock";
+            string query = "Select MAX(item_id) from items";
             OracleCommand cmd = new OracleCommand(query, connection);
             OracleDataReader data = cmd.ExecuteReader();
             connection.Close();
@@ -83,7 +83,7 @@ namespace DIYShopSys
         public int GetNextOrderId()
         {
             connection.Open();
-            string query = "Select MAX(OrderId) from Orders";
+            string query = "Select MAX(order_id) from orders";
             OracleCommand cmd = new OracleCommand(query, connection);
             OracleDataReader data = cmd.ExecuteReader();
             connection.Close();
@@ -100,7 +100,7 @@ namespace DIYShopSys
         public int GetNextSaleId()
         {
             connection.Open();
-            string query = "Select MAX(SaleId) from Sales";
+            string query = "Select MAX(sale_id) from sales";
             OracleCommand cmd = new OracleCommand(query, connection);
             OracleDataReader data = cmd.ExecuteReader();
             connection.Close();

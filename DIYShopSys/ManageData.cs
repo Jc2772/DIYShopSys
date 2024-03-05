@@ -27,17 +27,17 @@ namespace DIYShopSys
             //populate dataset
             if (this.Text.Equals("Update Supplier Details"))
             {
-                DataSet dataset = new Sql().SupplierData();
+                DataSet dataset = new Sql().;
                 Grid.DataSource = dataset.Tables[0];
             }
             else if (this.Text.Equals("Update Type Detail"))
             {
-                DataSet dataset = new Sql().typesData();
+                DataSet dataset = new Sql().;
                 Grid.DataSource = dataset.Tables[0];
             }
             else if (this.Text.Contains("Item"))
             {
-                DataSet dataset = new Sql().itemsData();
+                DataSet dataset = new Sql().;
                 Grid.DataSource = dataset.Tables[0];
                 if (this.Text.Equals("Query Items"))
                 {
