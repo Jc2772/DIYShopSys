@@ -1,6 +1,6 @@
 ﻿namespace DIYShopSys
 {
-    partial class AddAndUpdateSuppliers
+    partial class ManageSuppliers
     {
         /// <summary>
         /// Required designer variable.
@@ -142,7 +142,7 @@
             textBox1.Size = new Size(169, 23);
             textBox1.TabIndex = 21;
             // 
-            // AddAndUpdateSuppliers
+            // ManageSuppliers
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -159,9 +159,9 @@
             Controls.Add(PhoneNumber);
             Controls.Add(SupName);
             Controls.Add(ReturnButton);
-            Name = "AddAndUpdateSuppliers";
+            Name = "ManageSuppliers";
             Text = "add Suplier";
-            FormClosed += AddAndUpdateItems_FormClosed;
+            FormClosed += ManageItems_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

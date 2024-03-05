@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace DIYShopSys
 {
-    public partial class AddAndUpdateSuppliers : Form
+    public partial class ManageSuppliers : Form
     {
 
         //used to return to the main menu
@@ -19,18 +19,18 @@ namespace DIYShopSys
         //used to return to update supplier
         ManageData ManageData;
 
-        public AddAndUpdateSuppliers()
+        public ManageSuppliers()
         {
             InitializeComponent();
         }
-        public AddAndUpdateSuppliers(MainMenu main, String text)
+        public ManageSuppliers(MainMenu main, String text)
         {
             InitializeComponent();
             this.main = main;
             main.Hide();
             this.Text = text;
         }
-        public AddAndUpdateSuppliers(DataGridViewRow Row, ManageData update, String text)
+        public ManageSuppliers(DataGridViewRow Row, ManageData update, String text)
         {
             InitializeComponent();
             this.Text = text;
@@ -120,7 +120,7 @@ namespace DIYShopSys
         }
 
         // closing form
-        private void AddAndUpdateItems_FormClosed(object sender, FormClosedEventArgs e)
+        private void ManageItems_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (main != null)
             {

@@ -12,19 +12,19 @@ using System.Windows.Forms;
 
 namespace DIYShopSys
 {
-    public partial class AddAndUpdateItems : Form
+    public partial class ManageItems : Form
     {
         //used to return to the main menu
         MainMenu main;
         //used to return to update supplier
         ManageData ManageData;
         //Unused
-        public AddAndUpdateItems()
+        public ManageItems()
         {
             InitializeComponent();
         }
         //Add Supplier
-        public AddAndUpdateItems(MainMenu main, String text)
+        public ManageItems(MainMenu main, String text)
         {
             InitializeComponent();
             this.Text = text;
@@ -33,7 +33,7 @@ namespace DIYShopSys
             setup();
         }
         //Update Supplier
-        public AddAndUpdateItems(DataGridViewRow Row, ManageData update, String text)
+        public ManageItems(DataGridViewRow Row, ManageData update, String text)
         {
             InitializeComponent();
             this.Text = text;
@@ -83,7 +83,10 @@ namespace DIYShopSys
             {
                 if (this.Text.Equals("Add Item"))
                 {
-                    MessageBox.Show("You have Added an Item", "Added Item", MessageBoxButtons.OK);
+                    if (checkQuantity())
+                    {
+                        MessageBox.Show("You have Added an Item", "Added Item", MessageBoxButtons.OK);
+                    }
                 }
                 if (this.Text.Equals("Update Item Details"))
                 {
@@ -96,7 +99,7 @@ namespace DIYShopSys
         private Boolean CheckItem()
         {
             // tryparse = https://stackoverflow.com/questions/1019793/how-can-i-convert-string-to-int
-            Boolean IsPriceDouble,IsCostDouble ,IsQuantityInt;
+            Boolean IsPriceDouble, IsCostDouble;
             IsPriceDouble = double.TryParse(Price.Text, out _);
             IsCostDouble = double.TryParse(Price.Text, out _);
             //validate name
@@ -108,7 +111,7 @@ namespace DIYShopSys
             //validate price
             else if (Price.Text.Length > 8 || Price.Text.Length < 4)
             {
-                MessageBox.Show("Invalid Price, Price is not 1-8 characters long","Warning",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Invalid Price, Price is not 1-8 characters long", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else if (Price.Text[Price.Text.Length - 3] != '.')
@@ -137,25 +140,25 @@ namespace DIYShopSys
                 MessageBox.Show("Invalid Cost, Cost is Not Double", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            //validate quantity if add
-            else if (this.Text.Equals("Add Item"))
+            else
             {
+                return true;
+            }
+        }
+        private Boolean checkQuantity() {
+            Boolean IsQuantityInt;
+            //validate quantity if add
                 //parse int - https://code-maze.com/csharp-identify-if-a-string-is-a-number/
-                IsQuantityInt = int.TryParse(Quantity.Text, out _);
-                if (IsQuantityInt == false)
-                {
-                    MessageBox.Show("Invalid Quantity, Quantity is not Int", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-                else if (Quantity.Text.Length > 3 && Quantity.Text.Length < 1)
-                {
-                    MessageBox.Show("Invalid Quantity, Quantity is not 1-3 characters long", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
+            IsQuantityInt = int.TryParse(Quantity.Text, out _);
+            if (IsQuantityInt == false)
+            {
+                MessageBox.Show("Invalid Quantity, Quantity is not Int", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (Quantity.Text.Length > 3 && Quantity.Text.Length < 1)
+            {
+                MessageBox.Show("Invalid Quantity, Quantity is not 1-3 characters long", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else
             {
@@ -163,7 +166,7 @@ namespace DIYShopSys
             }
         }
         // closing form
-        private void AddAndUpdateItems_FormClosed(object sender, FormClosedEventArgs e)
+        private void ManageItems_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (main != null)
             {

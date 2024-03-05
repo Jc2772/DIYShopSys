@@ -26,17 +26,17 @@ namespace DIYShopSys
             this.Text = text;
             if (this.Text.Equals("Manage Supplier Status"))
             {
-                this.dataset = new Sql().SupplierData();
+                this.dataset = new Sql().GetDataSet("select supplier_id,supplier_name,supplier_status from suppliers");
                 Grid.DataSource = dataset.Tables[0];
             }
             else if (this.Text.Equals("Manage Type Status"))
             {
-                this.dataset = new Sql().typesData();
+                this.dataset = new Sql().GetDataSet("select type_id,type_name,type_status from item_types");
                 Grid.DataSource = dataset.Tables[0];
             }
             else if (this.Text.Equals("Manage Item Status"))
             {
-                this.dataset = new Sql().itemsData();
+                this.dataset = new Sql().GetDataSet("select item_id,item_name,item_status");
                 Grid.DataSource = dataset.Tables[0];
             }
         }

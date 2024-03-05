@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DIYShopSys
 
@@ -27,22 +28,24 @@ namespace DIYShopSys
             //populate dataset
             if (this.Text.Equals("Update Supplier Details"))
             {
-                DataSet dataset = new Sql().;
+                DataSet dataset = new Sql().GetDataSet("select supplier_id,supplier_name, phone_number, email, delivery_fee, rep_name from suppliers where supplier_status = 'a'");
                 Grid.DataSource = dataset.Tables[0];
             }
             else if (this.Text.Equals("Update Type Detail"))
             {
-                DataSet dataset = new Sql().;
+                DataSet dataset = new Sql().GetDataSet("select type_id,type_name from item_types where type_status = 'a'");
                 Grid.DataSource = dataset.Tables[0];
             }
-            else if (this.Text.Contains("Item"))
+            else if (this.Text.Equals("Update Item Details"))
             {
-                DataSet dataset = new Sql().;
+                DataSet dataset = new Sql().GetDataSet("select item_id, item_name, item_price, item_cost from items where item_status = 'a'");
                 Grid.DataSource = dataset.Tables[0];
-                if (this.Text.Equals("Query Items"))
-                {
-                    SubmitButton.Visible = false;
-                }
+            }
+            else if (this.Text.Equals("Query Supplier Details"))
+            {
+                DataSet dataset = new Sql().GetDataSet("select supplier_name, phone_number, email, delivery_fee, rep_name from suppliers where supplier_status = 'a'");
+                Grid.DataSource = dataset.Tables[0];
+                SubmitButton.Visible = false;
             }
         }
 
@@ -64,21 +67,21 @@ namespace DIYShopSys
                 if (this.Text.Equals("Update Supplier Details"))
                 {
                     String Text = "Update Supplier Details";
-                    AddAndUpdateSuppliers AddAndUpdateSupplier = new AddAndUpdateSuppliers(row, this, Text);
-                    AddAndUpdateSupplier.Show();
+                    ManageSuppliers ManageSupplier = new ManageSuppliers(row, this, Text);
+                    ManageSupplier.Show();
                 }
                 else if(this.Text.Equals("Update Type Detail"))
                 {
                     String Text = "Update Type Detail";
-                    AddAndUpdateTypes AddAndUpdateTypes = new AddAndUpdateTypes(row, this, Text);
-                    AddAndUpdateTypes.Show();
+                    ManageTypes ManageTypes = new ManageTypes(row, this, Text);
+                    ManageTypes.Show();
                 }
                 //updates item
                 else if (this.Text.Equals("Update Item Details"))
                 {
                     String Text = "Update Item Details";
-                    AddAndUpdateItems AddAndUpdateItems = new AddAndUpdateItems(row, this, Text);
-                    AddAndUpdateItems.Show();
+                    ManageItems ManageItems = new ManageItems(row, this, Text);
+                    ManageItems.Show();
                 } 
             }
             else

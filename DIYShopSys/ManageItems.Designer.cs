@@ -1,6 +1,6 @@
 ﻿namespace DIYShopSys
 {
-    partial class AddAndUpdateItems
+    partial class ManageItems
     {
         /// <summary>
         /// Required designer variable.
@@ -162,7 +162,7 @@
             Type.Size = new Size(169, 23);
             Type.TabIndex = 14;
             // 
-            // AddAndUpdateItems
+            // ManageItems
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -181,9 +181,9 @@
             Controls.Add(ItemName);
             Controls.Add(ReturnButton);
             Controls.Add(SubmitButton);
-            Name = "AddAndUpdateItems";
+            Name = "ManageItems";
             Text = "Form2";
-            FormClosed += AddAndUpdateItems_FormClosed;
+            FormClosed += ManageItems_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

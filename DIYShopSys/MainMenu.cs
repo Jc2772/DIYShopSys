@@ -8,11 +8,11 @@ namespace DIYShopSys
         }
         //this.title comes from https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
         //Add Supplier
-        private void AddAndUpdateItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ManageItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String Text = "Add Supplier";
-            AddAndUpdateSuppliers AddAndUpdateSuppliers = new AddAndUpdateSuppliers(this, Text);
-            AddAndUpdateSuppliers.Show();
+            ManageSuppliers ManageSuppliers = new ManageSuppliers(this, Text);
+            ManageSuppliers.Show();
         }
         //Update Supplier Details
         private void ManageDataToolStripMenuItem_Click(object sender, EventArgs e)
@@ -24,15 +24,23 @@ namespace DIYShopSys
         private void removeSupplierDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String Text = "Manage Supplier Status";
-            ChangeStatus manage = new ChangeStatus(this, Text);
-            manage.Show();
+            ChangeStatus ManageData = new ChangeStatus(this, Text);
+            ManageData.Show();
+        }
+        // Query Supplier Details
+        private void querySupplierDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String Text = "Query Supplier Details";
+            ManageData ManageData = new ManageData(this, Text);
+            ManageData.Show();
+
         }
         //Add Type
         private void addTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String Text = "Add Type";
-            AddAndUpdateTypes AddAndUpdateTypes = new AddAndUpdateTypes(this, Text);
-            AddAndUpdateTypes.Show();
+            ManageTypes ManageTypes = new ManageTypes(this, Text);
+            ManageTypes.Show();
         }
         //Update Type
         private void updateTypesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,13 +60,14 @@ namespace DIYShopSys
         private void addItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String Text = "Add Item";
-            AddAndUpdateItems AddAndUpdateItems = new AddAndUpdateItems(this, Text);
-            AddAndUpdateItems.Show();
+            ManageItems ManageItems = new ManageItems(this, Text);
+            ManageItems.Show();
         }
         //Update Item Details
         private void updateItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManageData ManageData = new ManageData(this, "Update Item Details");
+            String Text = "Update Item Details";
+            ManageData ManageData = new ManageData(this, Text);
             ManageData.Show();
         }
         //Manage Item Status

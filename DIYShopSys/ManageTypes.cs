@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace DIYShopSys
 {
-    public partial class AddAndUpdateTypes : Form
+    public partial class ManageTypes : Form
     {
         MainMenu main;
         ManageData ManageData;
         DataGridViewRow Row;
-        public AddAndUpdateTypes()
+        public ManageTypes()
         {
             InitializeComponent();
         }
-        public AddAndUpdateTypes(MainMenu main, String text)
+        public ManageTypes(MainMenu main, String text)
         {
             InitializeComponent();
             this.Text = Text;
             this.main = main;
             main.Hide();
         }
-        public AddAndUpdateTypes(DataGridViewRow Row, ManageData update, String text)
+        public ManageTypes(DataGridViewRow Row, ManageData update, String text)
         {
             InitializeComponent();
             this.Text = text;
@@ -36,7 +36,7 @@ namespace DIYShopSys
             TypeName.Text = Row.Cells[0].Value.ToString();
         }
         // closing form
-        private void AddAndUpdateItems_FormClosed(object sender, FormClosedEventArgs e)
+        private void ManageItems_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (main != null)
             {

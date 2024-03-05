@@ -1,6 +1,6 @@
 ﻿namespace DIYShopSys
 {
-    partial class AddAndUpdateTypes
+    partial class ManageTypes
     {
         /// <summary>
         /// Required designer variable.
@@ -70,7 +70,7 @@
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
             // 
-            // AddAndUpdateTypes
+            // ManageTypes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -79,9 +79,9 @@
             Controls.Add(ReturnButton);
             Controls.Add(LabelForTypeName);
             Controls.Add(TypeName);
-            Name = "AddAndUpdateTypes";
+            Name = "ManageTypes";
             Text = "Form1";
-            FormClosed += AddAndUpdateItems_FormClosed;
+            FormClosed += ManageItems_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }
