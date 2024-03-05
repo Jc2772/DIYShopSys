@@ -102,7 +102,7 @@ namespace DIYShopSys
         private void resetDataset()
         {
             //how to create a datatable https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable?view=net-7.0
-            this.dataset = new Sql().GetDataSet("");
+            this.dataset = new Sql().GetDataSet("select stock_id, item_name, item_price, quantity from stock where item_status = 'a' and quantity >= 1");
             //creating basket table
             DataTable table = new DataTable("Basket");
             DataColumn column;

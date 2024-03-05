@@ -126,7 +126,7 @@ namespace DIYShopSys
         private void resetDataset()
         {
             //how to create a datatable https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable?view=net-7.0
-            this.dataset = new Sql().GetDataSet("");
+            this.dataset = new Sql().GetDataSet("select supplier_id, supplier_name, delivery_fee, item_name, item_cost from stock inner join suppliers on suppliers.supplier_id = stock.supplier_id where item_status = 'a'");
             //creating basket table
             DataTable table = new DataTable("Basket");
             DataColumn column;
