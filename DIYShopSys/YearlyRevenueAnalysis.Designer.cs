@@ -30,11 +30,13 @@
         {
             ReturnButton = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            comboBox1 = new ComboBox();
+            groupBox1 = new GroupBox();
             SuspendLayout();
             // 
             // ReturnButton
             // 
-            ReturnButton.Location = new Point(410, 12);
+            ReturnButton.Location = new Point(707, 12);
             ReturnButton.Name = "ReturnButton";
             ReturnButton.Size = new Size(75, 23);
             ReturnButton.TabIndex = 2;
@@ -42,19 +44,40 @@
             ReturnButton.UseVisualStyleBackColor = true;
             ReturnButton.Click += ReturnButton_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(12, 12);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 3;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(-1, 41);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(783, 532);
+            groupBox1.TabIndex = 4;
+            groupBox1.TabStop = false;
+            groupBox1.Visible = false;
+            // 
             // YearlyRevenueAnalysis
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(522, 760);
+            ClientSize = new Size(794, 760);
+            Controls.Add(groupBox1);
+            Controls.Add(comboBox1);
             Controls.Add(ReturnButton);
             Name = "YearlyRevenueAnalysis";
-            Text = "analysis";
+            Text = "Yearly Revenue Analysis";
             ResumeLayout(false);
         }
 
         #endregion
         private Button ReturnButton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private ComboBox comboBox1;
+        private GroupBox groupBox1;
     }
 }
