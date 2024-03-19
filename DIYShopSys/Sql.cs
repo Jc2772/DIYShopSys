@@ -11,17 +11,24 @@ namespace DIYShopSys
 {
     internal class Sql
     {
-        OracleConnection connection = new OracleConnection("Data Source = oracle/orcl; User Id = T00225039; Password = kan7_Ww3496c;");
+        OracleConnection connection;
+        public Sql()
+        {
+            String oradb = "Data Source = orcl; User Id = T00225039; Password = kan7_Ww3496c;";
+            this.connection = new OracleConnection(oradb);
+            connection.Open();
+            connection.Close();
+        }
         public void AddOrUpdate(string query)
         {
-            connection.Open();
+            this.connection.Open();
             OracleCommand cmd = new OracleCommand(query, connection);
             cmd.ExecuteNonQuery();
             connection.Close();
         }
         public DataSet GetDataSet(string query)
         {
-            connection.Open();
+            this.connection.Open();
             OracleCommand cmd = new OracleCommand(query, connection);
             OracleDataAdapter dataAdapter = new OracleDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -31,11 +38,11 @@ namespace DIYShopSys
         }
         public int GetNextSupplierId()
         {
-            connection.Open();
+            this.connection.Open();
             string query = "Select MAX(supplier_id) from suppliers";
-            OracleCommand cmd = new OracleCommand(query, connection);
+            OracleCommand cmd = new OracleCommand(query, this.connection);
             OracleDataReader data = cmd.ExecuteReader();
-            connection.Close();
+            this.connection.Close();
             data.Read();
             if (data.IsDBNull(0))
             {
@@ -48,11 +55,11 @@ namespace DIYShopSys
         }
         public int GetNextTypeId()
         {
-            connection.Open();
+            this.connection.Open();
             string query = "Select MAX(type_id) from item_types";
-            OracleCommand cmd = new OracleCommand(query, connection);
+            OracleCommand cmd = new OracleCommand(query, this.connection);
             OracleDataReader data = cmd.ExecuteReader();
-            connection.Close();
+            this.connection.Close();
             data.Read();
             if (data.IsDBNull(0))
             {
@@ -65,11 +72,11 @@ namespace DIYShopSys
         }
         public int GetNextStockId()
         {
-            connection.Open();
+            this.connection.Open();
             string query = "Select MAX(item_id) from items";
-            OracleCommand cmd = new OracleCommand(query, connection);
+            OracleCommand cmd = new OracleCommand(query, this.connection);
             OracleDataReader data = cmd.ExecuteReader();
-            connection.Close();
+            this.connection.Close();
             data.Read();
             if (data.IsDBNull(0))
             {
@@ -82,11 +89,11 @@ namespace DIYShopSys
         }
         public int GetNextOrderId()
         {
-            connection.Open();
+            this.connection.Open();
             string query = "Select MAX(order_id) from orders";
-            OracleCommand cmd = new OracleCommand(query, connection);
+            OracleCommand cmd = new OracleCommand(query, this.connection);
             OracleDataReader data = cmd.ExecuteReader();
-            connection.Close();
+            this.connection.Close();
             data.Read();
             if (data.IsDBNull(0))
             {
@@ -99,11 +106,11 @@ namespace DIYShopSys
         }
         public int GetNextSaleId()
         {
-            connection.Open();
+            this.connection.Open();
             string query = "Select MAX(sale_id) from sales";
-            OracleCommand cmd = new OracleCommand(query, connection);
+            OracleCommand cmd = new OracleCommand(query, this.connection);
             OracleDataReader data = cmd.ExecuteReader();
-            connection.Close();
+            this.connection.Close();
             data.Read();
             if (data.IsDBNull(0))
             {
