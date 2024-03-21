@@ -101,7 +101,6 @@ namespace DIYShopSys
             //quantity
             row[2] = 1;
             dataset.Tables[1].Rows.Add(row);
-            //dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][4]) - 1;
         }
         
 
@@ -122,7 +121,7 @@ namespace DIYShopSys
         private void resetDataset()
         {
             //how to create a datatable https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable?view=net-7.0
-            this.dataset = new Sql().GetDataSet("select supplier_id, supplier_name, delivery_fee, item_name, item_cost from items inner join suppliers on suppliers.supplier_id = stock.supplier_id where item_status = 'a'");
+            this.dataset = new Sql().GetDataSet("select items.supplier_id, supplier_name, delivery_fee, item_name, item_cost from items inner join suppliers on suppliers.supplier_id = items.supplier_id where item_status = 'a'");
             //creating basket table
             DataTable table = new DataTable("Basket");
             DataColumn column;
