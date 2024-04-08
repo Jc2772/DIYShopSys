@@ -130,14 +130,6 @@ namespace DIYShopSys
             Basket.DataSource = dataset.Tables[1];
             total = 0;
         }
-        // closing form
-        private void Sales_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (mainMenu.Visible == false)
-            {
-                mainMenu.Close();
-            }
-        }
         //returns to main menu
         private void ReturnButton_Click(object sender, EventArgs e)
         {

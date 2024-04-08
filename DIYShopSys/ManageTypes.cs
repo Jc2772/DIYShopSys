@@ -33,7 +33,7 @@ namespace DIYShopSys
             this.ManageData = update;
             this.Row = Row;
             this.ManageData.Hide();
-            TypeName.Text = Row.Cells[0].Value.ToString();
+            TypeName.Text = Row.Cells[1].Value.ToString();
         }
         // closing form
         private void ManageItems_FormClosed(object sender, FormClosedEventArgs e)

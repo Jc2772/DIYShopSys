@@ -126,7 +126,7 @@
             ReturnButton.Name = "ReturnButton";
             ReturnButton.Size = new Size(75, 23);
             ReturnButton.TabIndex = 16;
-            ReturnButton.Text = "Return";
+            ReturnButton.Text = "Login";
             ReturnButton.UseVisualStyleBackColor = true;
             ReturnButton.Click += ReturnButton_Click;
             // 
@@ -145,7 +145,6 @@
             Controls.Add(BuyButton);
             Name = "Sales";
             Text = "Sales";
-            FormClosed += Sales_FormClosed;
             ((System.ComponentModel.ISupportInitialize)Items).EndInit();
             ((System.ComponentModel.ISupportInitialize)Basket).EndInit();
             ResumeLayout(false);

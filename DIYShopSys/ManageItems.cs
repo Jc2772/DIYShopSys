@@ -18,6 +18,7 @@ namespace DIYShopSys
         MainMenu main;
         //used to return to update supplier
         ManageData ManageData;
+        Sql sql = new Sql();
         //Unused
         public ManageItems()
         {
@@ -46,19 +47,19 @@ namespace DIYShopSys
             //input old values
             //https://stackoverflow.com/questions/6487839/reading-data-from-datagridview-in-c-sharp
             ItemName.Text = Row.Cells[1].Value.ToString();
-            Price.Text = Row.Cells[4].Value.ToString();
-            Cost.Text = Row.Cells[5].Value.ToString();
-            Quantity.Text = Row.Cells[8].Value.ToString();
+            Price.Text = Row.Cells[2].Value.ToString();
+            Cost.Text = Row.Cells[3].Value.ToString();
+            Quantity.Text = Row.Cells[4].Value.ToString();
             for (int i = 0; i < Supplier.Items.Count; i++)
             {
-                if (Supplier.Items[i].Equals(Row.Cells[7].Value.ToString() + "-" + Row.Cells[6].Value.ToString()))
+                if (Supplier.Items[i].Equals(Row.Cells[5].Value.ToString() + "-" + Row.Cells[6].Value.ToString()))
                 {
                     Supplier.SelectedIndex = i;
                 }
             }
             for (int i = 0;i < Type.Items.Count; i++)
             {
-                if (Type.Items[i].Equals(Row.Cells[3].Value.ToString() + "-" + Row.Cells[2].Value.ToString()))
+                if (Type.Items[i].Equals(Row.Cells[8].Value.ToString() + "-" + Row.Cells[7].Value.ToString()))
                 {
                     Type.SelectedIndex = i;
                 }
@@ -67,13 +68,15 @@ namespace DIYShopSys
         //setup
         public void setup()
         {
-            Supplier.Items.Add("1-Heavenly Plants");
-            Supplier.Items.Add("2-Tims Tools");
-            Supplier.Items.Add("3-ShortGnomes");
-            Type.Items.Add("1-Bulbs");
-            Type.Items.Add("2-Tools");
-            Type.Items.Add("3-Outdoor Furniture");
-            Type.Items.Add("4-Seeds");
+            DataSet dataset = sql.GetDataSet("select supplier_id, supplier_name from suppliers where supplier_status = 'a'");
+            for(int i = 0; i < dataset.Tables[0].Rows.Count; i++) {
+                Supplier.Items.Add(dataset.Tables[0].Rows[i][0] + "-" + dataset.Tables[0].Rows[i][1]);
+            }
+            dataset = sql.GetDataSet("select type_id, type_name from item_types where type_status = 'a'");
+            for(int i = 0; i < dataset.Tables[0].Rows.Count;i++)
+            {
+                Type.Items.Add(dataset.Tables[0].Rows[i][0] + "-" + dataset.Tables[0].Rows[i][1]);
+            }
         }
         //submit button
         private void SubmitButton_Click(object sender, EventArgs e)

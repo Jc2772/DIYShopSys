@@ -47,26 +47,28 @@ namespace DIYShopSys
             }
             else if (this.Text.Equals("Update Item Details"))
             {
-                DataSet dataset = new Sql().GetDataSet("select item_id, item_name, item_price, item_cost,items.supplier_id,supplier_name from items inner join suppliers on suppliers.supplier_id = items.supplier_id where item_status = 'a'");
+                DataSet dataset = new Sql().GetDataSet(
+                    "select item_id, item_name, item_price, item_cost,quantity,items.supplier_id,supplier_name,type_name,items.type_id from (items inner join suppliers on suppliers.supplier_id = items.supplier_id) inner join item_types on item_types.type_id = items.type_id where item_status = 'a'");
                 Grid.DataSource = dataset.Tables[0];
                 Grid.Columns[0].Visible = false;
-                Grid.Columns[4].Visible = false;
+                Grid.Columns[5].Visible = false;
+                Grid.Columns[8].Visible = false;
                 Grid.Columns[1].HeaderText = "Item name";
                 Grid.Columns[2].HeaderText = "Price";
                 Grid.Columns[3].HeaderText = "Cost";
-                Grid.Columns[5].HeaderText = "Supplier";
+                Grid.Columns[6].HeaderText = "Supplier";
+                Grid.Columns[7].HeaderText = "Type";
 
             }
             else if (this.Text.Equals("Query Supplier Details"))
             {
                 DataSet dataset = new Sql().GetDataSet("select supplier_name, phone_number, email, delivery_fee, rep_name from suppliers where supplier_status = 'a'");
                 Grid.DataSource = dataset.Tables[0];
-                Grid.Columns[0].Visible = false;
-                Grid.Columns[1].HeaderText = "Supplier name";
-                Grid.Columns[2].HeaderText = "Phone Number";
-                Grid.Columns[3].HeaderText = "Email";
-                Grid.Columns[4].HeaderText = "Delivery Fee";
-                Grid.Columns[5].HeaderText = "Rep Name";
+                Grid.Columns[0].HeaderText = "Supplier name";
+                Grid.Columns[1].HeaderText = "Phone Number";
+                Grid.Columns[2].HeaderText = "Email";
+                Grid.Columns[3].HeaderText = "Delivery Fee";
+                Grid.Columns[4].HeaderText = "Rep Name";
                 SubmitButton.Visible = false;
             }
         }

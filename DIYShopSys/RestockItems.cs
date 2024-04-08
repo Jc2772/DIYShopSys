@@ -154,7 +154,7 @@ namespace DIYShopSys
         {
             if (mainMenu.Visible == false)
             {
-                mainMenu.Close();
+                Application.Exit();
             }
         }
         //returns to main menu
