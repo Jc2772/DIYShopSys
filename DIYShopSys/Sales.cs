@@ -91,17 +91,24 @@ namespace DIYShopSys
         }
         private void addToBasket()
         {
-            DataRow row = dataset.Tables[1].NewRow();
-            //id
-            row[0] = Items.SelectedRows[0].Cells[0].Value.ToString();
-            //name
-            row[1] = Items.SelectedRows[0].Cells[1].Value.ToString();
-            //price
-            row[2] = Items.SelectedRows[0].Cells[2].Value.ToString();
-            //quantity
-            row[3] = 1;
-            dataset.Tables[1].Rows.Add(row);
-            dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) - 1;
+            if (Convert.ToInt32(Items.SelectedRows[0].Cells[3].Value) == 0)
+            {
+                MessageBox.Show("Maximum" + Items.SelectedRows[0].Cells[1].Value.ToString() + "Reached", "Error", MessageBoxButtons.OK);
+            }
+            else{
+                DataRow row = dataset.Tables[1].NewRow();
+                //id
+                row[0] = Items.SelectedRows[0].Cells[0].Value.ToString();
+                //name
+                row[1] = Items.SelectedRows[0].Cells[1].Value.ToString();
+                //price
+                row[2] = Items.SelectedRows[0].Cells[2].Value.ToString();
+                //quantity
+                row[3] = 1;
+                dataset.Tables[1].Rows.Add(row);
+                dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) - 1;
+            }
+
         }
         private void resetDataset()
         {
