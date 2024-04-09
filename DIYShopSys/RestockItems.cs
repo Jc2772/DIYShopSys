@@ -97,9 +97,9 @@ namespace DIYShopSys
         {
             DataRow row = dataset.Tables[1].NewRow();
             //name
-            row[0] = Items.SelectedCells[0].Value.ToString();
+            row[0] = Items.SelectedRows[0].Cells[0].Value.ToString();
             //price
-            row[1] = Items.SelectedCells[2].Value.ToString();
+            row[1] = Items.SelectedRows[0].Cells[1].Value.ToString();
             //quantity
             row[2] = 1;
             dataset.Tables[1].Rows.Add(row);

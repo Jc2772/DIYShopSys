@@ -56,21 +56,21 @@ namespace DIYShopSys
 
         private void RemoveFromBasket_Click(object sender, EventArgs e)
         {
-            if (Items.SelectedCells.Count == 1)
+            if (Basket.SelectedRows.Count == 1)
             {
-                total -= Convert.ToDouble(Basket.SelectedCells[3].Value.ToString());
+                total -= Convert.ToDouble(Basket.SelectedRows[0].Cells[3].Value.ToString());
                 TotalLabel.Text = "total = " + total;
                 if (Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][2]) == 1)
                 {
                     for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
                     {
-                        if (dataset.Tables[0].Rows[i][0].Equals(Basket.SelectedCells[0].Value.ToString()))
+                        if (dataset.Tables[0].Rows[i][0].Equals(Basket.SelectedRows[0].Cells[0].Value.ToString()))
                         {
                             dataset.Tables[0].Rows[i][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) + 1;
-
-                            dataset.Tables[1].Rows.RemoveAt(Basket.SelectedRows[0].Index);
                         }
                     }
+
+                    dataset.Tables[1].Rows.RemoveAt(Basket.SelectedRows[0].Index);
                 }
                 else
                 {
