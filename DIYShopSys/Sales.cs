@@ -67,9 +67,10 @@ namespace DIYShopSys
                         if (dataset.Tables[0].Rows[i][0].Equals(Basket.SelectedCells[0].Value.ToString()))
                         {
                             dataset.Tables[0].Rows[i][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) + 1;
+
+                            dataset.Tables[1].Rows.RemoveAt(Basket.SelectedRows[0].Index);
                         }
                     }
-                    dataset.Tables[1].Rows.RemoveAt(Basket.SelectedRows[0].Index);
                 }
                 else
                 {
