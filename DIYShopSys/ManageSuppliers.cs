@@ -42,6 +42,7 @@ namespace DIYShopSys
             PhoneNumber.Text = Row.Cells[2].Value.ToString();
             Email.Text = Row.Cells[3].Value.ToString();
             DeliveryFee.Text = Row.Cells[4].Value.ToString();
+            RepName.Text = Row.Cells[5].Value.ToString();
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)

@@ -39,7 +39,7 @@
             labelForDeliveryFee = new Label();
             DeliveryFee = new TextBox();
             LabelForRepName = new Label();
-            textBox1 = new TextBox();
+            RepName = new TextBox();
             SuspendLayout();
             // 
             // LabelForEmail
@@ -135,19 +135,19 @@
             LabelForRepName.TabIndex = 20;
             LabelForRepName.Text = "Rep Name";
             // 
-            // textBox1
+            // RepName
             // 
-            textBox1.Location = new Point(125, 178);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(169, 23);
-            textBox1.TabIndex = 21;
+            RepName.Location = new Point(125, 178);
+            RepName.Name = "RepName";
+            RepName.Size = new Size(169, 23);
+            RepName.TabIndex = 21;
             // 
             // ManageSuppliers
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(367, 280);
-            Controls.Add(textBox1);
+            Controls.Add(RepName);
             Controls.Add(LabelForRepName);
             Controls.Add(labelForDeliveryFee);
             Controls.Add(DeliveryFee);
@@ -179,6 +179,6 @@
         private Label labelForDeliveryFee;
         private TextBox DeliveryFee;
         private Label LabelForRepName;
-        private TextBox textBox1;
+        private TextBox RepName;
     }
 }

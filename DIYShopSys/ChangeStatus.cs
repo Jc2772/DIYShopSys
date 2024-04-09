@@ -28,16 +28,25 @@ namespace DIYShopSys
             {
                 this.dataset = new Sql().GetDataSet("select supplier_id,supplier_name,supplier_status from suppliers");
                 Grid.DataSource = dataset.Tables[0];
+                Grid.Columns[0].Visible = false;
+                Grid.Columns[1].HeaderText = "Supplier";
+                Grid.Columns[2].HeaderText = "Status";
             }
             else if (this.Text.Equals("Manage Type Status"))
             {
                 this.dataset = new Sql().GetDataSet("select type_id,type_name,type_status from item_types");
                 Grid.DataSource = dataset.Tables[0];
+                Grid.Columns[0].Visible = false;
+                Grid.Columns[1].HeaderText = "Type";
+                Grid.Columns[2].HeaderText = "Status";
             }
             else if (this.Text.Equals("Manage Item Status"))
             {
-                this.dataset = new Sql().GetDataSet("select item_id,item_name,item_status");
+                this.dataset = new Sql().GetDataSet("select item_id,item_name,item_status from items");
                 Grid.DataSource = dataset.Tables[0];
+                Grid.Columns[0].Visible = false;
+                Grid.Columns[1].HeaderText = "Item";
+                Grid.Columns[2].HeaderText = "Status";
             }
         }
         // return
