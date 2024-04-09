@@ -14,7 +14,7 @@ namespace DIYShopSys
         OracleConnection connection;
         public Sql()
         {
-            String oradb = "Data Source = orcl; User Id = T00225039; Password = kan7_Ww3496c;";
+            String oradb = "Data Source = oracle/orcl; User Id = T00225039; Password = kan7_Ww3496c;";
             this.connection = new OracleConnection(oradb);
             connection.Open();
             connection.Close();
