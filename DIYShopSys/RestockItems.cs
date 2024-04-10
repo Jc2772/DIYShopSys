@@ -90,6 +90,7 @@ namespace DIYShopSys
             MessageBox.Show("Are You Sure", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (DialogResult == DialogResult.Yes)
             {
+                new Sql().AddOrUpdate();
                 MessageBox.Show("Items Ordered", "Items Ordered", MessageBoxButtons.OK);
             }
         }
@@ -104,7 +105,7 @@ namespace DIYShopSys
             row[2] = 1;
             dataset.Tables[1].Rows.Add(row);
         }
-        
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

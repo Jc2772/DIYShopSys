@@ -78,11 +78,14 @@ namespace DIYShopSys
             {
                 if (this.Text.Equals("Update Type")) {
 
-                    MessageBox.Show("Updating Type");
+                    new Sql().AddOrUpdate();
+                    MessageBox.Show("Updating Type Name");
                     ManageData.Show();
                     this.Close();
                 }
-                else{
+                else
+                {
+                    new Sql().AddOrUpdate();
                     MessageBox.Show("Adding Type");
                 }
             }

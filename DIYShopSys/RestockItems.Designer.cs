@@ -86,7 +86,7 @@
             BuyButton.Name = "BuyButton";
             BuyButton.Size = new Size(54, 23);
             BuyButton.TabIndex = 4;
-            BuyButton.Text = "Buy";
+            BuyButton.Text = "Order";
             BuyButton.UseVisualStyleBackColor = true;
             BuyButton.Click += BuyButton_Click;
             // 
