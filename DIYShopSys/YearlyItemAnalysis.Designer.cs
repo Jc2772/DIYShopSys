@@ -38,7 +38,7 @@
             // 
             // ReturnButton
             // 
-            ReturnButton.Location = new Point(413, 12);
+            ReturnButton.Location = new Point(534, 12);
             ReturnButton.Name = "ReturnButton";
             ReturnButton.Size = new Size(75, 23);
             ReturnButton.TabIndex = 3;
@@ -52,7 +52,7 @@
             chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chart1.Legends.Add(legend1);
-            chart1.Location = new Point(28, 32);
+            chart1.Location = new Point(12, 61);
             chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
@@ -67,7 +67,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(621, 344);
+            ClientSize = new Size(621, 373);
             Controls.Add(chart1);
             Controls.Add(ReturnButton);
             Name = "YearlyItemAnalysis";
