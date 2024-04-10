@@ -2,9 +2,15 @@ namespace DIYShopSys
 {
     public partial class MainMenu : Form
     {
+        Sales sales;
         public MainMenu()
         {
             InitializeComponent();
+        }
+        public MainMenu(Sales sales)
+        {
+            InitializeComponent();
+            this.sales = sales;
         }
         //this.title comes from https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
         //Add Supplier
@@ -100,6 +106,20 @@ namespace DIYShopSys
         {
             YearlyItemAnalysis analysis = new YearlyItemAnalysis(this);
             analysis.Show();
+        }
+
+        private void ReturnButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.sales.Show();
+        }
+
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(this.sales.Visible == false)
+            {
+                Application.Exit();
+            }
         }
     }
 }

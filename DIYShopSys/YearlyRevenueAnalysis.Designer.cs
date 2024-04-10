@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             ReturnButton = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            comboBox1 = new ComboBox();
+            Year = new ComboBox();
             groupBox1 = new GroupBox();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ProfitChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            GrossProfitChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chart2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ProfitChart).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)GrossProfitChart).BeginInit();
             SuspendLayout();
             // 
             // ReturnButton
@@ -55,18 +55,19 @@
             ReturnButton.UseVisualStyleBackColor = true;
             ReturnButton.Click += ReturnButton_Click;
             // 
-            // comboBox1
+            // Year
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 12);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 3;
+            Year.FormattingEnabled = true;
+            Year.Location = new Point(12, 12);
+            Year.Name = "Year";
+            Year.Size = new Size(121, 23);
+            Year.TabIndex = 3;
+            Year.SelectedIndexChanged += Year_SelectedIndexChanged;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(chart2);
-            groupBox1.Controls.Add(chart1);
+            groupBox1.Controls.Add(ProfitChart);
+            groupBox1.Controls.Add(GrossProfitChart);
             groupBox1.Location = new Point(-1, 41);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(783, 532);
@@ -74,37 +75,39 @@
             groupBox1.TabStop = false;
             groupBox1.Visible = false;
             // 
-            // chart1
+            // ProfitChart
             // 
-            chartArea2.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chart1.Legends.Add(legend2);
-            chart1.Location = new Point(13, 31);
-            chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chart1.Series.Add(series2);
-            chart1.Size = new Size(384, 495);
-            chart1.TabIndex = 0;
-            chart1.Text = "chart1";
+            chartArea3.Name = "ChartArea1";
+            ProfitChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            ProfitChart.Legends.Add(legend3);
+            ProfitChart.Location = new Point(403, 31);
+            ProfitChart.Name = "ProfitChart";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            ProfitChart.Series.Add(series3);
+            ProfitChart.Size = new Size(374, 495);
+            ProfitChart.TabIndex = 1;
+            ProfitChart.Text = "chart2";
+            ProfitChart.Visible = false;
             // 
-            // chart2
+            // GrossProfitChart
             // 
-            chartArea1.Name = "ChartArea1";
-            chart2.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chart2.Legends.Add(legend1);
-            chart2.Location = new Point(403, 31);
-            chart2.Name = "chart2";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            chart2.Series.Add(series1);
-            chart2.Size = new Size(374, 495);
-            chart2.TabIndex = 1;
-            chart2.Text = "chart2";
+            chartArea4.Name = "ChartArea1";
+            GrossProfitChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            GrossProfitChart.Legends.Add(legend4);
+            GrossProfitChart.Location = new Point(13, 31);
+            GrossProfitChart.Name = "GrossProfitChart";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            GrossProfitChart.Series.Add(series4);
+            GrossProfitChart.Size = new Size(384, 495);
+            GrossProfitChart.TabIndex = 0;
+            GrossProfitChart.Text = "chart1";
+            GrossProfitChart.Visible = false;
             // 
             // YearlyRevenueAnalysis
             // 
@@ -112,22 +115,22 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(794, 760);
             Controls.Add(groupBox1);
-            Controls.Add(comboBox1);
+            Controls.Add(Year);
             Controls.Add(ReturnButton);
             Name = "YearlyRevenueAnalysis";
             Text = "Yearly Revenue Analysis";
             groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ProfitChart).EndInit();
+            ((System.ComponentModel.ISupportInitialize)GrossProfitChart).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private Button ReturnButton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private ComboBox comboBox1;
+        private ComboBox Year;
         private GroupBox groupBox1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ProfitChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart GrossProfitChart;
     }
 }

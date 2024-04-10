@@ -46,6 +46,7 @@
             analysisToolStripMenuItem = new ToolStripMenuItem();
             yearlyRevenueAnalysisToolStripMenuItem = new ToolStripMenuItem();
             yearlyItemAnalysisToolStripMenuItem = new ToolStripMenuItem();
+            ReturnButton = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { suppliersToolStripMenuItem, typesToolStripMenuItem, itemsToolStripMenuItem, analysisToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(686, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -131,28 +132,28 @@
             // addItemToolStripMenuItem
             // 
             addItemToolStripMenuItem.Name = "addItemToolStripMenuItem";
-            addItemToolStripMenuItem.Size = new Size(180, 22);
+            addItemToolStripMenuItem.Size = new Size(179, 22);
             addItemToolStripMenuItem.Text = "Add Item";
             addItemToolStripMenuItem.Click += addItemToolStripMenuItem_Click;
             // 
             // updateItemToolStripMenuItem
             // 
             updateItemToolStripMenuItem.Name = "updateItemToolStripMenuItem";
-            updateItemToolStripMenuItem.Size = new Size(180, 22);
+            updateItemToolStripMenuItem.Size = new Size(179, 22);
             updateItemToolStripMenuItem.Text = "Update Item Details";
             updateItemToolStripMenuItem.Click += updateItemToolStripMenuItem_Click;
             // 
             // removeItemToolStripMenuItem
             // 
             removeItemToolStripMenuItem.Name = "removeItemToolStripMenuItem";
-            removeItemToolStripMenuItem.Size = new Size(180, 22);
+            removeItemToolStripMenuItem.Size = new Size(179, 22);
             removeItemToolStripMenuItem.Text = "Manage Item Status";
             removeItemToolStripMenuItem.Click += removeItemToolStripMenuItem_Click;
             // 
             // restockItemToolStripMenuItem
             // 
             restockItemToolStripMenuItem.Name = "restockItemToolStripMenuItem";
-            restockItemToolStripMenuItem.Size = new Size(180, 22);
+            restockItemToolStripMenuItem.Size = new Size(179, 22);
             restockItemToolStripMenuItem.Text = "Restock Item";
             restockItemToolStripMenuItem.Click += restockItemToolStripMenuItem_Click;
             // 
@@ -177,15 +178,27 @@
             yearlyItemAnalysisToolStripMenuItem.Text = "Yearly Item Analysis";
             yearlyItemAnalysisToolStripMenuItem.Click += yearlyItemAnalysisToolStripMenuItem_Click;
             // 
+            // ReturnButton
+            // 
+            ReturnButton.Location = new Point(611, 1);
+            ReturnButton.Name = "ReturnButton";
+            ReturnButton.Size = new Size(75, 23);
+            ReturnButton.TabIndex = 1;
+            ReturnButton.Text = "Return";
+            ReturnButton.UseVisualStyleBackColor = true;
+            ReturnButton.Click += ReturnButton_Click;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(686, 450);
+            Controls.Add(ReturnButton);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "MainMenu";
             Text = "Form1";
+            FormClosed += MainMenu_FormClosed;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -212,5 +225,6 @@
         private ToolStripMenuItem updateTypesToolStripMenuItem;
         private ToolStripMenuItem manageTypeStatusToolStripMenuItem;
         private ToolStripMenuItem querySupplierDetailsToolStripMenuItem;
+        private Button ReturnButton;
     }
 }

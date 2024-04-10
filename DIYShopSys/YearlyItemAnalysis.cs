@@ -23,12 +23,26 @@ namespace DIYShopSys
             main.Show();
             this.Close();
         }
+        private void Year_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void GetDate()
+        {
+            int year = DateTime.Today.Year;
+
+            for (int i = 0; i < 5; i++)
+            {
+                Year.Items.Add(year.ToString());
+                year--;
+            }
+        }
         // stop program
         private void ChangeStatus_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (main.Visible == false)
             {
-                main.Close();
+                Application.Exit();
             }
         }
     }

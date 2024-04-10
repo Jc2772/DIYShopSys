@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             ReturnButton = new Button();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
+            ItemChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            Year = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)ItemChart).BeginInit();
             SuspendLayout();
             // 
             // ReturnButton
@@ -46,39 +47,50 @@
             ReturnButton.UseVisualStyleBackColor = true;
             ReturnButton.Click += ReturnButton_Click;
             // 
-            // chart1
+            // ItemChart
             // 
-            chartArea1.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chart1.Legends.Add(legend1);
-            chart1.Location = new Point(12, 61);
-            chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            chart1.Series.Add(series1);
-            chart1.Size = new Size(300, 300);
-            chart1.TabIndex = 4;
-            chart1.Text = "chart1";
+            chartArea2.Name = "ChartArea1";
+            ItemChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            ItemChart.Legends.Add(legend2);
+            ItemChart.Location = new Point(12, 61);
+            ItemChart.Name = "ItemChart";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            ItemChart.Series.Add(series2);
+            ItemChart.Size = new Size(300, 300);
+            ItemChart.TabIndex = 4;
+            ItemChart.Visible = false;
+            // 
+            // Year
+            // 
+            Year.FormattingEnabled = true;
+            Year.Location = new Point(12, 13);
+            Year.Name = "Year";
+            Year.Size = new Size(103, 23);
+            Year.TabIndex = 5;
+            Year.SelectedIndexChanged += Year_SelectedIndexChanged;
             // 
             // YearlyItemAnalysis
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(621, 373);
-            Controls.Add(chart1);
+            Controls.Add(Year);
+            Controls.Add(ItemChart);
             Controls.Add(ReturnButton);
             Name = "YearlyItemAnalysis";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ItemChart).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button ReturnButton;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ItemChart;
+        private ComboBox Year;
     }
 }
