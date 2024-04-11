@@ -25,6 +25,7 @@ namespace DIYShopSys
             this.main = main;
             main.Hide();
             InitializeComponent();
+            GetDates();
 
         }
         private void ReturnButton_Click(object sender, EventArgs e)
@@ -34,13 +35,14 @@ namespace DIYShopSys
         }
         private void Year_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             GetData();
             GrossProfitChart.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
             GrossProfitChart.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
             GrossProfitChart.Series[0].LegendText = "YearlyIncome in €";
             GrossProfitChart.Series[0].Points.DataBindXY(months, grossammounts);
             GrossProfitChart.ChartAreas["ChartArea1"].AxisX.LabelStyle.Format = "C";
-            
+
             GrossProfitChart.Series[0].Label = "#VALY";
 
             GrossProfitChart.Titles.Add("Yearly Gross Revenue");
@@ -61,9 +63,9 @@ namespace DIYShopSys
         }
         private void GetData()
         {
-            DataSet ds = new Sql().GetDataSet("SELECT SUM(total), to_Char(Sale_Date,'MM') FROM Sales GROUP BY to_Char(Sale_Date,'MM');");
-            DataSet ds2 = new Sql().GetDataSet("SELECT SUM(total), to_Char(Order_Date,'MM') FROM Orders GROUP BY to_Char(Order_Date,'MM');");
-            for(int i = 0; i < 12; i++)
+            DataSet ds = new Sql().GetDataSet("SELECT SUM(total), to_Char(Sale_Date,'MM') FROM Sales Where To_Char(Order_Date,'YYYY') = '2024' GROUP BY to_Char(Sale_Date,'MM');");
+            DataSet ds2 = new Sql().GetDataSet("SELECT SUM(total), to_Char(Order_Date,'MM') FROM Orders Where To_Char(Order_Date,'YYYY') = '2024'  GROUP BY to_Char(Order_Date,'MM');");
+            for (int i = 0; i < 12; i++)
             {
                 grossammounts[i] = Convert.ToDecimal(ds.Tables[0].Rows[i][0]);
                 months[i] = GetMonths(Convert.ToInt32(ds.Tables[0].Rows[i][1]));
@@ -140,10 +142,18 @@ namespace DIYShopSys
                     {
                         return "FEB";
                     }
-                default: 
+                default:
                     {
                         return "Oth";
                     }
+            }
+        }
+
+        private void YearlyRevenueAnalysis_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!main.Visible)
+            {
+                Application.Exit();
             }
         }
     }

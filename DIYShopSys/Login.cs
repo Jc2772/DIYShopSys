@@ -28,6 +28,7 @@ namespace DIYShopSys
             {
                 this.sales.Hide();
                 new MainMenu(this.sales).Show();
+                this.Close();
             }
             else
             {

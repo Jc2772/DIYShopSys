@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             ReturnButton = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             Year = new ComboBox();
@@ -77,16 +77,16 @@
             // 
             // ProfitChart
             // 
-            chartArea3.Name = "ChartArea1";
-            ProfitChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            ProfitChart.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            ProfitChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            ProfitChart.Legends.Add(legend1);
             ProfitChart.Location = new Point(403, 31);
             ProfitChart.Name = "ProfitChart";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            ProfitChart.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            ProfitChart.Series.Add(series1);
             ProfitChart.Size = new Size(374, 495);
             ProfitChart.TabIndex = 1;
             ProfitChart.Text = "chart2";
@@ -94,16 +94,16 @@
             // 
             // GrossProfitChart
             // 
-            chartArea4.Name = "ChartArea1";
-            GrossProfitChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            GrossProfitChart.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            GrossProfitChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            GrossProfitChart.Legends.Add(legend2);
             GrossProfitChart.Location = new Point(13, 31);
             GrossProfitChart.Name = "GrossProfitChart";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            GrossProfitChart.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            GrossProfitChart.Series.Add(series2);
             GrossProfitChart.Size = new Size(384, 495);
             GrossProfitChart.TabIndex = 0;
             GrossProfitChart.Text = "chart1";
@@ -119,6 +119,7 @@
             Controls.Add(ReturnButton);
             Name = "YearlyRevenueAnalysis";
             Text = "Yearly Revenue Analysis";
+            FormClosed += YearlyRevenueAnalysis_FormClosed;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ProfitChart).EndInit();
             ((System.ComponentModel.ISupportInitialize)GrossProfitChart).EndInit();

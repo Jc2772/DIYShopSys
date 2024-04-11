@@ -153,7 +153,7 @@ namespace DIYShopSys
         //returns to main menu
         private void ReturnButton_Click(object sender, EventArgs e)
         {
-            
+            new Login(this).Show();
         }
     }
 }
