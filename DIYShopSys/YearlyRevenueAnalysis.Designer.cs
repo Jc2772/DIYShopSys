@@ -37,10 +37,10 @@
             ReturnButton = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             Year = new ComboBox();
-            groupBox1 = new GroupBox();
+            DataBox = new GroupBox();
             ProfitChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             GrossProfitChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            groupBox1.SuspendLayout();
+            DataBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ProfitChart).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GrossProfitChart).BeginInit();
             SuspendLayout();
@@ -64,26 +64,31 @@
             Year.TabIndex = 3;
             Year.SelectedIndexChanged += Year_SelectedIndexChanged;
             // 
-            // groupBox1
+            // DataBox
             // 
-            groupBox1.Controls.Add(ProfitChart);
-            groupBox1.Controls.Add(GrossProfitChart);
-            groupBox1.Location = new Point(-1, 41);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(783, 532);
-            groupBox1.TabIndex = 4;
-            groupBox1.TabStop = false;
-            groupBox1.Visible = false;
+            DataBox.Controls.Add(ProfitChart);
+            DataBox.Controls.Add(GrossProfitChart);
+            DataBox.Location = new Point(-1, 41);
+            DataBox.Name = "DataBox";
+            DataBox.Size = new Size(783, 532);
+            DataBox.TabIndex = 4;
+            DataBox.TabStop = false;
+            DataBox.Visible = false;
             // 
             // ProfitChart
             // 
+            chartArea1.AxisX.Interval = 1D;
             chartArea1.Name = "ChartArea1";
             ProfitChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             ProfitChart.Legends.Add(legend1);
-            ProfitChart.Location = new Point(403, 31);
+            ProfitChart.Location = new Point(409, 31);
             ProfitChart.Name = "ProfitChart";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series1.EmptyPointStyle.IsValueShownAsLabel = true;
+            series1.IsXValueIndexed = true;
+            series1.LabelAngle = 1;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             ProfitChart.Series.Add(series1);
@@ -94,6 +99,7 @@
             // 
             // GrossProfitChart
             // 
+            chartArea2.AxisX.Interval = 1D;
             chartArea2.Name = "ChartArea1";
             GrossProfitChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -101,6 +107,10 @@
             GrossProfitChart.Location = new Point(13, 31);
             GrossProfitChart.Name = "GrossProfitChart";
             series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series2.EmptyPointStyle.IsValueShownAsLabel = true;
+            series2.EmptyPointStyle.LabelAngle = 1;
+            series2.IsXValueIndexed = true;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             GrossProfitChart.Series.Add(series2);
@@ -114,13 +124,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(794, 760);
-            Controls.Add(groupBox1);
+            Controls.Add(DataBox);
             Controls.Add(Year);
             Controls.Add(ReturnButton);
             Name = "YearlyRevenueAnalysis";
             Text = "Yearly Revenue Analysis";
             FormClosed += YearlyRevenueAnalysis_FormClosed;
-            groupBox1.ResumeLayout(false);
+            DataBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ProfitChart).EndInit();
             ((System.ComponentModel.ISupportInitialize)GrossProfitChart).EndInit();
             ResumeLayout(false);
@@ -130,7 +140,7 @@
         private Button ReturnButton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ComboBox Year;
-        private GroupBox groupBox1;
+        private GroupBox DataBox;
         private System.Windows.Forms.DataVisualization.Charting.Chart ProfitChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart GrossProfitChart;
     }
