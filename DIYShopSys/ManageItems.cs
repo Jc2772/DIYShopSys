@@ -19,6 +19,9 @@ namespace DIYShopSys
         //used to return to update supplier
         ManageData ManageData;
         Sql sql = new Sql();
+
+        String[] ArrTypeId, ArrSupplierId;
+        String SupplierId, TypeId, ItemId;
         //Unused
         public ManageItems()
         {
@@ -57,7 +60,7 @@ namespace DIYShopSys
                     Supplier.SelectedIndex = i;
                 }
             }
-            for (int i = 0;i < Type.Items.Count; i++)
+            for (int i = 0; i < Type.Items.Count; i++)
             {
                 if (Type.Items[i].Equals(Row.Cells[8].Value.ToString() + "-" + Row.Cells[7].Value.ToString()))
                 {
@@ -69,12 +72,17 @@ namespace DIYShopSys
         public void setup()
         {
             DataSet dataset = sql.GetDataSet("select supplier_id, supplier_name from suppliers where supplier_status = 'a'");
-            for(int i = 0; i < dataset.Tables[0].Rows.Count; i++) {
+            this.ArrSupplierId = new string[dataset.Tables[0].Rows.Count];
+            for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
+            {
+                ArrSupplierId[i] = dataset.Tables[0].Rows[i][0].ToString();
                 Supplier.Items.Add(dataset.Tables[0].Rows[i][0] + "-" + dataset.Tables[0].Rows[i][1]);
             }
             dataset = sql.GetDataSet("select type_id, type_name from item_types where type_status = 'a'");
-            for(int i = 0; i < dataset.Tables[0].Rows.Count;i++)
+            this.ArrTypeId = new string[dataset.Tables[0].Rows.Count];
+            for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
             {
+                ArrTypeId[i] = dataset.Tables[0].Rows[i][0].ToString();
                 Type.Items.Add(dataset.Tables[0].Rows[i][0] + "-" + dataset.Tables[0].Rows[i][1]);
             }
         }
@@ -88,7 +96,7 @@ namespace DIYShopSys
                 {
                     if (checkQuantity())
                     {
-                        new Sql().AddOrUpdate("");
+                        new Sql().AddOrUpdate("Insert Into Item (Item_Id,Item_Name,Item_Price,Item_Cost,Quantity,Supplier_Id,Type_Id,Item_Status) Values");
                         MessageBox.Show("You have Added an Item", "Added Item", MessageBoxButtons.OK);
                     }
                 }
@@ -150,10 +158,11 @@ namespace DIYShopSys
                 return true;
             }
         }
-        private Boolean checkQuantity() {
+        private Boolean checkQuantity()
+        {
             Boolean IsQuantityInt;
             //validate quantity if add
-                //parse int - https://code-maze.com/csharp-identify-if-a-string-is-a-number/
+            //parse int - https://code-maze.com/csharp-identify-if-a-string-is-a-number/
             IsQuantityInt = int.TryParse(Quantity.Text, out _);
             if (IsQuantityInt == false)
             {
@@ -200,6 +209,28 @@ namespace DIYShopSys
             {
                 main.Show();
                 this.Close();
+            }
+        }
+
+        private void Type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < ArrTypeId.Length; i++)
+            {
+                if (Type.Text.Contains(ArrTypeId[i]))
+                {
+                    TypeId = ArrTypeId[i];
+                }
+            }
+        }
+
+        private void Supplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for(int i = 0; i < ArrSupplierId.Length; i++)
+            {
+                if (Supplier.Text.Contains(ArrSupplierId[i]))
+                {
+                    SupplierId = ArrSupplierId[i];
+                }
             }
         }
     }

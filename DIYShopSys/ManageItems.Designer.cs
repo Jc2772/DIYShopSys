@@ -92,6 +92,7 @@
             Supplier.Name = "Supplier";
             Supplier.Size = new Size(169, 23);
             Supplier.TabIndex = 6;
+            Supplier.SelectedIndexChanged += Supplier_SelectedIndexChanged;
             // 
             // LabelForName
             // 
@@ -161,6 +162,7 @@
             Type.Name = "Type";
             Type.Size = new Size(169, 23);
             Type.TabIndex = 14;
+            Type.SelectedIndexChanged += Type_SelectedIndexChanged;
             // 
             // ManageItems
             // 

@@ -15,6 +15,7 @@ namespace DIYShopSys
         MainMenu main;
         ManageData ManageData;
         DataGridViewRow Row;
+        String id;
         public ManageTypes()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace DIYShopSys
             this.Row = Row;
             this.ManageData.Hide();
             TypeName.Text = Row.Cells[1].Value.ToString();
+            this.id = Row.Cells[0].Value.ToString();
         }
         // closing form
         private void ManageItems_FormClosed(object sender, FormClosedEventArgs e)
@@ -78,14 +80,14 @@ namespace DIYShopSys
             {
                 if (this.Text.Equals("Update Type")) {
 
-                    new Sql().AddOrUpdate("");
+                    new Sql().AddOrUpdate("Insert Into Item_Types (Type_Id,Type_Name) Values ("+ new Sql().GetNextTypeId + ",'" + TypeName.Text + "')");
                     MessageBox.Show("Updating Type Name");
                     ManageData.Show();
                     this.Close();
                 }
                 else
                 {
-                    new Sql().AddOrUpdate("");
+                    new Sql().AddOrUpdate("Update Item_Types Set Type_Name = '" + TypeName.Text +"' Where Type_Id = " + id);
                     MessageBox.Show("Adding Type");
                 }
             }
