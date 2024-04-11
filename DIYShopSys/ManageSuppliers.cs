@@ -51,12 +51,12 @@ namespace DIYShopSys
             {
                 if (this.Text.Equals("Add Supplier"))
                 {
-                    new Sql().AddOrUpdate();
+                    new Sql().AddOrUpdate("");
                     MessageBox.Show("You have Added a Supplier", "Added Supplier", MessageBoxButtons.OK);
                 }
                 else if (this.Text.Equals("Update Supplier Details"))
                 {
-                    new Sql().AddOrUpdate();
+                    new Sql().AddOrUpdate("");
                     MessageBox.Show("You have Updated Supplier Details", "Updated Supplier", MessageBoxButtons.OK);
                     ManageData.Show();
                     this.Close();

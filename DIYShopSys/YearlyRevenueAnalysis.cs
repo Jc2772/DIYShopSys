@@ -61,8 +61,8 @@ namespace DIYShopSys
         }
         private void GetData()
         {
-            DataSet ds = new Sql().GetDataSet();
-            DataSet ds2 = new Sql().GetDataSet();
+            DataSet ds = new Sql().GetDataSet("SELECT SUM(total), to_Char(Sale_Date,'MM') FROM Sales GROUP BY to_Char(Sale_Date,'MM');");
+            DataSet ds2 = new Sql().GetDataSet("SELECT SUM(total), to_Char(Order_Date,'MM') FROM Orders GROUP BY to_Char(Order_Date,'MM');");
             for(int i = 0; i < 12; i++)
             {
                 grossammounts[i] = Convert.ToDecimal(ds.Tables[0].Rows[i][0]);

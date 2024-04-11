@@ -90,7 +90,7 @@ namespace DIYShopSys
             MessageBox.Show("Are You Sure", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (DialogResult == DialogResult.Yes)
             {
-                new Sql().AddOrUpdate();
+                new Sql().AddOrUpdate("");
                 MessageBox.Show("Items Ordered", "Items Ordered", MessageBoxButtons.OK);
             }
         }

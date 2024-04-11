@@ -86,10 +86,10 @@ namespace DIYShopSys
             MessageBox.Show("Are You Sure", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (DialogResult == DialogResult.Yes)
             {
-                new Sql().AddOrUpdate();
+                new Sql().AddOrUpdate("");
                 for(int i = 0; i < Basket.Rows.Count; i++)
                 {
-                    new Sql().AddOrUpdate();
+                    new Sql().AddOrUpdate("");
                 }
                 MessageBox.Show("Items Ordered", "Items Ordered", MessageBoxButtons.OK);
             }

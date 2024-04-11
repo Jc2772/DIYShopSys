@@ -88,13 +88,13 @@ namespace DIYShopSys
                 {
                     if (checkQuantity())
                     {
-                        new Sql().AddOrUpdate();
+                        new Sql().AddOrUpdate("");
                         MessageBox.Show("You have Added an Item", "Added Item", MessageBoxButtons.OK);
                     }
                 }
                 if (this.Text.Equals("Update Item Details"))
                 {
-                    new Sql().AddOrUpdate();
+                    new Sql().AddOrUpdate("");
                     MessageBox.Show("You have Updated Item Details", "Updated Item", MessageBoxButtons.OK);
                     ManageData.Show();
                     this.Close();
