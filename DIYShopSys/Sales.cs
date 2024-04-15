@@ -57,7 +57,7 @@ namespace DIYShopSys
             }
             else
             {
-                MessageBox.Show("There is no items in the basket")
+                MessageBox.Show("There is no items in the basket");
             }
         }
 
