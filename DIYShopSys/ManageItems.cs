@@ -96,13 +96,13 @@ namespace DIYShopSys
                 {
                     if (checkQuantity())
                     {
-                        new Sql().AddOrUpdate("Insert Into Item (Item_Id,Item_Name,Item_Price,Item_Cost,Quantity,Supplier_Id,Type_Id,Item_Status) Values ()");
+                        new Sql().AddOrUpdate("Insert Into Items (Item_Id,Item_Name,Item_Price,Item_Cost,Quantity,Supplier_Id,Type_Id,Item_Status) Values (" + new Sql().GetNextStockId() + ",'" + ItemName.Text + "'," + Price.Text + "," + Cost.Text + ","+ Quantity.Text + "," + this.SupplierId + "," + this.TypeId + ")");
                         MessageBox.Show("You have Added an Item", "Added Item", MessageBoxButtons.OK);
                     }
                 }
                 if (this.Text.Equals("Update Item Details"))
                 {
-                    new Sql().AddOrUpdate("");
+                    new Sql().AddOrUpdate("Update Items set Item_Name = '" + ItemName.Text + "',Item_Price = " + Price.Text + ",Item_Cost =" + Cost.Text + ",Supplier_Id = " + this.SupplierId + ",Type_Id = " + this.TypeId + "Where Item_Id = " + this.ItemId);
                     MessageBox.Show("You have Updated Item Details", "Updated Item", MessageBoxButtons.OK);
                     ManageData.Show();
                     this.Close();

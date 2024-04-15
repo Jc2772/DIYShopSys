@@ -150,7 +150,7 @@
             Supplier.Name = "Supplier";
             Supplier.Size = new Size(121, 23);
             Supplier.TabIndex = 9;
-            Supplier.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            Supplier.SelectedIndexChanged += Supplier_SelectedIndexChanged;
             // 
             // GroupBox
             // 

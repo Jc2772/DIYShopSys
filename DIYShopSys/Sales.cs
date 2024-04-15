@@ -125,6 +125,9 @@ namespace DIYShopSys
         {
             //how to create a datatable https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable?view=net-7.0
             this.dataset = new Sql().GetDataSet("select item_id, item_name, item_price, quantity from items where item_status = 'a' and quantity >= 1");
+            dataset.Tables[0].Columns[1].ColumnName = "Name";
+            dataset.Tables[0].Columns[2].ColumnName = "Price";
+            dataset.Tables[0].Columns[3].ColumnName = "Quantity";
             //creating basket table
             DataTable table = new DataTable("Basket");
             DataColumn column;
