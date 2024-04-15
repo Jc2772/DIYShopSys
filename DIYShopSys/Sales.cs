@@ -29,17 +29,20 @@ namespace DIYShopSys
         {
             if (Items.SelectedRows.Count == 1)
             {
-                if (Basket.Rows.Count > 0)
+                if (Convert.ToInt32(Items.SelectedRows[0].Cells[3].Value) == 0)
+                {
+                    MessageBox.Show("Maximum" + Items.SelectedRows[0].Cells[1].Value.ToString() + "Reached", "Error", MessageBoxButtons.OK);
+                }
+                else if (Basket.Rows.Count > 0)
                 {
                     for (int i = 0; i < Basket.Rows.Count; i++)
                     {
                         //source for selectectedRows.index[2] second answer :https://stackoverflow.com/questions/3578144/index-of-currently-selected-row-in-datagridview
-                        if (Basket.Rows[i].Cells[0].Value.ToString().Equals(Items.SelectedRows[0].Cells[0].Value.ToString()))
+                        if (Basket.Rows[i].Cells[1].Value.ToString().Equals(Items.SelectedRows[0].Cells[1].Value.ToString()))
                         {
-                            dataset.Tables[1].Rows[i][2] = Convert.ToInt32(dataset.Tables[1].Rows[Items.SelectedRows[0].Index][2]) + 1;
+                            dataset.Tables[1].Rows[i][3] = Convert.ToInt32(dataset.Tables[1].Rows[i][3]) + 1;
+                            dataset.Tables[1].Rows[i][4] = Convert.ToInt32(dataset.Tables[1].Rows[i][4]) + 1;
                             dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) - 1;
-                            total += Convert.ToDouble(Items.SelectedRows[0].Cells[2].Value.ToString());
-                            TotalLabel.Text = "total = " + total;
                             return;
                         }
                     }
@@ -49,7 +52,7 @@ namespace DIYShopSys
                 {
                     addToBasket();
                 }
-                total += Convert.ToDouble(Items.SelectedRows[0].Cells[2].Value.ToString());
+                total += Convert.ToDouble(Items.SelectedRows[0].Cells[3].Value.ToString());
                 TotalLabel.Text = "total = " + total;
             }
         }
@@ -58,25 +61,28 @@ namespace DIYShopSys
         {
             if (Basket.SelectedRows.Count == 1)
             {
-                total -= Convert.ToDouble(Basket.SelectedRows[0].Cells[3].Value.ToString());
-                TotalLabel.Text = "total = " + total;
                 if (Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][2]) == 1)
                 {
                     for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
                     {
-                        if (dataset.Tables[0].Rows[i][0].Equals(Basket.SelectedRows[0].Cells[0].Value.ToString()))
+                        MessageBox.Show(Basket.SelectedRows[0].Cells[1].Value.ToString());
+                        MessageBox.Show(dataset.Tables[0].Rows[i][1].ToString());
+                        if (dataset.Tables[0].Rows[i][1].ToString().Equals(Basket.SelectedRows[0].Cells[1].Value.ToString()))
                         {
+                            //removes row in basket
+                            dataset.Tables[1].Rows.RemoveAt(Basket.SelectedRows[0].Index);
                             dataset.Tables[0].Rows[i][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) + 1;
                         }
                     }
-
-                    dataset.Tables[1].Rows.RemoveAt(Basket.SelectedRows[0].Index);
                 }
                 else
                 {
-                    dataset.Tables[1].Rows[0][2] = Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][2]) - 1;
+                    dataset.Tables[1].Rows[0][3] = Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][3]) - 1;
+                    dataset.Tables[1].Rows[0][4] = Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][4]) - 1;
                     dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) + 1;
                 }
+                total -= Convert.ToDouble(Basket.SelectedRows[0].Cells[2].Value);
+                TotalLabel.Text = "total = " + total;
             }
         }
 
@@ -96,11 +102,6 @@ namespace DIYShopSys
         }
         private void addToBasket()
         {
-            if (Convert.ToInt32(Items.SelectedRows[0].Cells[3].Value) == 0)
-            {
-                MessageBox.Show("Maximum" + Items.SelectedRows[0].Cells[1].Value.ToString() + "Reached", "Error", MessageBoxButtons.OK);
-            }
-            else{
                 DataRow row = dataset.Tables[1].NewRow();
                 //id
                 row[0] = Items.SelectedRows[0].Cells[0].Value.ToString();
@@ -108,12 +109,12 @@ namespace DIYShopSys
                 row[1] = Items.SelectedRows[0].Cells[1].Value.ToString();
                 //price
                 row[2] = Items.SelectedRows[0].Cells[2].Value.ToString();
+                //Total price
+                row[3] = Items.SelectedRows[0].Cells[2].Value.ToString();
                 //quantity
-                row[3] = 1;
+                row[4] = 1;
                 dataset.Tables[1].Rows.Add(row);
                 dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) - 1;
-            }
-
         }
         private void resetDataset()
         {
@@ -137,6 +138,11 @@ namespace DIYShopSys
             column = new DataColumn();
             column.DataType = typeof(double);
             column.ColumnName = "Cost";
+            table.Columns.Add(column);
+            //total price
+            column = new DataColumn();
+            column.DataType = typeof(double);
+            column.ColumnName = "Total Cost";
             table.Columns.Add(column);
             //Quantity
             column = new DataColumn();
