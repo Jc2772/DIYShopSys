@@ -95,10 +95,11 @@ namespace DIYShopSys
             MessageBox.Show("Are You Sure", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (DialogResult == DialogResult.Yes)
             {
-                new Sql().AddOrUpdate("");
+                new Sql().AddOrUpdate("insert into sales values("+ new Sql().GetNextSaleId + ",'" + DateTime.Today + "'," + total + ")");
+                DataSet dataset = new Sql().GetDataSet("select Max(Sale_id) from Sales");
                 for(int i = 0; i < Basket.Rows.Count; i++)
                 {
-                    new Sql().AddOrUpdate("");
+                    new Sql().AddOrUpdate("insert into basket values(" + Basket.Rows[i].Cells[0].Value + "," + dataset.Tables[0].Rows[0][0] + "," + Basket.Rows[0].Cells[4].Value + ")");
                 }
                 MessageBox.Show("Items Ordered", "Items Ordered", MessageBoxButtons.OK);
             }
