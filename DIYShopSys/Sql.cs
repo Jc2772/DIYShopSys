@@ -41,16 +41,17 @@ namespace DIYShopSys
             this.connection.Open();
             string query = "Select MAX(supplier_id) from suppliers";
             OracleCommand cmd = new OracleCommand(query, this.connection);
-            OracleDataReader data = cmd.ExecuteReader();
-            this.connection.Close();
-            data.Read();
-            if (data.IsDBNull(0))
+            OracleDataAdapter dataAdapter = new OracleDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+            connection.Close();
+            if (ds.Tables[0].Rows[0][0] != null)
             {
-                return 1;
+                return Convert.ToInt32(ds.Tables[0].Rows[0][0]) + 1;
             }
             else
             {
-                return data.GetInt32(0) + 1;
+                return 1;
             }
         }
         public int GetNextTypeId()
@@ -58,16 +59,17 @@ namespace DIYShopSys
             this.connection.Open();
             string query = "Select MAX(type_id) from item_types";
             OracleCommand cmd = new OracleCommand(query, this.connection);
-            OracleDataReader data = cmd.ExecuteReader();
-            this.connection.Close();
-            data.Read();
-            if (data.IsDBNull(0))
+            OracleDataAdapter dataAdapter = new OracleDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+            connection.Close();
+            if (ds.Tables[0].Rows[0][0] != null)
             {
-                return 1;
+                return Convert.ToInt32(ds.Tables[0].Rows[0][0]) + 1;
             }
             else
             {
-                return data.GetInt32(0) + 1;
+                return 1;
             }
         }
         public int GetNextStockId()
@@ -75,16 +77,17 @@ namespace DIYShopSys
             this.connection.Open();
             string query = "Select MAX(item_id) from items";
             OracleCommand cmd = new OracleCommand(query, this.connection);
-            OracleDataReader data = cmd.ExecuteReader();
-            this.connection.Close();
-            data.Read();
-            if (data.IsDBNull(0))
+            OracleDataAdapter dataAdapter = new OracleDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+            connection.Close();
+            if (ds.Tables[0].Rows[0][0] != null)
             {
-                return 1;
+                return Convert.ToInt32(ds.Tables[0].Rows[0][0]) + 1;
             }
             else
             {
-                return data.GetInt32(0) + 1;
+                return 1;
             }
         }
         public int GetNextOrderId()
@@ -92,16 +95,17 @@ namespace DIYShopSys
             this.connection.Open();
             string query = "Select MAX(order_id) from orders";
             OracleCommand cmd = new OracleCommand(query, this.connection);
-            OracleDataReader data = cmd.ExecuteReader();
-            this.connection.Close();
-            data.Read();
-            if (data.IsDBNull(0))
+            OracleDataAdapter dataAdapter = new OracleDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+            connection.Close();
+            if (ds.Tables[0].Rows[0][0] != null)
             {
-                return 1;
+                return Convert.ToInt32(ds.Tables[0].Rows[0][0]) + 1;
             }
             else
             {
-                return data.GetInt32(0) + 1;
+                return 1;
             }
         }
         public int GetNextSaleId()
@@ -109,16 +113,17 @@ namespace DIYShopSys
             this.connection.Open();
             string query = "Select MAX(sale_id) from sales";
             OracleCommand cmd = new OracleCommand(query, this.connection);
-            OracleDataReader data = cmd.ExecuteReader();
-            this.connection.Close();
-            data.Read();
-            if (data.IsDBNull(0))
+            OracleDataAdapter dataAdapter = new OracleDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+            connection.Close();
+            if (ds.Tables[0].Rows[0][0] != null)
             {
-                return 1;
+                return Convert.ToInt32(ds.Tables[0].Rows[0][0]) + 1;
             }
             else
             {
-                return data.GetInt32(0) + 1;
+                return 1;
             }
         }
     }

@@ -96,7 +96,7 @@ namespace DIYShopSys
                 {
                     if (checkQuantity())
                     {
-                        new Sql().AddOrUpdate("Insert Into Item (Item_Id,Item_Name,Item_Price,Item_Cost,Quantity,Supplier_Id,Type_Id,Item_Status) Values");
+                        new Sql().AddOrUpdate("Insert Into Item (Item_Id,Item_Name,Item_Price,Item_Cost,Quantity,Supplier_Id,Type_Id,Item_Status) Values ()");
                         MessageBox.Show("You have Added an Item", "Added Item", MessageBoxButtons.OK);
                     }
                 }

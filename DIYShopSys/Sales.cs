@@ -92,14 +92,15 @@ namespace DIYShopSys
         private void BuyButton_Click(object sender, EventArgs e)
         {
             //messagebox yes no from https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
-            MessageBox.Show("Are You Sure", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (DialogResult == DialogResult.Yes)
+            DialogResult dialogresult = MessageBox.Show("Are You Sure", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogresult == DialogResult.Yes)
             {
-                new Sql().AddOrUpdate("insert into sales values("+ new Sql().GetNextSaleId + ",'" + DateTime.Today + "'," + total + ")");
+                new Sql().AddOrUpdate("insert into sales values("+ new Sql().GetNextSaleId() + ",Sysdate," + total + ")");
                 DataSet dataset = new Sql().GetDataSet("select Max(Sale_id) from Sales");
                 for(int i = 0; i < Basket.Rows.Count; i++)
                 {
                     new Sql().AddOrUpdate("insert into basket values(" + Basket.Rows[i].Cells[0].Value + "," + dataset.Tables[0].Rows[0][0] + "," + Basket.Rows[0].Cells[4].Value + ")");
+                    new Sql().AddOrUpdate("Update Items set quantity = quantity - "+ Basket.Rows[i].Cells[4].Value + " Where Item_Id = " + Basket.Rows[i].Cells[0].Value);
                 }
                 MessageBox.Show("Items Ordered", "Items Ordered", MessageBoxButtons.OK);
             }
