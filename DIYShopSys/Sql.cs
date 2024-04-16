@@ -41,10 +41,10 @@ namespace DIYShopSys
             this.connection.Open();
             OracleCommand cmd = new OracleCommand(query, connection);
             OracleDataAdapter dataAdapter = new OracleDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            dataAdapter.Fill(ds);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
             connection.Close();
-            return ds.Tables[0];
+            return dt;
         }
         public int GetNextSupplierId()
         {

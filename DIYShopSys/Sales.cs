@@ -29,14 +29,14 @@ namespace DIYShopSys
         {
             if (Items.SelectedRows.Count == 1)
             {
-                total += Convert.ToDouble(Items.SelectedRows[0].Cells[2].Value.ToString());
-                TotalLabel.Text = "total = " + total;
                 if (Convert.ToInt32(Items.SelectedRows[0].Cells[3].Value) == 0)
                 {
-                    MessageBox.Show("Maximum" + Items.SelectedRows[0].Cells[1].Value.ToString() + "Reached", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Maximum" + Items.SelectedRows[0].Cells[1].Value.ToString() + " Reached", "Error", MessageBoxButtons.OK);
                 }
                 else if (Basket.Rows.Count > 0)
                 {
+                    total += Convert.ToDouble(Items.SelectedRows[0].Cells[2].Value.ToString());
+                    TotalLabel.Text = "total = " + total;
                     for (int i = 0; i < Basket.Rows.Count; i++)
                     {
                         //source for selectectedRows.index[2] second answer :https://stackoverflow.com/questions/3578144/index-of-currently-selected-row-in-datagridview
@@ -52,6 +52,8 @@ namespace DIYShopSys
                 }
                 else
                 {
+                    total += Convert.ToDouble(Items.SelectedRows[0].Cells[2].Value.ToString());
+                    TotalLabel.Text = "total = " + total;
                     addToBasket();
                 }
             }
@@ -67,24 +69,28 @@ namespace DIYShopSys
             {
                 total -= Convert.ToDouble(Basket.SelectedRows[0].Cells[2].Value);
                 TotalLabel.Text = "total = " + total;
-                if (Convert.ToInt32(Basket.SelectedRows[0].Cells[4].Value) == 1)
+                for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
                 {
-                    for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
+                    if (Convert.ToInt32(dataset.Tables[0].Rows[i][0]) == Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][0]))
                     {
-                        if (dataset.Tables[0].Rows[i][1].Equals(Basket.SelectedRows[0].Cells[1].Value.ToString()))
+                        if (Convert.ToInt32(Basket.SelectedRows[0].Cells[4].Value) == 1)
                         {
-                            //removes row in basket
-                            dataset.Tables[1].Rows.RemoveAt(Basket.SelectedRows[0].Index);
+                            if (dataset.Tables[0].Rows[i][1].Equals(Basket.SelectedRows[0].Cells[1].Value.ToString()))
+                            {
+                                //removes row in basket
+                                dataset.Tables[1].Rows.RemoveAt(Basket.SelectedRows[0].Index);
+                                dataset.Tables[0].Rows[i][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) + 1;
+                                break;
+                            }
+
+                        }
+                        else
+                        {
+                            dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][3] = Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][3]) - 1;
+                            dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][4] = Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][4]) - 1;
                             dataset.Tables[0].Rows[i][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) + 1;
-                            break;
                         }
                     }
-                }
-                else
-                {
-                    dataset.Tables[1].Rows[0][3] = Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][3]) - 1;
-                    dataset.Tables[1].Rows[0][4] = Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][4]) - 1;
-                    dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) + 1;
                 }
             }
         }
@@ -92,17 +98,25 @@ namespace DIYShopSys
         private void BuyButton_Click(object sender, EventArgs e)
         {
             //messagebox yes no from https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
-            DialogResult dialogresult = MessageBox.Show("Are You Sure", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogresult == DialogResult.Yes)
+            if (Basket.Rows.Count > 0)
             {
-                new Sql().AddOrUpdate("insert into sales values("+ new Sql().GetNextSaleId() + ",Sysdate," + total + ")");
-                DataSet dataset = new Sql().GetDataSet("select Max(Sale_id) from Sales");
-                for(int i = 0; i < Basket.Rows.Count; i++)
+                DialogResult dialogresult = MessageBox.Show("Are You Sure", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogresult == DialogResult.Yes)
                 {
-                    new Sql().AddOrUpdate("insert into basket values(" + Basket.Rows[i].Cells[0].Value + "," + dataset.Tables[0].Rows[0][0] + "," + Basket.Rows[0].Cells[4].Value + ")");
-                    new Sql().AddOrUpdate("Update Items set quantity = quantity - "+ Basket.Rows[i].Cells[4].Value + " Where Item_Id = " + Basket.Rows[i].Cells[0].Value);
+                    new Sql().AddOrUpdate("insert into sales values(" + new Sql().GetNextSaleId() + ",Sysdate," + total + ")");
+                    DataSet dataset = new Sql().GetDataSet("select Max(Sale_id) from Sales");
+                    for (int i = 0; i < Basket.Rows.Count; i++)
+                    {
+                        new Sql().AddOrUpdate("insert into basket values(" + Basket.Rows[i].Cells[0].Value + "," + dataset.Tables[0].Rows[0][0] + "," + Basket.Rows[0].Cells[4].Value + ")");
+                        new Sql().AddOrUpdate("Update Items set quantity = quantity - " + Basket.Rows[i].Cells[4].Value + " Where Item_Id = " + Basket.Rows[i].Cells[0].Value);
+                    }
+                    MessageBox.Show("Items Ordered", "Items Ordered", MessageBoxButtons.OK);
+                    resetDataset();
                 }
-                MessageBox.Show("Items Ordered", "Items Ordered", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No item in Basket");
             }
         }
         private void addToBasket()
@@ -119,7 +133,7 @@ namespace DIYShopSys
             //quantity
             row[4] = 1;
             dataset.Tables[1].Rows.Add(row);
-            dataset.Tables[0].Rows[0][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) - 1;
+            dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3] = Convert.ToInt32(dataset.Tables[0].Rows[Items.SelectedRows[0].Index][3]) - 1;
         }
         private void resetDataset()
         {
@@ -168,6 +182,11 @@ namespace DIYShopSys
         private void ReturnButton_Click(object sender, EventArgs e)
         {
             new Login(this).Show();
+        }
+
+        private void Sales_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

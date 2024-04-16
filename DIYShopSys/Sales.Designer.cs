@@ -145,6 +145,7 @@
             Controls.Add(BuyButton);
             Name = "Sales";
             Text = "Sales";
+            FormClosed += Sales_FormClosed;
             ((System.ComponentModel.ISupportInitialize)Items).EndInit();
             ((System.ComponentModel.ISupportInitialize)Basket).EndInit();
             ResumeLayout(false);

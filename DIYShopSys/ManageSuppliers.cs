@@ -17,7 +17,7 @@ namespace DIYShopSys
         //used to return to the main menu
         MainMenu main;
         //used to return to update supplier
-        ManageData ManageData;
+        ManageData managedata;
         String id;
 
         public ManageSuppliers()
@@ -35,14 +35,14 @@ namespace DIYShopSys
         {
             InitializeComponent();
             this.Text = text;
-            this.ManageData = update;
-            this.ManageData.Hide();
+            this.managedata = update;
+            this.managedata.Hide();
             //input old values
             //figured out how to get row values from here https://stackoverflow.com/questions/6487839/reading-data-from-datagridview-in-c-sharp
             SupName.Text = Row.Cells[1].Value.ToString();
             PhoneNumber.Text = Row.Cells[2].Value.ToString();
             Email.Text = Row.Cells[3].Value.ToString();
-            DeliveryFee.Text = Row.Cells[4].Value.ToString();
+            DeliveryFee.Text = Row.Cells[4].Value.ToString() + "0";
             RepName.Text = Row.Cells[5].Value.ToString();
             this.id = Row.Cells[0].Value.ToString();
         }
@@ -53,14 +53,15 @@ namespace DIYShopSys
             {
                 if (this.Text.Equals("Add Supplier"))
                 {
-                    new Sql().AddOrUpdate("Insert Into Suppliers (Supplier_Id,Supplier_Name,Phone_Number,Email,Delivery_Fee,Rep_Name)  Values(" + new Sql().GetNextSupplierId + ",'" + SupName.Text + "','" + PhoneNumber.Text + "','" + Email.Text + "'," + DeliveryFee.Text + "','" + RepName.Text + ")");
+                    new Sql().AddOrUpdate("Insert Into Suppliers (Supplier_Id,Supplier_Name,Phone_Number,Email,Delivery_Fee,Rep_Name)  Values(" + new Sql().GetNextSupplierId() + ",'" + SupName.Text + "','" + PhoneNumber.Text + "','" + Email.Text + "'," + DeliveryFee.Text + ",'" + RepName.Text + "')");
                     MessageBox.Show("You have Added a Supplier", "Added Supplier", MessageBoxButtons.OK);
                 }
                 else if (this.Text.Equals("Update Supplier Details"))
                 {
-                    new Sql().AddOrUpdate("Update Suppliers Set Supplier_Name = '" + SupName.Text + "',Phone_Number = '" + PhoneNumber.Text + "',Email = '" + Email.Text +"',Delivery_Fee = " + DeliveryFee.Text + "',Rep_Name = '" + RepName.Text + "' Where Supplier_Id = " + id);
+                    new Sql().AddOrUpdate("Update Suppliers Set Supplier_Name = '" + SupName.Text + "',Phone_Number = '" + PhoneNumber.Text + "',Email = '" + Email.Text +"',Delivery_Fee = " + DeliveryFee.Text + ",Rep_Name = '" + RepName.Text + "' Where Supplier_Id = " + id);
                     MessageBox.Show("You have Updated Supplier Details", "Updated Supplier", MessageBoxButtons.OK);
-                    ManageData.Show();
+                    managedata.ResetData();
+                    managedata.Show();
                     this.Close();
                 }
             }
@@ -136,9 +137,9 @@ namespace DIYShopSys
             }
             else
             {
-                if (ManageData.Visible == false)
+                if (managedata.Visible == false)
                 {
-                    ManageData.Close();
+                    managedata.Close();
                 }
             }
         }
@@ -147,7 +148,7 @@ namespace DIYShopSys
         {
             if (this.Text.Equals("Update Supplier Details"))
             {
-                this.ManageData.Show();
+                this.managedata.Show();
                 this.Close();
             }
             else

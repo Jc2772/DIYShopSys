@@ -48,7 +48,7 @@ namespace DIYShopSys
         }
         private void GetData()
         {
-            DataSet ds = new Sql().GetDataSet("Select Sum(quantity_sold),Type_Name from (items inner join item_types on items.type_id = item_types.type_id) inner join basket on items.item_id = basket.item_idWhere To_Char(Sale_Date,'YYYY') = '" + Year.Text + "' group by type_name");
+            DataSet ds = new Sql().GetDataSet("Select Sum(quantity_sold),Type_Name from (items inner join item_types on items.type_id = item_types.type_id) inner join basket on items.item_id = basket.item_id Where To_Char(Sale_Date,'YYYY') = '" + Year.Text + "' group by type_name");
             this.item_types = new string[ds.Tables[0].Rows.Count];
             this.ammounts = new int[ds.Tables[0].Rows.Count];
             if (ds.Tables[0].Rows.Count > 0)
