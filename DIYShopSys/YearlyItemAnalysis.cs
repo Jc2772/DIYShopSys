@@ -14,6 +14,8 @@ namespace DIYShopSys
     public partial class YearlyItemAnalysis : Form
     {
         MainMenu main;
+        int[] ammounts;
+        string[] item_types;
         public YearlyItemAnalysis(MainMenu main)
         {
             InitializeComponent();
@@ -40,11 +42,18 @@ namespace DIYShopSys
             ItemChart.Series.Add(seriesname);
 
             GetData();
-            ProfitChart.Series[0].Points.DataBindXY(months, ammounts);
+            ItemChart.Series[0].Points.DataBindXY(item_types, ammounts);
         }
         private void GetData()
         {
             DataSet ds = new Sql().GetDataSet("Select Sum(quantity_sold),Type_Name from (items inner join item_types on items.type_id = type.type_id) inner join basket on items.item_id = basket.item_id group by type_name");
+            this.item_types = new string[ds.Tables[0].Rows.Count];
+            this.ammounts = new int[ds.Tables[0].Rows.Count];
+            for(int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                this.ammounts[i] = Convert.ToInt32(ds.Tables[0].Rows[i][0]);
+                this.item_types[i] = ds.Tables[0].Rows[i][1].ToString();
+            }
         }
         public void GetDate()
         {
