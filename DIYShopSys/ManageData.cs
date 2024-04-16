@@ -71,6 +71,7 @@ namespace DIYShopSys
                 Grid.Columns[4].HeaderText = "Rep Name";
                 SubmitButton.Visible = false;
             }
+
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)

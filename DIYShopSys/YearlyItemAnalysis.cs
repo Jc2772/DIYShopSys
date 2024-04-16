@@ -20,6 +20,7 @@ namespace DIYShopSys
         {
             InitializeComponent();
             this.main = main;
+            GetDate();
         }
         private void ReturnButton_Click(object sender, EventArgs e)
         {
@@ -40,19 +41,28 @@ namespace DIYShopSys
 
             string seriesname = "Yearly Item Analysis";
             ItemChart.Series.Add(seriesname);
-
+            ItemChart.Series[0].ChartType = SeriesChartType.Pie;
             GetData();
             ItemChart.Series[0].Points.DataBindXY(item_types, ammounts);
+            ItemChart.Visible = true;
         }
         private void GetData()
         {
-            DataSet ds = new Sql().GetDataSet("Select Sum(quantity_sold),Type_Name from (items inner join item_types on items.type_id = type.type_id) inner join basket on items.item_id = basket.item_id group by type_name");
+            DataSet ds = new Sql().GetDataSet("Select Sum(quantity_sold),Type_Name from (items inner join item_types on items.type_id = item_types.type_id) inner join basket on items.item_id = basket.item_idWhere To_Char(Sale_Date,'YYYY') = '" + Year.Text + "' group by type_name");
             this.item_types = new string[ds.Tables[0].Rows.Count];
             this.ammounts = new int[ds.Tables[0].Rows.Count];
-            for(int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            if (ds.Tables[0].Rows.Count > 0)
             {
-                this.ammounts[i] = Convert.ToInt32(ds.Tables[0].Rows[i][0]);
-                this.item_types[i] = ds.Tables[0].Rows[i][1].ToString();
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    this.ammounts[i] = Convert.ToInt32(ds.Tables[0].Rows[i][0]);
+                    this.item_types[i] = ds.Tables[0].Rows[i][1].ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Data For " + Year.Text + "Does Not Exist");
+                ItemChart.Visible=false;
             }
         }
         public void GetDate()

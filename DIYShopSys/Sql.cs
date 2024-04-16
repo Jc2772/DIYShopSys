@@ -36,6 +36,16 @@ namespace DIYShopSys
             connection.Close();
             return ds;
         }
+        public DataTable GetDataTable(string query)
+        {
+            this.connection.Open();
+            OracleCommand cmd = new OracleCommand(query, connection);
+            OracleDataAdapter dataAdapter = new OracleDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+            connection.Close();
+            return ds.Tables[0];
+        }
         public int GetNextSupplierId()
         {
             this.connection.Open();

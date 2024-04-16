@@ -95,7 +95,6 @@
             ProfitChart.Size = new Size(374, 495);
             ProfitChart.TabIndex = 1;
             ProfitChart.Text = "chart2";
-            ProfitChart.Visible = false;
             // 
             // GrossProfitChart
             // 
@@ -117,7 +116,6 @@
             GrossProfitChart.Size = new Size(384, 495);
             GrossProfitChart.TabIndex = 0;
             GrossProfitChart.Text = "chart1";
-            GrossProfitChart.Visible = false;
             // 
             // YearlyRevenueAnalysis
             // 
