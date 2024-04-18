@@ -166,6 +166,7 @@ namespace DIYShopSys
             total = 0;
             Items.Columns[3].Visible = false;
             Basket.Columns[0].Visible = false;
+            Supplier.SelectedIndex = -1;
         }
         // closing form
         private void RestockItems_FormClosed(object sender, FormClosedEventArgs e)

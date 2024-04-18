@@ -32,6 +32,7 @@
             ReturnButton = new Button();
             Grid = new DataGridView();
             SearchBox = new TextBox();
+            SearchLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)Grid).BeginInit();
             SuspendLayout();
             // 
@@ -79,11 +80,21 @@
             SearchBox.TabIndex = 3;
             SearchBox.TextChanged += SearchBox_TextChanged;
             // 
+            // SearchLabel
+            // 
+            SearchLabel.AutoSize = true;
+            SearchLabel.Location = new Point(237, 50);
+            SearchLabel.Name = "SearchLabel";
+            SearchLabel.Size = new Size(42, 15);
+            SearchLabel.TabIndex = 4;
+            SearchLabel.Text = "Search";
+            // 
             // ManageData
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(SearchLabel);
             Controls.Add(SearchBox);
             Controls.Add(Grid);
             Controls.Add(ReturnButton);
@@ -102,5 +113,6 @@
         private Button ReturnButton;
         private DataGridView Grid;
         private TextBox SearchBox;
+        private Label SearchLabel;
     }
 }

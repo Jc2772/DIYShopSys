@@ -138,21 +138,25 @@ namespace DIYShopSys
             string text;
             if (this.Text.Equals("Update Supplier Details"))
             {
-
+                text = "Supplier name = " + SearchBox.Text;
             }
             else if(this.Text.Equals("Update Type Detail"))
             {
-
+                text = "Type name = " + SearchBox.Text;
             }
-            else if ((this.Text.Equals("Update Item Details"))
+            else if (this.Text.Equals("Update Item Details"))
             {
-
+                text = "Item name = " + SearchBox.Text;
             }
-            else if (this.Text.Equals("Query Supplier Details")
+            else if (this.Text.Equals("Query Supplier Details"))
             {
-
+                text = "Supplier name = " + SearchBox.Text;
             }
-            dataset.Tables[0].DefaultView.RowFilter = text;
+            else
+            {
+                text = "";
+            }
+            (Grid.DataSource as DataTable).DefaultView.RowFilter = text;
         }
     }
 }

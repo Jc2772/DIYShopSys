@@ -18,7 +18,7 @@ namespace DIYShopSys
         {
             InitializeComponent();
         }
-        public ChangeStatus(MainMenu main,String text)
+        public ChangeStatus(MainMenu main, String text)
         {
             InitializeComponent();
             this.main = main;
@@ -43,20 +43,21 @@ namespace DIYShopSys
 
         private void Activate_Click(object sender, EventArgs e)
         {
-            if (Grid.SelectedRows.Count == 1) {
+            if (Grid.SelectedRows.Count == 1)
+            {
                 if (this.Text.Equals("Manage Supplier Status"))
                 {
-                    new Sql().AddOrUpdate();
+                    new Sql().AddOrUpdate("Update suppliers set supplier_status = 'a' where supplier_id = " + Grid.SelectedRows[0].Cells[0].Value.ToString());
                     resetDataset();
                 }
                 else if (this.Text.Equals("Manage Type Status"))
                 {
-                    new Sql().AddOrUpdate();
+                    new Sql().AddOrUpdate("Update type set type_status = 'a' where type_id = " + Grid.SelectedRows[0].Cells[0].Value.ToString());
                     resetDataset();
                 }
                 else if (this.Text.Equals("Manage Item Status"))
                 {
-                    new Sql().AddOrUpdate();
+                    new Sql().AddOrUpdate("Update items set item_status = 'a' where item_id = " + Grid.SelectedRows[0].Cells[0].Value.ToString());
                     resetDataset();
                 }
             }
@@ -64,20 +65,30 @@ namespace DIYShopSys
 
         private void Deativate_Click(object sender, EventArgs e)
         {
-            if (Grid.SelectedRows.Count == 1) {
+            if (Grid.SelectedRows.Count == 1)
+            {
                 if (this.Text.Equals("Manage Supplier Status"))
                 {
-                    new Sql().AddOrUpdate();
-                    resetDataset();
+                    DialogResult dialogresult = MessageBox.Show("Deactivating Supplier Will Deactivate all items associated with the supplier, Are You Sure You Want to do this", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        new Sql().AddOrUpdate("Update suppliers set supplier_status = 'd' where supplier_id = " + Grid.SelectedRows[0].Cells[0].Value.ToString());
+                        resetDataset();
+
+                    }
                 }
                 else if (this.Text.Equals("Manage Type Status"))
                 {
-                    new Sql().AddOrUpdate();
-                    resetDataset();
+                    DialogResult dialogresult = MessageBox.Show("Deactivating Supplier Will Deactivate all items associated with the supplier, Are You Sure You Want to do this", "Confirmation", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        new Sql().AddOrUpdate("Update type set type_status = 'd' where type_id = " + Grid.SelectedRows[0].Cells[0].Value.ToString());
+                        resetDataset();
+                    }
                 }
                 else if (this.Text.Equals("Manage Item Status"))
                 {
-                    new Sql().AddOrUpdate();
+                    new Sql().AddOrUpdate("Update items set item_status = 'd' where item_id = " + Grid.SelectedRows[0].Cells[0].Value.ToString());
                     resetDataset();
                 }
             }
@@ -108,6 +119,28 @@ namespace DIYShopSys
                 Grid.Columns[1].HeaderText = "Item";
                 Grid.Columns[2].HeaderText = "Status";
             }
+        }
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            String text;
+            if (this.Text.Equals("Manage Supplier Status"))
+            {
+                text = "Supplier name = " + SearchBox.Text;
+            }
+            else if (this.Text.Equals("Manage Type Status"))
+            {
+                text = "Type name = " + SearchBox.Text;
+            }
+            else if (this.Text.Equals("Manage Item Status"))
+            {
+                text = "Item name = " + SearchBox.Text;
+            }
+            else
+            {
+                text = "";
+            }
+            (Grid.DataSource as DataTable).DefaultView.RowFilter = text;
         }
     }
 }

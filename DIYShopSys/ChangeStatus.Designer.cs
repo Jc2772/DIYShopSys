@@ -32,6 +32,8 @@
             ReturnButton = new Button();
             Activate = new Button();
             Deativate = new Button();
+            SearchLabel = new Label();
+            SearchBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)Grid).BeginInit();
             SuspendLayout();
             // 
@@ -81,11 +83,30 @@
             Deativate.UseVisualStyleBackColor = true;
             Deativate.Click += Deativate_Click;
             // 
+            // SearchLabel
+            // 
+            SearchLabel.AutoSize = true;
+            SearchLabel.Location = new Point(251, 49);
+            SearchLabel.Name = "SearchLabel";
+            SearchLabel.Size = new Size(42, 15);
+            SearchLabel.TabIndex = 8;
+            SearchLabel.Text = "Search";
+            // 
+            // SearchBox
+            // 
+            SearchBox.Location = new Point(309, 46);
+            SearchBox.Name = "SearchBox";
+            SearchBox.Size = new Size(169, 23);
+            SearchBox.TabIndex = 7;
+            SearchBox.TextChanged += SearchBox_TextChanged;
+            // 
             // ChangeStatus
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(SearchLabel);
+            Controls.Add(SearchBox);
             Controls.Add(Deativate);
             Controls.Add(Activate);
             Controls.Add(Grid);
@@ -95,6 +116,7 @@
             FormClosed += ChangeStatus_FormClosed;
             ((System.ComponentModel.ISupportInitialize)Grid).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -103,5 +125,7 @@
         private Button ReturnButton;
         private Button Activate;
         private Button Deativate;
+        private Label SearchLabel;
+        private TextBox SearchBox;
     }
 }
