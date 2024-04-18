@@ -132,5 +132,27 @@ namespace DIYShopSys
             }
 
         }
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            string text;
+            if (this.Text.Equals("Update Supplier Details"))
+            {
+
+            }
+            else if(this.Text.Equals("Update Type Detail"))
+            {
+
+            }
+            else if ((this.Text.Equals("Update Item Details"))
+            {
+
+            }
+            else if (this.Text.Equals("Query Supplier Details")
+            {
+
+            }
+            dataset.Tables[0].DefaultView.RowFilter = text;
+        }
     }
 }

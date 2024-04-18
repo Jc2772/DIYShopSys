@@ -31,6 +31,7 @@
             SubmitButton = new Button();
             ReturnButton = new Button();
             Grid = new DataGridView();
+            SearchBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)Grid).BeginInit();
             SuspendLayout();
             // 
@@ -70,11 +71,20 @@
             Grid.Size = new Size(776, 286);
             Grid.TabIndex = 2;
             // 
+            // SearchBox
+            // 
+            SearchBox.Location = new Point(295, 47);
+            SearchBox.Name = "SearchBox";
+            SearchBox.Size = new Size(169, 23);
+            SearchBox.TabIndex = 3;
+            SearchBox.TextChanged += SearchBox_TextChanged;
+            // 
             // ManageData
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(SearchBox);
             Controls.Add(Grid);
             Controls.Add(ReturnButton);
             Controls.Add(SubmitButton);
@@ -83,6 +93,7 @@
             FormClosed += ManageData_FormClosed;
             ((System.ComponentModel.ISupportInitialize)Grid).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -90,5 +101,6 @@
         private Button SubmitButton;
         private Button ReturnButton;
         private DataGridView Grid;
+        private TextBox SearchBox;
     }
 }
