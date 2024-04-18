@@ -54,12 +54,14 @@ namespace DIYShopSys
             }
             GroupBox.Visible = true;
         }
-            private void AddToBasket_Click(object sender, EventArgs e)
+        private void AddToBasket_Click(object sender, EventArgs e)
         {
             if (Items.SelectedRows.Count == 1)
             {
                 if (Basket.Rows.Count > 0)
                 {
+                    total += Convert.ToDouble(Items.SelectedRows[0].Cells[5].Value.ToString());
+                    TotalLabel.Text = "total = " + total;
                     for (int i = 0; i < Basket.Rows.Count; i++)
                     {
                         //source for selectectedRows.index[2] second answer :https://stackoverflow.com/questions/3578144/index-of-currently-selected-row-in-datagridview
@@ -75,21 +77,24 @@ namespace DIYShopSys
                 }
                 else
                 {
+                    total += Convert.ToDouble(Items.SelectedRows[0].Cells[5].Value.ToString());
+                    TotalLabel.Text = "total = " + total;
                     addToBasket();
                 }
-                total += Convert.ToDouble(Items.SelectedRows[0].Cells[2].Value.ToString());
-                TotalLabel.Text = "total = " + total;
             }
         }
         private void addToBasket()
         {
             DataRow row = dataset.Tables[1].NewRow();
+            //id
+            row[0] = Items.SelectedRows[0].Cells[5].Value.ToString();
             //name
-            row[0] = Items.SelectedRows[0].Cells[0].Value.ToString();
+            row[1] = Items.SelectedRows[0].Cells[0].Value.ToString();
             //price
-            row[1] = Items.SelectedRows[0].Cells[1].Value.ToString();
+            row[2] = Items.SelectedRows[0].Cells[1].Value.ToString();
             //quantity
-            row[2] = 1;
+            row[3] = 1;
+            dataset.Tables[1].Rows.Add(row);
         }
         private void RemoveItemFromBasket_Click(object sender, EventArgs e)
         {
