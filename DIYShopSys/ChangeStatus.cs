@@ -73,8 +73,8 @@ namespace DIYShopSys
                     if (dialogresult == DialogResult.Yes)
                     {
                         new Sql().AddOrUpdate("Update suppliers set supplier_status = 'd' where supplier_id = " + Grid.SelectedRows[0].Cells[0].Value.ToString());
+                        new Sql().AddOrUpdate("Update items set item_status = 'd' where supplier_id = " + Grid.SelectedRows[0].Cells[0].Value.ToString());
                         resetDataset();
-
                     }
                 }
                 else if (this.Text.Equals("Manage Type Status"))
@@ -82,7 +82,8 @@ namespace DIYShopSys
                     DialogResult dialogresult = MessageBox.Show("Deactivating Supplier Will Deactivate all items associated with the supplier, Are You Sure You Want to do this", "Confirmation", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                     if (dialogresult == DialogResult.Yes)
                     {
-                        new Sql().AddOrUpdate("Update type set type_status = 'd' where type_id = " + Grid.SelectedRows[0].Cells[0].Value.ToString());
+                        new Sql().AddOrUpdate("Update types set type_status = 'd' where type_id = " + Grid.SelectedRows[0].Cells[0].Value.ToString());
+                        new Sql().AddOrUpdate("Update items set item_status = 'd' where type_id = " + Grid.SelectedRows[0].Cells[0].Value.ToString());
                         resetDataset();
                     }
                 }
