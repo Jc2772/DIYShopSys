@@ -47,6 +47,7 @@ namespace DIYShopSys
                 {
                     total = Convert.ToDouble(dataset.Tables[0].Rows[i][2]);
                     TotalLabel.Text = "total = " + total;
+                    //found out how to filter datasets from here https://stackoverflow.com/questions/5843537/filtering-datagridview-without-changing-datasource
                     dataset.Tables[0].DefaultView.RowFilter = "Supplier_id = " + dataset.Tables[0].Rows[i][0];
                     Items.Columns[0].Visible = false;
                     SupplierId = Convert.ToInt32(dataset.Tables[0].Rows[i][0]);
@@ -122,6 +123,7 @@ namespace DIYShopSys
                     new Sql().AddOrUpdate("update items set quantity = quantity + " + Basket.Rows[i].Cells[3].Value + "where item_id = " + Basket.Rows[i].Cells[0].Value);
                 }
                 MessageBox.Show("Items Ordered", "Items Ordered", MessageBoxButtons.OK);
+                resetDataset();
             }
         }
         private void resetDataset()

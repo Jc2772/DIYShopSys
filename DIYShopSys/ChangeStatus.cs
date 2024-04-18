@@ -24,6 +24,66 @@ namespace DIYShopSys
             this.main = main;
             main.Hide();
             this.Text = text;
+            resetDataset();
+        }
+        // return
+        private void ReturnButton_Click(object sender, EventArgs e)
+        {
+            main.Show();
+            this.Close();
+        }
+        // stop program
+        private void ChangeStatus_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (main.Visible == false)
+            {
+                main.Close();
+            }
+        }
+
+        private void Activate_Click(object sender, EventArgs e)
+        {
+            if (Grid.SelectedRows.Count == 1) {
+                if (this.Text.Equals("Manage Supplier Status"))
+                {
+                    new Sql().AddOrUpdate();
+                    resetDataset();
+                }
+                else if (this.Text.Equals("Manage Type Status"))
+                {
+                    new Sql().AddOrUpdate();
+                    resetDataset();
+                }
+                else if (this.Text.Equals("Manage Item Status"))
+                {
+                    new Sql().AddOrUpdate();
+                    resetDataset();
+                }
+            }
+        }
+
+        private void Deativate_Click(object sender, EventArgs e)
+        {
+            if (Grid.SelectedRows.Count == 1) {
+                if (this.Text.Equals("Manage Supplier Status"))
+                {
+                    new Sql().AddOrUpdate();
+                    resetDataset();
+                }
+                else if (this.Text.Equals("Manage Type Status"))
+                {
+                    new Sql().AddOrUpdate();
+                    resetDataset();
+                }
+                else if (this.Text.Equals("Manage Item Status"))
+                {
+                    new Sql().AddOrUpdate();
+                    resetDataset();
+                }
+            }
+        }
+        private void resetDataset()
+        {
             if (this.Text.Equals("Manage Supplier Status"))
             {
                 this.dataset = new Sql().GetDataSet("select supplier_id,supplier_name,supplier_status from suppliers");
@@ -47,56 +107,6 @@ namespace DIYShopSys
                 Grid.Columns[0].Visible = false;
                 Grid.Columns[1].HeaderText = "Item";
                 Grid.Columns[2].HeaderText = "Status";
-            }
-        }
-        // return
-        private void ReturnButton_Click(object sender, EventArgs e)
-        {
-            main.Show();
-            this.Close();
-        }
-        // stop program
-        private void ChangeStatus_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (main.Visible == false)
-            {
-                main.Close();
-            }
-        }
-
-        private void Activate_Click(object sender, EventArgs e)
-        {
-            if (Grid.SelectedRows.Count == 1) {
-                if (this.Text.Equals("Manage Supplier Status"))
-                {
-                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][5] = "a";
-                }
-                else if (this.Text.Equals("Manage Type Status"))
-                {
-                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][2] = "a";
-                }
-                else if (this.Text.Equals("Manage Item Status"))
-                {
-                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][8] = "a";
-                }
-            }
-        }
-
-        private void Deativate_Click(object sender, EventArgs e)
-        {
-            if (Grid.SelectedRows.Count == 1) {
-                if (this.Text.Equals("Manage Supplier Status"))
-                {
-                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][5] = "d";
-                }
-                else if (this.Text.Equals("Manage Type Status"))
-                {
-                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][2] = "d";
-                }
-                else if (this.Text.Equals("Manage Item Status"))
-                {
-                    dataset.Tables[0].Rows[Grid.SelectedRows[0].Index][8] = "d";
-                }
             }
         }
     }
