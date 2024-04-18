@@ -110,13 +110,13 @@ namespace DIYShopSys
 
         private void ReturnButton_Click(object sender, EventArgs e)
         {
-            this.Close();
             this.sales.Show();
+            this.Close();
         }
 
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(this.sales.Visible == false)
+            if(sales.Visible == false)
             {
                 Application.Exit();
             }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             ReturnButton = new Button();
             ItemChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             Year = new ComboBox();
@@ -49,17 +49,17 @@
             // 
             // ItemChart
             // 
-            chartArea2.Name = "ChartArea1";
-            ItemChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            ItemChart.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            ItemChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            ItemChart.Legends.Add(legend1);
             ItemChart.Location = new Point(12, 61);
             ItemChart.Name = "ItemChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            ItemChart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            ItemChart.Series.Add(series1);
             ItemChart.Size = new Size(300, 300);
             ItemChart.TabIndex = 4;
             ItemChart.Visible = false;
@@ -82,7 +82,7 @@
             Controls.Add(ItemChart);
             Controls.Add(ReturnButton);
             Name = "YearlyItemAnalysis";
-            Text = "Form1";
+            Text = "Yearly Item Type Analysis";
             ((System.ComponentModel.ISupportInitialize)ItemChart).EndInit();
             ResumeLayout(false);
         }

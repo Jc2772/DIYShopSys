@@ -60,14 +60,12 @@ namespace DIYShopSys
             {
                 if (Basket.Rows.Count > 0)
                 {
-                    total += Convert.ToDouble(Items.SelectedRows[0].Cells[5].Value.ToString());
-                    TotalLabel.Text = "total = " + total;
                     for (int i = 0; i < Basket.Rows.Count; i++)
                     {
                         //source for selectectedRows.index[2] second answer :https://stackoverflow.com/questions/3578144/index-of-currently-selected-row-in-datagridview
-                        if (Basket.Rows[i].Cells[1].Value.ToString().Equals(Items.SelectedRows[0].Cells[0].Value.ToString()))
+                        if (Basket.Rows[i].Cells[0].Value.ToString().Equals(Items.SelectedRows[0].Cells[3].Value.ToString()))
                         {
-                            dataset.Tables[1].Rows[i][2] = Convert.ToInt32(dataset.Tables[1].Rows[Items.SelectedRows[0].Index][2]) + 1;
+                            dataset.Tables[1].Rows[i][3] = Convert.ToInt32(dataset.Tables[1].Rows[Items.SelectedRows[0].Index][3]) + 1;
                             total += Convert.ToDouble(Items.SelectedRows[0].Cells[5].Value.ToString());
                             TotalLabel.Text = "total = " + total;
                             return;
@@ -77,8 +75,6 @@ namespace DIYShopSys
                 }
                 else
                 {
-                    total += Convert.ToDouble(Items.SelectedRows[0].Cells[5].Value.ToString());
-                    TotalLabel.Text = "total = " + total;
                     addToBasket();
                 }
             }
@@ -87,14 +83,16 @@ namespace DIYShopSys
         {
             DataRow row = dataset.Tables[1].NewRow();
             //id
-            row[0] = Items.SelectedRows[0].Cells[5].Value.ToString();
+            row[0] = Items.SelectedRows[0].Cells[3].Value.ToString();
             //name
-            row[1] = Items.SelectedRows[0].Cells[0].Value.ToString();
+            row[1] = Items.SelectedRows[0].Cells[4].Value.ToString();
             //price
-            row[2] = Items.SelectedRows[0].Cells[1].Value.ToString();
+            row[2] = Items.SelectedRows[0].Cells[5].Value.ToString();
             //quantity
             row[3] = 1;
             dataset.Tables[1].Rows.Add(row);
+            total += Convert.ToDouble(Items.SelectedRows[0].Cells[5].Value.ToString());
+            TotalLabel.Text = "total = " + total;
         }
         private void RemoveItemFromBasket_Click(object sender, EventArgs e)
         {
@@ -116,11 +114,11 @@ namespace DIYShopSys
         private void BuyButton_Click(object sender, EventArgs e)
         {
             //messagebox yes no from https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
-            MessageBox.Show("Are You Sure", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (DialogResult == DialogResult.Yes)
+            DialogResult dialogresult = MessageBox.Show("Are You Sure", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogresult == DialogResult.Yes)
             {
                 new Sql().AddOrUpdate("insert into orders values(" + new Sql().GetNextOrderId() + ",sysdate," + total + "," + SupplierId + ")");
-                for (int i = 0; i < Basket.SelectedRows.Count; i++) {
+                for (int i = 0; i < Basket.Rows.Count; i++) {
                     new Sql().AddOrUpdate("update items set quantity = quantity + " + Basket.Rows[i].Cells[3].Value + "where item_id = " + Basket.Rows[i].Cells[0].Value);
                 }
                 MessageBox.Show("Items Ordered", "Items Ordered", MessageBoxButtons.OK);

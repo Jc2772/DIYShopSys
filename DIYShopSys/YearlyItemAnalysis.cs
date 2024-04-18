@@ -20,6 +20,7 @@ namespace DIYShopSys
         {
             InitializeComponent();
             this.main = main;
+            main.Hide();
             GetDate();
         }
         private void ReturnButton_Click(object sender, EventArgs e)
@@ -44,11 +45,10 @@ namespace DIYShopSys
             ItemChart.Series[0].ChartType = SeriesChartType.Pie;
             GetData();
             ItemChart.Series[0].Points.DataBindXY(item_types, ammounts);
-            ItemChart.Visible = true;
         }
         private void GetData()
         {
-            DataSet ds = new Sql().GetDataSet("Select Sum(quantity_sold),Type_Name from (items inner join item_types on items.type_id = item_types.type_id) inner join basket on items.item_id = basket.item_id Where To_Char(Sale_Date,'YYYY') = '" + Year.Text + "' group by type_name");
+            DataSet ds = new Sql().GetDataSet("Select Sum(quantity_sold),Type_Name from (items inner join item_types on items.type_id = item_types.type_id) inner join (basket inner join sales on basket.sale_id = sales.sale_id) on items.item_id = basket.item_id Where To_Char(Sale_Date,'YYYY') = '" + Year.Text + "' group by type_name");
             this.item_types = new string[ds.Tables[0].Rows.Count];
             this.ammounts = new int[ds.Tables[0].Rows.Count];
             if (ds.Tables[0].Rows.Count > 0)
@@ -58,11 +58,12 @@ namespace DIYShopSys
                     this.ammounts[i] = Convert.ToInt32(ds.Tables[0].Rows[i][0]);
                     this.item_types[i] = ds.Tables[0].Rows[i][1].ToString();
                 }
+                ItemChart.Visible = true;
             }
             else
             {
-                MessageBox.Show("Data For " + Year.Text + "Does Not Exist");
-                ItemChart.Visible=false;
+                MessageBox.Show("Data For " + Year.Text + " Does Not Exist");
+                ItemChart.Visible= false;
             }
         }
         public void GetDate()
