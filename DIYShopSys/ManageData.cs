@@ -138,19 +138,19 @@ namespace DIYShopSys
             string text;
             if (this.Text.Equals("Update Supplier Details"))
             {
-                text = "Supplier name = " + SearchBox.Text;
+                text = "supplier_name like '%" + SearchBox.Text + "%'";
             }
             else if(this.Text.Equals("Update Type Detail"))
             {
-                text = "Type name = " + SearchBox.Text;
+                text = "Type_name like '%" + SearchBox.Text + "%'";
             }
             else if (this.Text.Equals("Update Item Details"))
             {
-                text = "Item name = " + SearchBox.Text;
+                text = "item_name like '%" + SearchBox.Text + "%'";
             }
             else if (this.Text.Equals("Query Supplier Details"))
             {
-                text = "Supplier name = " + SearchBox.Text;
+                text = "supplier_name like '%" + SearchBox.Text + "%'";
             }
             else
             {

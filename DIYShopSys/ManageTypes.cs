@@ -23,7 +23,7 @@ namespace DIYShopSys
         public ManageTypes(MainMenu main, String text)
         {
             InitializeComponent();
-            this.Text = Text;
+            this.Text = text;
             this.main = main;
             main.Hide();
         }
@@ -72,20 +72,20 @@ namespace DIYShopSys
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            if(TypeName.Text.Length >= 1 && TypeName.Text.Length <= 20)
+            if(TypeName.Text.Length < 1 || TypeName.Text.Length > 20)
             {
                 MessageBox.Show("Name Is Not Valid","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
-                if (this.Text.Equals("Update Type")) {
+                if (this.Text.Equals("Add Type")) {
 
-                    new Sql().AddOrUpdate("Insert Into Item_Types (Type_Id,Type_Name) Values ("+ new Sql().GetNextTypeId + ",'" + TypeName.Text + "')");
+                    new Sql().AddOrUpdate("Insert Into Item_Types (Type_Id,Type_Name) Values ("+ new Sql().GetNextTypeId() + ",'" + TypeName.Text + "')");
                     MessageBox.Show("Updating Type Name");
                     ManageData.Show();
                     this.Close();
                 }
-                else
+                else if(this.Text.Equals("Update Type"))
                 {
                     new Sql().AddOrUpdate("Update Item_Types Set Type_Name = '" + TypeName.Text +"' Where Type_Id = " + id);
                     MessageBox.Show("Adding Type");
