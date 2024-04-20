@@ -42,7 +42,7 @@ namespace DIYShopSys
             SupName.Text = Row.Cells[1].Value.ToString();
             PhoneNumber.Text = Row.Cells[2].Value.ToString();
             Email.Text = Row.Cells[3].Value.ToString();
-            DeliveryFee.Text = Row.Cells[4].Value.ToString() + "0";
+            DeliveryFee.Text = String.Format("{0:.00}", Convert.ToDouble(Row.Cells[4].Value.ToString()));
             RepName.Text = Row.Cells[5].Value.ToString();
             this.id = Row.Cells[0].Value.ToString();
         }
