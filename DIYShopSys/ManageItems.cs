@@ -50,7 +50,7 @@ namespace DIYShopSys
             //input old values
             //https://stackoverflow.com/questions/6487839/reading-data-from-datagridview-in-c-sharp
             ItemName.Text = Row.Cells[1].Value.ToString();
-            Price.Text = Row.Cells[2].Value.ToString();
+            Price.Text = String.Format("{0:.00}",Convert.ToDouble(Row.Cells[2].Value.ToString()));
             Cost.Text = Row.Cells[3].Value.ToString();
             Quantity.Text = Row.Cells[4].Value.ToString();
             for (int i = 0; i < Supplier.Items.Count; i++)

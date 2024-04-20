@@ -94,6 +94,7 @@ namespace DIYShopSys
                 Grid.Columns[2].HeaderText = "Phone Number";
                 Grid.Columns[3].HeaderText = "Email";
                 Grid.Columns[4].HeaderText = "Delivery Fee";
+                Grid.Columns[4].DefaultCellStyle.Format = "0.00";
                 Grid.Columns[5].HeaderText = "Rep Name";
 
             }
@@ -114,7 +115,9 @@ namespace DIYShopSys
                 Grid.Columns[8].Visible = false;
                 Grid.Columns[1].HeaderText = "Item name";
                 Grid.Columns[2].HeaderText = "Price";
+                Grid.Columns[2].DefaultCellStyle.Format = "0.00";
                 Grid.Columns[3].HeaderText = "Cost";
+                Grid.Columns[3].DefaultCellStyle.Format = "0.00";
                 Grid.Columns[6].HeaderText = "Supplier";
                 Grid.Columns[7].HeaderText = "Type";
 
@@ -127,6 +130,7 @@ namespace DIYShopSys
                 Grid.Columns[1].HeaderText = "Phone Number";
                 Grid.Columns[2].HeaderText = "Email";
                 Grid.Columns[3].HeaderText = "Delivery Fee";
+                Grid.Columns[3].DefaultCellStyle.Format = "0.00";
                 Grid.Columns[4].HeaderText = "Rep Name";
                 SubmitButton.Visible = false;
             }
