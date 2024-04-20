@@ -111,6 +111,8 @@
             Controls.Add(Activate);
             Controls.Add(Grid);
             Controls.Add(ReturnButton);
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "ChangeStatus";
             Text = "Form1";
             FormClosed += ChangeStatus_FormClosed;

@@ -79,6 +79,7 @@
             // PhoneNumber
             // 
             PhoneNumber.Location = new Point(125, 89);
+            PhoneNumber.MaxLength = 10;
             PhoneNumber.Name = "PhoneNumber";
             PhoneNumber.Size = new Size(169, 23);
             PhoneNumber.TabIndex = 12;
@@ -159,6 +160,8 @@
             Controls.Add(PhoneNumber);
             Controls.Add(SupName);
             Controls.Add(ReturnButton);
+            MaximumSize = new Size(383, 319);
+            MinimumSize = new Size(383, 319);
             Name = "ManageSuppliers";
             Text = "add Suplier";
             FormClosed += ManageItems_FormClosed;

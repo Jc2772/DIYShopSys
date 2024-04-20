@@ -67,6 +67,8 @@
             Controls.Add(LoginButton);
             Controls.Add(Password);
             Controls.Add(LabelForPassword);
+            MaximumSize = new Size(245, 133);
+            MinimumSize = new Size(245, 133);
             Name = "Login";
             Text = "Admin Login";
             ResumeLayout(false);

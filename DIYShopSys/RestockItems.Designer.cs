@@ -177,6 +177,8 @@
             Controls.Add(Supplier);
             Controls.Add(ItemLabel);
             Controls.Add(ReturnButton);
+            MaximumSize = new Size(816, 513);
+            MinimumSize = new Size(816, 513);
             Name = "RestockItems";
             Text = "Restock Items";
             FormClosed += RestockItems_FormClosed;

@@ -183,6 +183,8 @@
             Controls.Add(ItemName);
             Controls.Add(ReturnButton);
             Controls.Add(SubmitButton);
+            MaximumSize = new Size(373, 324);
+            MinimumSize = new Size(373, 324);
             Name = "ManageItems";
             Text = "Form2";
             FormClosed += ManageItems_FormClosed;

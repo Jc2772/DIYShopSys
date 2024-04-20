@@ -196,8 +196,10 @@
             Controls.Add(ReturnButton);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            MaximumSize = new Size(702, 489);
+            MinimumSize = new Size(702, 489);
             Name = "MainMenu";
-            Text = "Form1";
+            Text = "Main Menu";
             FormClosed += MainMenu_FormClosed;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

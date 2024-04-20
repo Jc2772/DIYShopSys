@@ -68,9 +68,9 @@
             // 
             DataBox.Controls.Add(ProfitChart);
             DataBox.Controls.Add(GrossProfitChart);
-            DataBox.Location = new Point(-1, 41);
+            DataBox.Location = new Point(1, 41);
             DataBox.Name = "DataBox";
-            DataBox.Size = new Size(783, 532);
+            DataBox.Size = new Size(790, 514);
             DataBox.TabIndex = 4;
             DataBox.TabStop = false;
             DataBox.Visible = false;
@@ -82,7 +82,7 @@
             ProfitChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             ProfitChart.Legends.Add(legend1);
-            ProfitChart.Location = new Point(409, 31);
+            ProfitChart.Location = new Point(412, 12);
             ProfitChart.Name = "ProfitChart";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
@@ -103,7 +103,7 @@
             GrossProfitChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             GrossProfitChart.Legends.Add(legend2);
-            GrossProfitChart.Location = new Point(13, 31);
+            GrossProfitChart.Location = new Point(13, 12);
             GrossProfitChart.Name = "GrossProfitChart";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
@@ -121,10 +121,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(794, 760);
+            ClientSize = new Size(799, 588);
             Controls.Add(DataBox);
             Controls.Add(Year);
             Controls.Add(ReturnButton);
+            MaximumSize = new Size(815, 627);
+            MinimumSize = new Size(815, 627);
             Name = "YearlyRevenueAnalysis";
             Text = "Yearly Revenue Analysis";
             FormClosed += YearlyRevenueAnalysis_FormClosed;

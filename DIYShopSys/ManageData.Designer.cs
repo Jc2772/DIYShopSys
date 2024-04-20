@@ -99,6 +99,8 @@
             Controls.Add(Grid);
             Controls.Add(ReturnButton);
             Controls.Add(SubmitButton);
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "ManageData";
             Text = "Form1";
             FormClosed += ManageData_FormClosed;

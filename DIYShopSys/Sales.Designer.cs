@@ -143,6 +143,8 @@
             Controls.Add(TotalLabel);
             Controls.Add(Basket);
             Controls.Add(BuyButton);
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "Sales";
             Text = "Sales";
             FormClosed += Sales_FormClosed;

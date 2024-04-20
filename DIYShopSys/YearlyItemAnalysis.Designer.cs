@@ -81,6 +81,8 @@
             Controls.Add(Year);
             Controls.Add(ItemChart);
             Controls.Add(ReturnButton);
+            MaximumSize = new Size(637, 412);
+            MinimumSize = new Size(637, 412);
             Name = "YearlyItemAnalysis";
             Text = "Yearly Item Type Analysis";
             ((System.ComponentModel.ISupportInitialize)ItemChart).EndInit();

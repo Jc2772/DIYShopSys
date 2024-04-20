@@ -79,6 +79,8 @@
             Controls.Add(ReturnButton);
             Controls.Add(LabelForTypeName);
             Controls.Add(TypeName);
+            MaximumSize = new Size(275, 183);
+            MinimumSize = new Size(275, 183);
             Name = "ManageTypes";
             Text = "Form1";
             FormClosed += ManageItems_FormClosed;
