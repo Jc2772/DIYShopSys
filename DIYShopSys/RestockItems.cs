@@ -43,7 +43,7 @@ namespace DIYShopSys
         {
             for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
             {
-                if (Supplier.SelectedItem.Equals(dataset.Tables[0].Rows[i][0] + "-" + dataset.Tables[0].Rows[i][1]))
+                if (Supplier.Text.Equals(dataset.Tables[0].Rows[i][0] + "-" + dataset.Tables[0].Rows[i][1]))
                 {
                     total = Convert.ToDouble(dataset.Tables[0].Rows[i][2]);
                     TotalLabel.Text = "total = " + total;
@@ -110,8 +110,8 @@ namespace DIYShopSys
                 }
                 else
                 {
-                    Basket.SelectedRows[0].Cells[3].Value = Convert.ToInt32(Basket.SelectedRows[0].Cells[3].Value) - 1;
-                    Basket.SelectedRows[0].Cells[3].Value = Convert.ToInt32(Basket.SelectedRows[0].Cells[4].Value) - 1;
+                    Basket.SelectedRows[0].Cells[3].Value = Convert.ToInt32(Basket.SelectedRows[0].Cells[3].Value) - Convert.ToInt32(Basket.SelectedRows[0].Cells[2].Value);
+                    Basket.SelectedRows[0].Cells[4].Value = Convert.ToInt32(Basket.SelectedRows[0].Cells[4].Value) - 1;
                 }
             }
         }
@@ -176,6 +176,8 @@ namespace DIYShopSys
             Items.Columns[3].Visible = false;
             Basket.Columns[0].Visible = false;
             Supplier.SelectedIndex = -1;
+            GroupBox.Visible = false;
+            total = 0;
         }
         // closing form
         private void RestockItems_FormClosed(object sender, FormClosedEventArgs e)

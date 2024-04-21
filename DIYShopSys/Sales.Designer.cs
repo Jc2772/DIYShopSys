@@ -30,7 +30,6 @@
         {
             Items = new DataGridView();
             AddToBasket = new Button();
-            Basketlabel = new Label();
             RemoveFromBasket = new Button();
             TotalLabel = new Label();
             Basket = new DataGridView();
@@ -65,15 +64,6 @@
             AddToBasket.Text = "Add Item to Basket";
             AddToBasket.UseVisualStyleBackColor = true;
             AddToBasket.Click += AddToBasket_Click;
-            // 
-            // Basketlabel
-            // 
-            Basketlabel.AutoSize = true;
-            Basketlabel.Location = new Point(602, 50);
-            Basketlabel.Name = "Basketlabel";
-            Basketlabel.Size = new Size(41, 15);
-            Basketlabel.TabIndex = 15;
-            Basketlabel.Text = "Basket";
             // 
             // RemoveFromBasket
             // 
@@ -138,7 +128,6 @@
             Controls.Add(ReturnButton);
             Controls.Add(Items);
             Controls.Add(AddToBasket);
-            Controls.Add(Basketlabel);
             Controls.Add(RemoveFromBasket);
             Controls.Add(TotalLabel);
             Controls.Add(Basket);
@@ -158,7 +147,6 @@
 
         private DataGridView Items;
         private Button AddToBasket;
-        private Label Basketlabel;
         private Button RemoveFromBasket;
         private Label TotalLabel;
         private DataGridView Basket;
