@@ -79,14 +79,15 @@ namespace DIYShopSys
                 if (this.main != null) {
 
                     new Sql().AddOrUpdate("Insert Into Item_Types (Type_Id,Type_Name) Values ("+ new Sql().GetNextTypeId() + ",'" + TypeName.Text + "')");
-                    MessageBox.Show("Updating Type Name");
-                    ManageData.Show();
-                    this.Close();
+                    MessageBox.Show("Added Type");
+                    TypeName.Text = "";
                 }
                 else
                 {
                     new Sql().AddOrUpdate("Update Item_Types Set Type_Name = '" + TypeName.Text +"' Where Type_Id = " + id);
-                    MessageBox.Show("Adding Type");
+                    MessageBox.Show("Updating Type Name");
+                    ManageData.Show();
+                    this.Close();
                 }
             }
         }
