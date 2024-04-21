@@ -85,6 +85,7 @@ namespace DIYShopSys
         public void ResetData()
         {
             //populate dataset
+            // renamed datagridview using some code from here https://stackoverflow.com/questions/2486482/how-to-change-header-text-in-datagridview-in-code-c
             if (this.Text.Equals("Update Supplier Details"))
             {
                 DataSet dataset = new Sql().GetDataSet("select supplier_id,supplier_name, phone_number, email, delivery_fee, rep_name from suppliers where supplier_status = 'a'");
