@@ -66,8 +66,9 @@ namespace DIYShopSys
                         //source for selectectedRows.index[2] second answer :https://stackoverflow.com/questions/3578144/index-of-currently-selected-row-in-datagridview
                         if (Basket.Rows[i].Cells[0].Value.ToString().Equals(Items.SelectedRows[0].Cells[3].Value.ToString()))
                         {
-                            dataset.Tables[1].Rows[i][3] = Convert.ToInt32(dataset.Tables[1].Rows[Items.SelectedRows[0].Index][3]) + 1;
-                            total += Convert.ToDouble(Items.SelectedRows[0].Cells[5].Value.ToString());
+                            Basket.Rows[i].Cells[3].Value = Convert.ToInt32(Basket.Rows[i].Cells[3].Value) + Convert.ToInt32(Items.SelectedRows[0].Cells[5].Value);
+                            Basket.Rows[i].Cells[4].Value = Convert.ToInt32(Basket.Rows[i].Cells[4].Value) + 1;
+                            total += Convert.ToDouble(Items.SelectedRows[0].Cells[5].Value);
                             TotalLabel.Text = "total = " + total;
                             return;
                         }
@@ -101,13 +102,14 @@ namespace DIYShopSys
             {
                 total -= Convert.ToDouble(Basket.SelectedRows[0].Cells[2].Value.ToString());
                 TotalLabel.Text = "total = " + total;
-                if (Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][3]) == 1)
+                if (Convert.ToInt32(Basket.SelectedRows[0].Cells[4].Value) == 1)
                 {
                     dataset.Tables[1].Rows.RemoveAt(Basket.SelectedRows[0].Index);
                 }
                 else
                 {
-                    dataset.Tables[1].Rows[0][2] = Convert.ToInt32(dataset.Tables[1].Rows[Basket.SelectedRows[0].Index][3]) - 1;
+                    Basket.SelectedRows[0].Cells[3].Value = Convert.ToInt32(Basket.SelectedRows[0].Cells[3].Value) - 1;
+                    Basket.SelectedRows[0].Cells[3].Value = Convert.ToInt32(Basket.SelectedRows[0].Cells[4].Value) - 1;
                 }
             }
         }
@@ -120,7 +122,7 @@ namespace DIYShopSys
             {
                 new Sql().AddOrUpdate("insert into orders values(" + new Sql().GetNextOrderId() + ",sysdate," + total + "," + SupplierId + ")");
                 for (int i = 0; i < Basket.Rows.Count; i++) {
-                    new Sql().AddOrUpdate("update items set quantity = quantity + " + Basket.Rows[i].Cells[3].Value + "where item_id = " + Basket.Rows[i].Cells[0].Value);
+                    new Sql().AddOrUpdate("update items set quantity = quantity + " + Basket.Rows[i].Cells[4].Value + "where item_id = " + Basket.Rows[i].Cells[0].Value);
                 }
                 MessageBox.Show("Items Ordered", "Items Ordered", MessageBoxButtons.OK);
                 resetDataset();
@@ -152,6 +154,11 @@ namespace DIYShopSys
             column = new DataColumn();
             column.DataType = typeof(double);
             column.ColumnName = "Cost";
+            table.Columns.Add(column);
+            //totalcost
+            column = new DataColumn();
+            column.DataType = typeof(double);
+            column.ColumnName = "Total Cost";
             table.Columns.Add(column);
             //Quantity
             column = new DataColumn();
