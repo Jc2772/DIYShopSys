@@ -14,7 +14,6 @@ namespace DIYShopSys
     {
         MainMenu main;
         ManageData ManageData;
-        DataGridViewRow Row;
         String id;
         public ManageTypes()
         {
@@ -32,7 +31,6 @@ namespace DIYShopSys
             InitializeComponent();
             this.Text = text;
             this.ManageData = update;
-            this.Row = Row;
             this.ManageData.Hide();
             TypeName.Text = Row.Cells[1].Value.ToString();
             this.id = Row.Cells[0].Value.ToString();
