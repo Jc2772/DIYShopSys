@@ -98,6 +98,12 @@ namespace DIYShopSys
                     {
                         new Sql().AddOrUpdate("Insert Into Items (Item_Id,Item_Name,Item_Price,Item_Cost,Quantity,Supplier_Id,Type_Id,Item_Status) Values (" + new Sql().GetNextStockId() + ",'" + ItemName.Text + "'," + Price.Text + "," + Cost.Text + ","+ Quantity.Text + "," + this.SupplierId + "," + this.TypeId + ")");
                         MessageBox.Show("You have Added an Item", "Added Item", MessageBoxButtons.OK);
+                        ItemName.Text = "";
+                        Price.Text = "";
+                        Cost.Text = "";
+                        Supplier.SelectedIndex = -1;
+                        Type.SelectedIndex = -1;
+                        Quantity.Text = "";
                     }
                 }
                 else
@@ -153,6 +159,16 @@ namespace DIYShopSys
                 MessageBox.Show("Invalid Cost, Cost is Not Double", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            else if (Supplier.SelectedIndex > -1)
+            {
+                MessageBox.Show("Supplier is not Picked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (Type.SelectedIndex > -1)
+            {
+                MessageBox.Show("Type is not Picked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             else
             {
                 return true;
@@ -200,14 +216,14 @@ namespace DIYShopSys
         //returns to main menu
         private void ReturnButton_Click(object sender, EventArgs e)
         {
-            if (this.Text.Equals("Update Item Details"))
+            if (main != null)
             {
-                ManageData.Show();
+                main.Show();
                 this.Close();
             }
             else
             {
-                main.Show();
+                ManageData.Show();
                 this.Close();
             }
         }
