@@ -109,16 +109,15 @@ namespace DIYShopSys
             else if (this.Text.Equals("Update Item Details"))
             {
                 DataSet dataset = new Sql().GetDataSet(
-                    "select item_id, item_name, item_price, item_cost,quantity,items.supplier_id,supplier_name,type_name,items.type_id from (items inner join suppliers on suppliers.supplier_id = items.supplier_id) inner join item_types on item_types.type_id = items.type_id where item_status = 'a'");
+                    "select item_id, item_name, item_price, item_cost,quantity,supplier_name,type_name from (items inner join suppliers on suppliers.supplier_id = items.supplier_id) inner join item_types on item_types.type_id = items.type_id where item_status = 'a'");
                 Grid.DataSource = dataset.Tables[0];
                 Grid.Columns[0].Visible = false;
-                Grid.Columns[5].Visible = false;
-                Grid.Columns[8].Visible = false;
                 Grid.Columns[1].HeaderText = "Item name";
                 Grid.Columns[2].HeaderText = "Price";
                 Grid.Columns[2].DefaultCellStyle.Format = "0.00";
                 Grid.Columns[3].HeaderText = "Cost";
                 Grid.Columns[3].DefaultCellStyle.Format = "0.00";
+                Grid.Columns[4].HeaderText = "Quantity";
                 Grid.Columns[6].HeaderText = "Supplier";
                 Grid.Columns[7].HeaderText = "Type";
 

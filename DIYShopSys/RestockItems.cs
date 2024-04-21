@@ -46,7 +46,7 @@ namespace DIYShopSys
                 if (Supplier.Text.Equals(dataset.Tables[0].Rows[i][0] + "-" + dataset.Tables[0].Rows[i][1]))
                 {
                     total = Convert.ToDouble(dataset.Tables[0].Rows[i][2]);
-                    TotalLabel.Text = "total = " + total;
+                    TotalLabel.Text = "total = " + String.Format("{0:.00}", total);
                     //found out how to filter datasets from here https://stackoverflow.com/questions/5843537/filtering-datagridview-without-changing-datasource
                     dataset.Tables[0].DefaultView.RowFilter = "Supplier_id = " + dataset.Tables[0].Rows[i][0];
                     Items.Columns[0].Visible = false;
@@ -69,7 +69,7 @@ namespace DIYShopSys
                             Basket.Rows[i].Cells[3].Value = Convert.ToInt32(Basket.Rows[i].Cells[3].Value) + Convert.ToInt32(Items.SelectedRows[0].Cells[5].Value);
                             Basket.Rows[i].Cells[4].Value = Convert.ToInt32(Basket.Rows[i].Cells[4].Value) + 1;
                             total += Convert.ToDouble(Items.SelectedRows[0].Cells[5].Value);
-                            TotalLabel.Text = "total = " + total;
+                            TotalLabel.Text = "total = " + String.Format("{0:.00}", total); ;
                             return;
                         }
                     }
@@ -96,14 +96,14 @@ namespace DIYShopSys
             row[4]= 1;
             dataset.Tables[1].Rows.Add(row);
             total += Convert.ToDouble(Items.SelectedRows[0].Cells[5].Value.ToString());
-            TotalLabel.Text = "total = " + total;
+            TotalLabel.Text = "total = " + String.Format("{0:.00}", total);
         }
         private void RemoveItemFromBasket_Click(object sender, EventArgs e)
         {
             if (Basket.SelectedRows.Count == 1)
             {
                 total -= Convert.ToDouble(Basket.SelectedRows[0].Cells[2].Value.ToString());
-                TotalLabel.Text = "total = " + total;
+                TotalLabel.Text = "total = " + String.Format("{0:.00}", total);
                 if (Convert.ToInt32(Basket.SelectedRows[0].Cells[4].Value) == 1)
                 {
                     dataset.Tables[1].Rows.RemoveAt(Basket.SelectedRows[0].Index);
@@ -177,6 +177,9 @@ namespace DIYShopSys
             Basket.Columns[0].Visible = false;
             Supplier.SelectedIndex = -1;
             GroupBox.Visible = false;
+            Items.Columns[5].DefaultCellStyle.Format = "0.00";
+            Basket.Columns[2].DefaultCellStyle.Format = "0.00";
+            Basket.Columns[3].DefaultCellStyle.Format = "0.00";
             total = 0;
         }
         // closing form

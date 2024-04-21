@@ -29,6 +29,9 @@ namespace DIYShopSys
         {
             if (Items.SelectedRows.Count == 1)
             {
+                //adding price to total
+                total += Convert.ToDouble(Items.SelectedRows[0].Cells[2].Value.ToString());
+                TotalLabel.Text = "total = " + String.Format("{0:.00}", total);
                 if (Convert.ToInt32(Items.SelectedRows[0].Cells[3].Value) == 0)
                 {
                     MessageBox.Show("Maximum" + Items.SelectedRows[0].Cells[1].Value.ToString() + " Reached", "Error", MessageBoxButtons.OK);
@@ -36,9 +39,6 @@ namespace DIYShopSys
                 }
                 else if (Basket.Rows.Count > 0)
                 {
-                    //adding price to total
-                    total += Convert.ToDouble(Items.SelectedRows[0].Cells[2].Value.ToString());
-                    TotalLabel.Text = "total = " + total;
                     for (int i = 0; i < Basket.Rows.Count; i++)
                     {
                         //source for selectectedRows.index[2] second answer :https://stackoverflow.com/questions/3578144/index-of-currently-selected-row-in-datagridview
@@ -57,9 +57,6 @@ namespace DIYShopSys
                 }
                 else
                 { 
-                    //adding price to total
-                    total += Convert.ToDouble(Items.SelectedRows[0].Cells[2].Value);
-                    TotalLabel.Text = "total = " + total;
                     addToBasket();
                 }
             }
@@ -74,7 +71,7 @@ namespace DIYShopSys
             if (Basket.SelectedRows.Count == 1)
             {
                 total -= Convert.ToDouble(Basket.SelectedRows[0].Cells[2].Value);
-                TotalLabel.Text = "total = " + total;
+                TotalLabel.Text = "total = " + String.Format("{0:.00}", total);
                 // for loop check
                 for (int i = 0; i < Items.Rows.Count; i++)
                 {
@@ -189,6 +186,10 @@ namespace DIYShopSys
             Items.DataSource = dataset.Tables[0];
             Basket.DataSource = dataset.Tables[1];
             total = 0;
+            TotalLabel.Text = "total = ";
+            Items.Columns[3].DefaultCellStyle.Format = "0.00";
+            Basket.Columns[2].DefaultCellStyle.Format = "0.00";
+            Basket.Columns[3].DefaultCellStyle.Format = "0.00";
         }
         //returns to main menu
         private void ReturnButton_Click(object sender, EventArgs e)

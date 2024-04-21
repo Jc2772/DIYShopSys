@@ -49,6 +49,7 @@ namespace DIYShopSys
             setup();
             //input old values
             //https://stackoverflow.com/questions/6487839/reading-data-from-datagridview-in-c-sharp
+            this.ItemId = Row.Cells[0].Value.ToString();
             ItemName.Text = Row.Cells[1].Value.ToString();
             Price.Text = String.Format("{0:.00}",Convert.ToDouble(Row.Cells[2].Value.ToString()));
             Cost.Text = String.Format("{0:.00}", Convert.ToDouble(Row.Cells[3].Value.ToString()));
@@ -108,7 +109,7 @@ namespace DIYShopSys
                 }
                 else
                 {
-                    new Sql().AddOrUpdate("Update Items set Item_Name = '" + ItemName.Text + "',Item_Price = " + Price.Text + ",Item_Cost =" + Cost.Text + ",Supplier_Id = " + this.SupplierId + ",Type_Id = " + this.TypeId + "Where Item_Id = " + this.ItemId);
+                    new Sql().AddOrUpdate("Update Items set Item_Name = '" + ItemName.Text + "',Item_Price = " + Price.Text + ",Item_Cost =" + Cost.Text + ",Supplier_Id = " + this.SupplierId + ",Type_Id = " + this.TypeId + " Where Item_Id = " + this.ItemId);
                     MessageBox.Show("You have Updated Item Details", "Updated Item", MessageBoxButtons.OK);
                     ManageData.Show();
                     this.Close();
@@ -159,12 +160,12 @@ namespace DIYShopSys
                 MessageBox.Show("Invalid Cost, Cost is Not Double", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else if (Supplier.SelectedIndex > -1)
+            else if (Supplier.SelectedIndex == -1)
             {
                 MessageBox.Show("Supplier is not Picked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else if (Type.SelectedIndex > -1)
+            else if (Type.SelectedIndex == -1)
             {
                 MessageBox.Show("Type is not Picked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
