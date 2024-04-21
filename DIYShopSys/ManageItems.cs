@@ -92,7 +92,7 @@ namespace DIYShopSys
             //Checks for form text
             if (CheckItem())
             {
-                if (this.Text.Equals("Add Item"))
+                if (this.main != null)
                 {
                     if (checkQuantity())
                     {
@@ -100,7 +100,7 @@ namespace DIYShopSys
                         MessageBox.Show("You have Added an Item", "Added Item", MessageBoxButtons.OK);
                     }
                 }
-                if (this.Text.Equals("Update Item Details"))
+                else
                 {
                     new Sql().AddOrUpdate("Update Items set Item_Name = '" + ItemName.Text + "',Item_Price = " + Price.Text + ",Item_Cost =" + Cost.Text + ",Supplier_Id = " + this.SupplierId + ",Type_Id = " + this.TypeId + "Where Item_Id = " + this.ItemId);
                     MessageBox.Show("You have Updated Item Details", "Updated Item", MessageBoxButtons.OK);

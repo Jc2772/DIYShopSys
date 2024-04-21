@@ -51,12 +51,12 @@ namespace DIYShopSys
         {
             if (CheckSupplier())
             {
-                if (this.Text.Equals("Add Supplier"))
+                if (this.main != null)
                 {
                     new Sql().AddOrUpdate("Insert Into Suppliers (Supplier_Id,Supplier_Name,Phone_Number,Email,Delivery_Fee,Rep_Name)  Values(" + new Sql().GetNextSupplierId() + ",'" + SupName.Text + "','" + PhoneNumber.Text + "','" + Email.Text + "'," + DeliveryFee.Text + ",'" + RepName.Text + "')");
                     MessageBox.Show("You have Added a Supplier", "Added Supplier", MessageBoxButtons.OK);
                 }
-                else if (this.Text.Equals("Update Supplier Details"))
+                else
                 {
                     new Sql().AddOrUpdate("Update Suppliers Set Supplier_Name = '" + SupName.Text + "',Phone_Number = '" + PhoneNumber.Text + "',Email = '" + Email.Text +"',Delivery_Fee = " + DeliveryFee.Text + ",Rep_Name = '" + RepName.Text + "' Where Supplier_Id = " + id);
                     MessageBox.Show("You have Updated Supplier Details", "Updated Supplier", MessageBoxButtons.OK);

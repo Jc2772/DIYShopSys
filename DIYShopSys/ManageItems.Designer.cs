@@ -87,6 +87,7 @@
             // 
             // Supplier
             // 
+            Supplier.DropDownStyle = ComboBoxStyle.DropDownList;
             Supplier.FormattingEnabled = true;
             Supplier.Location = new Point(117, 178);
             Supplier.Name = "Supplier";
@@ -157,6 +158,7 @@
             // 
             // Type
             // 
+            Type.DropDownStyle = ComboBoxStyle.DropDownList;
             Type.FormattingEnabled = true;
             Type.Location = new Point(117, 151);
             Type.Name = "Type";

@@ -90,8 +90,10 @@ namespace DIYShopSys
             row[1] = Items.SelectedRows[0].Cells[4].Value.ToString();
             //price
             row[2] = Items.SelectedRows[0].Cells[5].Value.ToString();
-            //quantity
+            //total price
             row[3] = 1;
+            //quantity
+            row[4]= 1;
             dataset.Tables[1].Rows.Add(row);
             total += Convert.ToDouble(Items.SelectedRows[0].Cells[5].Value.ToString());
             TotalLabel.Text = "total = " + total;

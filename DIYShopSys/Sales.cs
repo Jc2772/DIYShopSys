@@ -45,9 +45,9 @@ namespace DIYShopSys
                         if (Basket.Rows[i].Cells[1].Value.ToString().Equals(Items.SelectedRows[0].Cells[1].Value.ToString()))
                         {
                             //cost
-                            dataset.Tables[1].Rows[i][3] = Convert.ToInt32(dataset.Tables[1].Rows[i][3]) + 1;
+                            Basket.Rows[i].Cells[3].Value = Convert.ToInt32(dataset.Tables[1].Rows[i][3]) + 1;
                             //total cost
-                            dataset.Tables[1].Rows[i][4] = Convert.ToInt32(dataset.Tables[1].Rows[i][4]) + 1;
+                            Basket.Rows[i].Cells[4].Value = Convert.ToInt32(dataset.Tables[1].Rows[i][4]) + 1;
                             //price
                             Items.SelectedRows[0].Cells[3].Value = Convert.ToInt32(Items.SelectedRows[0].Cells[3].Value) - 1;
                             return;

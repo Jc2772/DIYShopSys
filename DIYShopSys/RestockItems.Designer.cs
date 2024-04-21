@@ -145,6 +145,7 @@
             // 
             // Supplier
             // 
+            Supplier.DropDownStyle = ComboBoxStyle.DropDownList;
             Supplier.FormattingEnabled = true;
             Supplier.Location = new Point(12, 45);
             Supplier.Name = "Supplier";
