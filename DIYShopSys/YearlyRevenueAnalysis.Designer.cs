@@ -57,6 +57,7 @@
             // 
             // Year
             // 
+            Year.DropDownStyle = ComboBoxStyle.DropDownList;
             Year.FormattingEnabled = true;
             Year.Location = new Point(12, 12);
             Year.Name = "Year";
