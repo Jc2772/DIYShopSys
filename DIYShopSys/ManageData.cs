@@ -37,7 +37,7 @@ namespace DIYShopSys
                     came up with grid Selceted rows while looking at site
                 */
                 DataGridViewRow row = Grid.SelectedRows[0];
-                /*used this to learn how to change form name in c#
+                /*used this to learn how to change form text name in c#
                  * first answer on page
                  * https://stackoverflow.com/questions/5104175/how-do-you-change-the-text-in-the-titlebar-in-windows-forms
                  */
