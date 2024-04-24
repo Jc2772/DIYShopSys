@@ -78,7 +78,7 @@ namespace DIYShopSys
                 {
                     for(int i = 0; i < ds.Tables[1].Rows.Count; i++)
                     {
-                        ammounts[Convert.ToInt32(ds.Tables[1].Rows[i][1]) - 1] = grossammounts[Convert.ToInt32(ds.Tables[1].Rows[i][1]) - 1] -Convert.ToDecimal(ds.Tables[1].Rows[i][0]);
+                        ammounts[Convert.ToInt32(ds.Tables[1].Rows[i][1]) - 1] = grossammounts[Convert.ToDecimal(ds.Tables[1].Rows[i][0]) - 1] -Convert.ToDecimal(ds.Tables[1].Rows[i][0]);
                     }
                 }
                 DataBox.Visible = true;
